@@ -1,0 +1,22 @@
+
+
+* 새 환경
+git bash부터 시작
+이름/이메일 설정
+git init : 시작,  폴더경로
+
+* push
+1. git add . :전체파일
+2. git remote -v : 리모트확인
+3. git remote add origin "링크" / 깃허브 레파지토리에서 링크복사
+4. git commit -m "커밋메시지" : 파일올릴때 다는 코멘트 / 
+
+
+* pull
+* 새 환경
+git bash부터 시작
+이름/이메일 설정
+git init : 시작,  폴더경로
+git remote -v : 리모트확인
+git remote add origin "링크" / 깃허브 레파지토리에서 링크복사
+pull 명령어

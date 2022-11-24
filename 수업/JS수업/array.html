@@ -7,11 +7,68 @@
     <title>Document</title>
   </head>
   <body>
+    <div class="result">10+20+30=</div>
+
+    <div class="self">
+      <p>html(60), css(90), js(20)</p>
+      <p>총점 =</p>
+      <p>평균 =</p>
+      <!-- 60점이상일경우 '합격' -->
+      <p>판정 =</p>
+    </div>
     <script>
       let arry = [10, 20, 30];
-      console.log(arry[1]);
+      //console.log(arry[1]);
+      //console.log(arry[0] + arry[1] + arry[2]);
 
-      console.log(arry[0] + arry[1] + arry[2]);
+      let sum = 0;
+      let num20;
+
+      /* sum += arry[0];
+      sum += arry[1];
+      sum += arry[2];
+      console.log(sum); */
+
+      // * 반복문
+      for (i = 0; i < arry.length; i++) {
+        sum += arry[i];
+
+        if (arry[i] === 20) {
+          num20 = arry[i];
+        }
+      }
+      console.log(sum);
+      //   console.log(num20);
+
+      const a = document.querySelector(".result");
+      console.log(a);
+      //   a.textContent = "10+20+30=" + sum;
+      //   a.textContent += sum;
+
+      //   a.textContent += sum + "," + num20;
+      a.textContent += `${sum} , ${num20}`;
+    </script>
+
+    <script>
+      const eltotal = document.querySelector(".self > p:nth-child(2)");
+      const elavg = document.querySelector(".self > p:nth-child(3)");
+      const elpass = document.querySelector(".self > p:nth-child(4)");
+      console.log(elavg);
+
+      let sClass = [60, 90, 20];
+
+      let totalValue = sClass[0] + sClass[1] + sClass[2];
+      console.log(totalValue);
+
+      let avg = totalValue / 3;
+
+      eltotal.textContent += totalValue;
+      elavg.textContent += Math.round(avg * 100) / 100;
+      if (elavg > 60) {
+        elpass.textContent += "합격";
+      } else {
+        elpass.textContent += "불합격";
+      }
     </script>
   </body>
 </html>
