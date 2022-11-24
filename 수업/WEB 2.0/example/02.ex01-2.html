@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!-- ex01을 backgroundImg 버전으로-->
+    <style>
+        body,html,div{
+            margin:0px;
+            padding:0px;
+            font-family: sans-serif;
+        }
+        a{
+            text-decoration: none;
+        }
+
+        
+        .container{
+            /* 백그라운드로 넣으려면 영역이 지정되어있어야 한다. => height값 지정*/
+            width: 520px;
+            height: 244px;
+            padding:24px;
+            border:1px solid rgb(44, 44, 44);
+            margin: 100px auto; /* 가운데정렬 */
+            background: url('images/woman.jpg') no-repeat 24px 24px;
+            padding-left: 240px;
+        }
+
+
+        div.textContainer span,
+        div.textContainer a{
+            display: block;
+        }
+
+        .subTitle{
+            font-size: 12px; /* 폰트의 사이즈는 최소 12px을 권장 */
+            letter-spacing: 4px; /*글자의 자간*/
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .title{
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .text{
+            font-size: 14px;
+            color: rgb(68, 67, 67);
+            margin-bottom: 24px;
+        }
+
+        a{
+            text-decoration: none;
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+        <div class="container">
+
+            <div class="textContainer">
+                <span class="subTitle">2016 LAFUMA CATALOGUE</span>
+                <span class="title">ATHLETIC + TREKKING</span>
+                <span class="text">도심속 가벼운 애슬레틱에서도, 자연과 함께 즐기는 트래킹에서도,<br>
+                언제 어디서나 라푸마와 함께라면 당신의 모든 액비트한 순간들은<br> 더욱
+                FRESH하게 변화한다.
+                </span>
+                <a href="#" title="상세페이지로 이동"> view more </a>
+            </div>
+           
+            
+        </div>
+
+        </div>
+</body>
+</html>

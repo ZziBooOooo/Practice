@@ -1,0 +1,37 @@
+@charset "UTF-8";
+/* @mixin flex {
+  display: flex;
+  align-items: center;
+} */
+/* @include flex(flex, center) {
+  justify-content: space-between; /* 명령추가 
+} */
+main {
+  background-color: rgb(216, 219, 219);
+}
+
+article {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+article ul {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  /* include에서 추가한 내용을 가져오는 내장함수 */
+  /* 기본값 */
+  display: flex;
+}
+article ul li {
+  display: flex;
+  align-items: center;
+  /* include에서 추가한 내용을 가져오는 내장함수 */
+  width: 30%;
+}
+article ul li::after {
+  /* &는 상위 부모를 가리킨다. 여기서는 li */
+  content: "";
+  flex-grow: 1;
+  border: 1px solid black;
+}/*# sourceMappingURL=index.css.map */

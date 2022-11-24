@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css" />
+    <style>
+      /* 
+        * justify : 방향 정렬 (메인축)
+
+        * align : 방향 정렬 (보조축)
+
+            - space-around : 자식들의 요소 '둘레'에 균일한 간격을 배분
+            - space-between : 자식들의 요소 '사이'에 균알헌 간격을 배분
+            - space-evenly : 자식요소들의 양쪽에 균일한 간격을 배분
+            - flex-start : 기본값(direction에 의해 기준이 바뀜)
+            - flex-end : 정렬의 끝쪽에서 시작
+            - center : 가운데시작
+
+
+
+        // direction에 따라 메인축, 보조축이 바뀐다. 
+        
+        */
+
+      .container {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">aaa</div>
+      <div class="item">bbb</div>
+      <div class="item">ccc</div>
+      <div class="item">dddd</div>
+    </div>
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dolores
+    deserunt aspernatur delectus temporibus vero quidem ipsam consectetur et
+    nulla sapiente, natus aliquam inventore, accusamus necessitatibus,
+    voluptatem ut laborum voluptas!
+  </body>
+</html>

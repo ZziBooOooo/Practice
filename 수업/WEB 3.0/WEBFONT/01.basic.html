@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>웹폰트</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Poor Story", cursive;
+      }
+
+      [lang="en"] {
+        font-family: "Courier New", Courier, monospace;
+      }
+      /*
+      언어별로 폰트를 다르게 설정하고 싶을때에는 class대신 
+      언어를 선택자로 잡아야 한다.
+
+      lang="*" 으로 언어를 선언하는 경우 스크린리더기에서 언어를 번역하는 시스템이 바뀌게된다.
+
+      다른 폰트를 구별해서 쓰는 경우
+      같은언어 -> 클래스
+      다른언어 -> 언어별로 지정
+
+      국가별 lang code
+      한국어 = ko
+      영어 = en
+      중국어 = zh
+      일본어 = ja
+
+      */
+    </style>
+  </head>
+  <body>
+    <span lang="en"> Poor Story </span>
+  </body>
+</html>

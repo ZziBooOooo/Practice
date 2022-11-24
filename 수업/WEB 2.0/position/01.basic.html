@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /*
+        * position
+
+            - relative
+              상대적인 위치값
+              현재 자신의 위치를 기준으로 함
+              기존 컨텐츠들의 플로우를 유지
+
+            - absoulte
+              절대적인 위치값
+              부모요소를 기준으로 함
+              부모요소에 potision의 적용여부를 따짐 - 없다면 상위요소로 올라가며, body까지 올라갈 수 있음
+              모든 컨텐츠들의 플로우 관계 무시
+
+              특정한 경우(스크립트,레이아웃과 별개의 컨텐츠 구현)을 제외하면
+              대부분 absolute를 컨트롤하기 위해 부모요소에 relative를 적용한다.
+
+            - static
+              position이 적용되지 않은 상태와 같음
+              기존의 position속성을 해제할 때 사용 (스크립트에서)
+
+            - fixed
+              브라우처창의 크기를 기준으로 함
+              스크롤이 내려가다 현재 위치가 고정되어있는 것처럼 보임
+            
+        */
+      /*
+        * z-index
+        
+            position, flex, grid가 있을 때 적용
+            위의 속성이 적용된 요소들끼리만 (겹치는 경우가 있기 때문)
+            숫자가 커질수록 앞쪽에 출력
+            같은 값이면 마지막에 작성된 요소가 출력
+
+        */
+      .box {
+        width: 200px;
+        height: 200px;
+        background-color: rgb(170, 205, 219);
+        position: relative;
+        left: 500px;
+      }
+
+      .box1 {
+        width: 200px;
+        height: 200px;
+        background-color: rgb(167, 211, 156);
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .box2 {
+        width: 200px;
+        height: 200px;
+        background-color: rgb(231, 173, 214);
+      }
+      .child {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(148, 148, 148);
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .box3 {
+        width: 200px;
+        height: 200px;
+        background-color: rgb(226, 200, 161);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">0</div>
+    <div class="box1">1</div>
+    <div class="box2">
+      2
+      <div class="child">child</div>
+    </div>
+    <div class="box3">3</div>
+  </body>
+</html>

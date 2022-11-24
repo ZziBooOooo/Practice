@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex-grow</title>
+    <link rel="stylesheet" href="reset.css" />
+    <style>
+      /* 
+        * flex-grow : 아이템들의 영역 배분 속성
+                      숫자가 클수록 많은 영역을 가져가게 되며,
+                      컨텐츠 영역을 제외한 남은 여백값을
+                      적용된 grow의 숫자만큼 나눠서 여백을 배분한다.
+
+                      // item의 크기가 px이거나 값이 0인 경우 적용되지 않는다.
+
+    */
+      .container {
+        display: flex;
+      }
+
+      .item:nth-of-type(1) {
+        flex-grow: 2;
+      }
+      .item:nth-of-type(2) {
+        flex-grow: 1;
+      }
+      .item:nth-of-type(3) {
+        flex-grow: 1;
+      }
+      .item:nth-of-type(4) {
+        flex-grow: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">aaaaaaaaaaaaaaaa</div>
+      <div class="item">bbbbbbbbbbbbbb</div>
+      <div class="item">ccddddddddddc</div>
+      <div class="item">ddbbbbbbbbbbbbbbd</div>
+    </div>
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dolores
+    deserunt aspernatur delectus temporibus vero quidem ipsam consectetur et
+    nulla sapiente, natus aliquam inventore, accusamus necessitatibus,
+    voluptatem ut laborum voluptas!
+  </body>
+</html>

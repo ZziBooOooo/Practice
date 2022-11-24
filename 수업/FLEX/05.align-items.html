@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css" />
+    <style>
+      /*
+        * align-items : 수직축 방향정렬(justify-content의 반대)
+            - stretch : 부모요소의 높이값을 받아 길이가 늘어감 (기본값)
+                        stretch외, 다른속성은 영역값이 부모길이가 아닌 컨텐츠의 영역값으로 바뀜
+            - flex-start : 시작점 정렬
+            - flex-end : 끝점 정렬
+            - center : 가운데
+            - baseline : 텍스트의 베이스라인을 기준으로 정렬(기준이 애매해 잘 사용 X)
+        */
+      .container {
+        display: flex;
+        height: 500px;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">aaa</div>
+      <div class="item">bbb</div>
+      <div class="item">ccc</div>
+      <div class="item">dddd</div>
+    </div>
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dolores
+    deserunt aspernatur delectus temporibus vero quidem ipsam consectetur et
+    nulla sapiente, natus aliquam inventore, accusamus necessitatibus,
+    voluptatem ut laborum voluptas!
+  </body>
+</html>

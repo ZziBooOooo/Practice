@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /*
+        폰트를 직접 등록해서 사용 -> 여러개의 확장자명이 필요
+        브라우저마다 엔진이 다르기때문에 각각 맞는 확장자명을 등록해야 한다.
+
+        ttf (트루타입폰트)
+        가장 기본적인 폰트, 압축률이 낮아 용량이 크기 때문에 웹에서는 사용하지 않는다.
+        크롬, 사파리, 파이어폭스, 오페라, 익스플로어 지원
+
+        oft (오픈타입포맷)
+        ttf를 기반으로하는 폰트
+        익스플로어 제외 지원
+
+        woff (웹 오픈타입 폰트 포맷)
+        웹 전용 폰트
+        압축률, 구현률이 웹에 최적화되어 있다.
+        W3C에서 사용하도록 권고하고 있다.
+        모든 브라우저 지원 (익스플로어 6-8 버전만 제외)
+
+        eot (엠베비드 오픈타입 폰트)
+        ms 자체 폰트 (익스플로어만 지원)
+
+        >> 폰트를 변환해서 사용하면 된다.
+
+*/
+
+      @font-face {
+        /*폰트를 생성하는 css*/
+        font-family: "funflow"; /*저장할 폰트명은 직접 입력 - 한글, 띄어쓰기 가능하지만 ''안에 있어야함*/
+        src: url(../fonts/EF_Diary.eot); /* eot 먼저 와야함 - ie9 버전 호환 대응 */
+        src: url(../fonts/EF_Diary.woff);
+
+        src: local(※), url("../fonts/EF_Diary.woff") format("woff");
+        /* local() -  외부파일을 참조하기 전에 사용자 컴퓨터 local에 있는 글꼴을 먼저 참조하도록 한다.
+                      특수문자를 사용하는 이유는 없는 글꼴을 넣어서 강제적으로 설정해놓은 폰트를 다운받도록 하기 위함
+           
+                      mac os 에서는 2byte 문자열을 처리하지 못하기 때문
+           
+           format() - 값을 작성하면 이 형식을 지원하는 브라우저에서만 해당 폰트를 다운
+                      생략되어 있으면 모든 브라우저에서 폰트를 내려받게 된다.
+                      
+           선택속성 
+           font-weight 
+           font-size
+           
+           폰트 다운 사이트 - dafont(영문), 눈누폰트(국문)
+                      */
+      }
+
+      p {
+        font-size: 24px;
+        font-family: "funflow", sans-serif; /*글꼴을 불러올대 여러개의 이름을 입력하는 경우
+        같은 글꼴이어도 각자의 컴퓨터에 파일명이 다른 경우가 있다.
+        여러가지의 파일명을 입력하여 찾도록 하는 방법이며, 
+        제일 마지막에 폰트의 기본 스타일(serif, sans-serif)를 넣어서 같은 폰트가 아니더라도 비슷한 스타일을
+        가진 폰트를 불러 분위기를 통일시킨다.
+        */
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      폰트적용 font <br /><br />
+      abcdefghijklmnop <br /><br />다이어리 폰트
+    </p>
+  </body>
+</html>

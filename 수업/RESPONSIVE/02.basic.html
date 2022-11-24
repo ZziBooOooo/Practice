@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 
+    * viewport에 들어가는 속성값
+    - width : 뷰포트의 가로크기 , 기본값 : device-width(화면 해상도 너비에 따라 줄어든다)
+              height값은 자동으로 조절
+
+    - initial scale : 접속했을 때 처음 보여질 화면의 확대배율
+                      기본값은 1이며, 0 ~ 10 까지 설정가능
+
+    - minimum scale : 사용자가 축소시킬 수 있는 최소배율값 (0 ~ 10)
+
+    - maximum scale : 사용자가 확대시킬 수 있는 최대배율값 (0 ~ 10)
+
+    - user-scalable : yes/no, 기본값 : yes, 사용자가 확대/축소시킬 수 있는 권한여부
+
+
+    * 반응형 - 고려해야 할 사항
+    - 분기점의 개수 : 보통 3가지 형태로 나눈다. (pc, tab, mobile)
+                      기준 pc:1200px~, tab:768~1199px, mobile:480px
+
+                      레이아웃에 따라서 중간 분기점이 생성되는 경우도 많다.
+    */
+
+      .box {
+        width: 1200px;
+        height: 300px;
+        margin: 0px auto;
+        background-color: rgb(168, 168, 207);
+      }
+
+      /* pc */
+      @media screen and (max-width: 1199px) {
+        .box {
+          width: 100%;
+          background-color: rgb(150, 209, 219);
+        }
+      }
+
+      /* tablet */
+      @media screen and (max-width: 979px) {
+        .box {
+          width: 80%;
+          height: 500px;
+          background-color: rgb(240, 206, 144);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">box</div>
+  </body>
+</html>

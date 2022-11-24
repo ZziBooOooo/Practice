@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mostlyFluid</title>
+
+    <style>
+      /* * 유동형 레이아웃
+            가장 많이 사용되는 패턴,
+            기준이 되는 사이즈를 하나 채택
+            가운데 정렬이 기본, 기준화면보다 클 때에는 좌우에 여백을 둔다.
+            기준보다 작을 때는 컨텐츠들을 아래로 쌓는 레이아웃으로 바뀐다.
+
+            태블릿 > 모바일 순으로 컨텐츠의 좌우여백은 없어지는 편이다.
+            모바일에서는 화면의 양 끝에 컨텐츠가 가려지지 않도록
+            약간의 여백을 주는 편이다.
+
+            심플하고 모든 분기점에서 완벽하게 제어할 수 있는 패턴 중 하나
+
+         */
+
+      body,
+      html,
+      h1 {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background-color: rgb(34, 34, 34);
+      }
+      .clearfix::after {
+        content: "";
+        clear: both;
+        display: block;
+      }
+
+      .wrapper {
+        width: 1200px;
+        background-color: rgb(168, 168, 168);
+        margin: 0 auto;
+      }
+
+      header {
+        width: 83%;
+        height: 100px;
+        background-color: pink;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      h1 {
+        width: 150px;
+        height: 70px;
+        background-color: whitesmoke;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 10px;
+      }
+
+      nav {
+        width: 600px;
+        height: 100%;
+        background-color: whitesmoke;
+        position: absolute;
+        top: 0;
+        right: 10px;
+      }
+
+      .section1 {
+        width: 100%;
+        background-color: rgb(112, 112, 112);
+        padding: 12px;
+        box-sizing: border-box;
+      }
+
+      .section1 div {
+        float: left;
+        height: 200px;
+      }
+
+      .content1 {
+        width: 35%;
+        background-color: whitesmoke;
+        margin-right: 5%;
+      }
+
+      .content2 {
+        width: 60%;
+        background-color: pink;
+      }
+
+      .section2 {
+        padding: 12px;
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .section2 div {
+        float: left;
+        height: 300px;
+      }
+      .content3 {
+        width: 33.3%;
+        background-color: rgb(241, 158, 197);
+      }
+      .content4 {
+        width: 33.3%;
+        background-color: rgb(247, 147, 172);
+      }
+      .content5 {
+        width: 33.3%;
+        background-color: rgb(255, 180, 180);
+      }
+
+      @media screen and (max-width: 1199px) {
+        .wrapper {
+          width: 100%;
+        }
+      }
+
+      @media screen and (max-width: 979px) {
+        header {
+          width: 100%;
+        }
+        nav {
+          display: none;
+        }
+        .content1,
+        .content2 {
+          width: 100%;
+        }
+        .content1 {
+          margin-right: 0;
+        }
+        .content3,
+        .content4 {
+          width: 100%;
+        }
+        .content5 {
+          width: 100%;
+        }
+      }
+
+      @media screen and (max-width: 479px) {
+        .content3,
+        .content4 {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>LOGO</h1>
+        <nav>nav</nav>
+      </header>
+
+      <main>
+        <section class="section1 clearfix">
+          <div class="content1">content1</div>
+          <div class="content2">content2</div>
+        </section>
+
+        <section class="section2 clearfix">
+          <div class="content3">content3</div>
+          <div class="content4">content4</div>
+          <div class="content5">content5</div>
+        </section>
+      </main>
+
+      <footer>footer</footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CDN import</title>
+    <style>
+      /*
+        외부 css를 연결하는 방식중에 link와 import 방식이 있다.
+        link : 병렬식 - 동시에 파일 로딩
+        import : 직렬식 - 한번에 한개씩 로딩 (양이 많으면 지양하는것이 좋다)
+        */
+      @import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poor+Story&display=swap");
+
+      body {
+        font-size: 24px;
+        font-family: "Fredoka One", cursive;
+      }
+    </style>
+  </head>
+  <body>
+    cdn import font
+  </body>
+</html>

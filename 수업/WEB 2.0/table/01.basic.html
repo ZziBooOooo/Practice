@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic_Table</title>
+
+    <style>
+      table {
+        border-spacing: 0px; /*셀의 간격*/
+        border-collapse: collapse; /*겹치는 border 조정*/
+      }
+      table,
+      td,
+      th {
+        border: solid 1px rgb(70, 70, 70);
+      }
+      thead {
+        background-color: rgb(140, 206, 206);
+      }
+      tbody {
+        background-color: rgb(226, 226, 226);
+      }
+      tfoot {
+        background-color: rgb(243, 235, 208);
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+        * <table> 
+            행과 열로 이루어진 표
+            하나의 주제로 이루어진 컨테이너
+            table에 border을 지정하면 여백과 겹치는 border가 생긴다.
+            각각 border-spacing, border-collapse로 해결
+
+        * <caption>
+            테이블의 설명이나 제목 (표의 중앙에 위치)
+            summay는 html5이전에 사용하던 속성, 원래 테이블의 제목을 설명하는 용도였지만 더이상 사용하지 않는다.
+
+        * <tr>
+            테이블의 행을 구성
+            반드시 자식요소로 <th>나 <td>만 올 수 있다.
+
+        * <th>
+            테이블의 셀을 구성 - 제목을 의미
+        
+        * <td>
+            테이블의 셀을 구성 - 내용을 의미
+
+        // th와 td는 단독으로 구성될 수 없다.
+    -->
+
+    <table>
+      <caption>
+        캡션
+      </caption>
+      <tr>
+        <th>제목</th>
+        <th>1</th>
+        <th>2</th>
+      </tr>
+
+      <tr>
+        <td>내용</td>
+        <td>내용</td>
+        <td>내용</td>
+      </tr>
+    </table>
+
+    <br />
+    <br />
+    <br />
+
+    <!-- 가로병합 -->
+    <table>
+      <tr>
+        <th colspan="5">제목</th>
+      </tr>
+      <tr>
+        <td>내용</td>
+        <td>내용</td>
+        <td>내용</td>
+        <td>내용</td>
+        <td>내용</td>
+      </tr>
+    </table>
+
+    <br /><br /><br />
+    <!-- 세로병합-->
+    <!-- 병합되면서 한칸씩 밀리기 때문에 한칸씩 즐여서 만든다-->
+    <table>
+      <tr>
+        <th rowspan="4">제목</th>
+        <td>내용</td>
+        <td>내용</td>
+        <td>내용</td>
+        <td>내용</td>
+      </tr>
+
+      <tr>
+        <td>내용</td>
+        <td>내용</td>
+        <td>내용</td>
+        <td>내용</td>
+      </tr>
+
+      <tr>
+        <td>내용</td>
+        <td>내용</td>
+        <td>내용</td>
+        <td>내용</td>
+      </tr>
+
+      <tr>
+        <td>내용</td>
+        <td>내용</td>
+        <td>내용</td>
+        <td>내용</td>
+      </tr>
+    </table>
+    <br /><br /><br />
+    <!-- 영역구별-->
+    <table>
+      <thead>
+        <tr>
+          <th>날짜</th>
+          <th>연필</th>
+          <th>지우개</th>
+          <th>볼펜</th>
+          <th>노트</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>7월2일</td>
+          <td>50,000</td>
+          <td>1,200</td>
+          <td>5,500</td>
+          <td>47,000</td>
+        </tr>
+
+        <tr>
+          <td>7월3일</td>
+          <td>50,000</td>
+          <td>1,200</td>
+          <td>5,500</td>
+          <td>47,000</td>
+        </tr>
+
+        <tr>
+          <td>7월4일</td>
+          <td>50,000</td>
+          <td>1,200</td>
+          <td>5,500</td>
+          <td>47,000</td>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td>합계</td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>

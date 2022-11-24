@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu</title>
+
+    <style>
+      body,
+      html,
+      div,
+      ul,
+      li,
+      a {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      .container {
+        width: 100%;
+        height: 500px;
+        background-color: rgb(170, 188, 204);
+      }
+
+      .inner {
+        width: 1170px;
+        height: 120px;
+        background-color: transparent;
+        margin: 0 auto;
+      }
+
+      .headerTop {
+        width: 100%; /*%는 부모요소를 기준 - 부모요소에 값이 있다면 가능*/
+        height: 30px;
+        background: transparent;
+        position: relative;
+      }
+
+      .submenu {
+        font-weight: bold;
+        display: block;
+        position: absolute;
+        right: 25px;
+        position: absolute;
+        transform: translateY(-50%);
+        color: rgb(77, 77, 77);
+      }
+
+      .headerBottom {
+        width: 100%;
+        height: 90px;
+        background-color: whitesmoke;
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+
+      .logo {
+        width: 110px;
+        height: 45px;
+        position: absolute; /* 정렬하는법 알아두기 */
+        left: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgb(243, 206, 157);
+      }
+
+      .gnb {
+        height: 100%;
+        float: right;
+        background-color: rgb(236, 189, 197);
+      }
+
+      .gnb ul {
+        width: 100%;
+        height: 100%;
+      }
+
+      .gnb li {
+        float: left;
+        padding: 0 30px; /*margin으로하면 이벤트 못잡음*/
+        height: 100%;
+      }
+
+      .gnb a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        /*a에 패딩을 주게되면 양옆까지로 영역이 바뀐다.*/
+        color: rgb(29, 29, 29);
+        line-height: 90px;
+        font-weight: bold;
+      }
+
+      .line {
+        display: block;
+        width: 100%;
+        height: 7px;
+        background-color: rgb(253, 246, 231);
+        margin-top: -7px;
+        transform: scale(0); /*scale은 기준이 중앙, width는 왼쪽부터*/
+        transition: 250ms;
+
+        /* margin으로 이벤트
+        width:0;
+        margin : -7px 0 auto;
+        hover하면 width:100px; */
+      }
+
+      /* 이벤트가 일어나는 대상은 span */
+      li:hover a span.line {
+        /*li에 hover하면 a태그의 span.line width가 변경*/
+        transform: scalex(1);
+      }
+      li:hover a {
+        color: rgb(253, 246, 231);
+      }
+
+      .gnb ul li a:after {
+        content: "";
+        display: block;
+        width: 0px;
+        height: 7px;
+        background-color: rgb(253, 246, 231);
+        transition: 300ms;
+        margin: -7px auto 0px;
+      }
+
+      .gnb li:hover a:after {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="inner">
+        <div class="headerTop"><span class="submenu">sub menu</span></div>
+        <div class="headerBottom">
+          <div class="logo">LOGO</div>
+          <div class="gnb">
+            <ul>
+              <li>
+                <a href="#" title="메인메뉴">BRAND</a>
+                <!-- 
+                  <!-- <span class="line"></span>이것처럼 빈 태그를 만드는것은 좋지않다. -> 가상클래스 사용으로 해결-->
+              </li>
+              <li>
+                <a href="#" title="메인메뉴">ESG</a>
+              </li>
+              <li>
+                <a href="#" title="메인메뉴">MENU</a>
+              </li>
+              <li>
+                <a href="#" title="메인메뉴">STORE</a>
+              </li>
+              <li>
+                <a href="#" title="메인메뉴">EVENT</a>
+              </li>
+              <li>
+                <a href="#" title="메인메뉴"
+                  >FRANCHISE<span class="line"></span
+                ></a>
+              </li>
+              <li>
+                <a href="#" title="메인메뉴"
+                  >HANSOT<span class="line"></span
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

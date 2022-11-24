@@ -1,0 +1,77 @@
+article {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.ani-1 div {
+  overflow: hidden;
+}
+.ani-1 p {
+  margin: 0;
+  font-size: 5rem;
+  animation: ani-1 1s forwards; /* cubic-bezier.com 참고*/
+}
+
+@keyframes ani-1 {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.ani-1 p:after {
+  content: "";
+  border-bottom: 1px solid black;
+  display: block;
+  width: 0%;
+  animation: line 0.5s 0.7s forwards;
+}
+
+@keyframes line {
+  100% {
+    width: 100%;
+  }
+}
+
+/* animation2 */
+
+.ani-2 {
+}
+.ani-2 div {
+  width: 300px;
+  height: 200px;
+  position: relative;
+  animation: ani-2 2s infinite;
+  transform-style: preserve-3d; /* 자식요소에게 3d속성 부여*/
+}
+.ani-2 p {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ani-2 p:nth-of-type(1) {
+  background-color: rgb(165, 197, 238);
+}
+.ani-2 p:nth-of-type(2) {
+  background-color: rgb(199, 223, 162);
+  transform: translateZ(-100px);
+}
+
+@keyframes ani-2 {
+  0% {
+    transform: perspective(600px) rotateY(0deg);
+  }
+
+  100% {
+    transform: perspective(600px) rotateY(360deg);
+  }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transition css</title>
+    <style>
+      /*
+        * transition
+            애니메이션 효과
+            특정행동(이벤트)을 취했을 때 요소가 변환되는 시간에 대한 속성
+
+        * -property
+            전환되는 대상이 되는 속성(background, width, height ...)
+            기본값은 all, 값이 많거나 특정 속성을 지정할 수 없으면 생략하기도 한다.
+
+        * -duration
+            단위는 s, ms 이며 1s = 1000ms (스크립트에서는 ms를 쓰기때문에 ms를 권장)
+
+        * -delay
+            이벤트가 발생되고 전환이 시작되기 까지의 지연시간
+
+        * -timing-function
+            전환시간 함수
+            linear : 처음부터 끝까지 동일한 속도
+            ease : 느리게 시작 -> 빠르게 -> 느리게 종료
+            ease-in : 느리게 -> 가속하면서 종료 (기본값)
+            ease-out : 빠르게 시작 -> 감속하면서 종료
+            ease-in-out : 느리게 시작 -> 빠르게 -> 느리게 종료 (ease보다 빠름)
+
+        * transition 그룹속성
+            transition(property(생략가능) duration(생략불가능) delay(생략가능) timing-function(생략가능))
+            duration과 delay의 순서는 바뀌면 안된다.
+            값이 하나만 있으면 duration만 적용, 두개일때는 항상 앞의 값이 duration이기 때문
+        */
+
+      .box {
+        width: 500px;
+        height: 500px;
+        background-color: rgb(245, 174, 67);
+        transform-origin: left top;
+        /*transition-property: all;
+        transition-duration: 1500ms;
+        transition-delay: 0ms;
+        transition-timing-function: ease-in;*/
+        transition: 1500ms;
+      }
+
+      .box:hover {
+        background-color: rgb(238, 110, 51);
+        transform: scaleX(1.5);
+        /*transition: 1500ms; .box와 .box:hover에 넣는것과의 차이점 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">BOX</div>
+  </body>
+</html>

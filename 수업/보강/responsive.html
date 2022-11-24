@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <article>
+      <h2>responsive</h2>
+      <ul>
+        <li>가로 콘텐츠를 세로로 전환</li>
+        <li>콘텐츠 순서 바꾸기</li>
+        <li>position 해제</li>
+        <li>picture 활용한 각 디바이스 이미지 출력</li>
+        <li>반응형 코드 추가 또는 변경</li>
+      </ul>
+    </article>
+
+    <!-- css 적용 우선순위 -->
+
+    <!-- 
+      1. id
+      2. class
+      3. 부모 > 자식 등 구조 이용
+      4. 일반태그
+    
+    -->
+
+    <section class="issue-1">
+      <h2>가로->세로 전환 : flex</h2>
+      <ul>
+        <li>이미지01</li>
+        <li>이미지02</li>
+        <li>이미지03</li>
+      </ul>
+    </section>
+
+    <!-- <style>
+      .issue-1 {
+        max-width: 1400px;
+        margin: 100px auto;
+      }
+
+      .issue-1 ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .issue-1 ul > li {
+        /*%는 부모로부터 받아낸다. 부모가 없으면 소용없음*/
+        width: 30%;
+        height: 300px;
+        background-color: rgb(170, 134, 204);
+      }
+    </style> -->
+
+    <!--     <section class="issue-2">
+      <h2>순서변경</h2>
+      <ul>
+        <li>
+          <div>이미지</div>
+          <div>내용</div>
+        </li>
+        <li>
+          <div>이미지</div>
+          <div>내용</div>
+        </li>
+        <li>
+          <div>이미지</div>
+          <div>내용</div>
+        </li>
+        <li>
+          <div>이미지</div>
+          <div>내용</div>
+        </li>
+      </ul>
+    </section>
+
+    <style>
+      .issue-2 {
+        max-width: 1400px;
+        margin: 100px auto;
+      }
+
+      .issue-2 li {
+        display: flex;
+      }
+      .issue-2 li div {
+        width: 50%;
+      }
+
+      .issue-2 li div:nth-child(1) {
+        height: 200px;
+        background-color: rgb(151, 238, 238);
+      }
+      .issue-2 li div:nth-child(2) {
+      }
+
+      /* order은 flex에 있는 명령 */
+      .issue-2 li:nth-child(even) div:nth-child(1) {
+        order: 2;
+      }
+      .issue-2 li:nth-child(even) div:nth-child(2) {
+        order: 1;
+      }
+    </style> -->
+
+    <!--    <section class="issue-3">
+      <h2>포지션 : absolute, relative, static, sticky, fixed</h2>
+
+      <div class="pos1">이미지</div>
+      <div class="pos2">내용</div>
+    </section>
+
+    <style>
+      body {
+        height: 5000px;
+      }
+      .issue-3 {
+        max-width: 1400px;
+        margin: 100px auto;
+        border: 1px solid black;
+        height: 500px;
+      }
+
+      .issue-3 .pos1 {
+        width: 100px;
+        height: 100px;
+        position: fixed;
+        right: 5%;
+        bottom: 5%;
+        background-color: yellowgreen;
+      }
+      .issue-3 .pos2 {
+        width: 100px;
+        height: 100px;
+        position: sticky;
+        top: 100px;
+        background-color: rgb(238, 238, 10);
+      }
+
+      @media screen and (max-width: 1400px) {
+        .issue-3 .pos1 {
+          position: static;
+        }
+      }
+    </style> -->
+
+    <section class="issue-3">
+      <h2>picture태그</h2>
+
+      <picture>
+        <source media="(max-width:1400px)" srcset="./img-03.jpg" />
+        <img src="./img-01.jpg" alt="" />
+      </picture>
+    </section>
+  </body>
+</html>

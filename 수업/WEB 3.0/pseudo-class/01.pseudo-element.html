@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /*
+        * 가상요소
+            태그상으로는 존재하지 않지만 화면상에는 존재하는 것처럼 보이는 스타일 기법
+
+            선택자::before - 선택자 내용 바로 앞에 오는 요소 생성
+            선택자::after - 선택자 내용 바로 뒤에 오는 요소 생성
+
+        //  before & after 는 inline 속성 > 영역을 가지지 못한다.
+
+            가상요소는 중요한 내용을 담고 있지 않고 주로 꾸미는 요소로 사용된다.
+
+        * : & :: 의 차이
+            가상요소와 가상선택자를 구별 - 가상요소를 :: 으로 사용하게 되었지만,
+            일부 css3를 지원하지 않는 하위 브라우저들은 :: 을 인식하지 못한다.
+            따라서, 하위 브라우저까지 호환하는 :을 사용한다.
+        
+        * clearfix 기법
+            float 되어있는 요소들을 감싸는 부모요소dml :after(:before은 안됨) 끝에
+            가상요소를 추가함으로써 float를 해제하는 방법
+            content : "";
+            display : block;
+            clear : both;
+
+        // overflow로 float를 해제하는 것보다 안정적이며, 일반 태그를 사용하지 않아도 된다는 장점이 있다.
+
+        */
+
+      .box {
+        width: 200px;
+        height: 200px;
+        margin: 200px auto;
+        background-color: rgb(211, 211, 211);
+      }
+
+      .box:before {
+        content: ""; /*빈 영역이 존재해야한다 */
+        width: 50px;
+        height: 50px;
+        background-color: rgb(137, 196, 235);
+        display: block;
+      }
+
+      .box::after {
+        content: ""; /*빈 영역이 존재해야한다 */
+        width: 50px;
+        height: 50px;
+        background-color: rgb(235, 156, 202);
+        display: block;
+      }
+
+      ul {
+        list-style: none;
+        padding: 25px;
+        background-color: rgb(201, 201, 201);
+        width: 500px;
+      }
+
+      li {
+        width: 100%;
+        height: 50px;
+        background-color: pink;
+        float: left;
+      }
+
+      .clearfix:after {
+        content: "";
+        clear: both;
+        display: block;
+      }
+
+      .text {
+        margin-bottom: 100px;
+      }
+
+      .text::selection {
+        color: red;
+      }
+
+      input::placeholder {
+        color: orange;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+
+    <ul class="clearfix">
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+    </ul>
+
+    <div class="text">lorem</div>
+
+    <input type="text" placeholder="ㅎㅇ" />
+  </body>
+</html>

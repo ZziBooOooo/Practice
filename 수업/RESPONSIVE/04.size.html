@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>사이즈단위</title>
+
+    <style>
+      /* 
+        ** 단위의 종류
+        - px = 기본단위, 고정형
+
+        - % = 반응형에서 사용하는 단위
+              부모요소의 사이즈에 영향을 받음 
+
+        - em = 부모요소의 폰트사이즈에 영향을 받음
+               부모요소에 없다면 body를 기준
+               반응형에서 폰트사이즈 조절용으로 많이 쓰인다.
+               구조가 복잡해지면 오히려 관리하기 어려워지는 단점이 존재
+               ex) 부모요소에서 폰트가 20px이었다면 20px이 1em
+
+        - rem = 최상위(body,html)에 있는 폰트사이즈가 기준
+                최상위에 선언된 폰트사이즈가 1rem
+                최상위 기본 폰트는 16px     
+                계산하기 쉽게 폰트사이즈를 10px로 선언 후 사용한다.
+                em과 달리 광범위하게 쓰일 수 있는 장점이 있다.  
+
+
+        //  반응형이라고 모든 수치를 %,em,rem으로 사용할 필요는 없다.
+            rem의 경우는 광범위하게 사용하지 않고 극소적으로 사용하는 경우엔 추천하지 않으며
+            % 역시 반응형에서 사이즈에 영향을 받는 구조가 아니라면 사용하지 않아도 된다.
+        */
+
+      body,
+      html {
+        font-size: 10px;
+        /* 10px과 62.5%는 같지만, 접근성 측면에서 10px는 브라우저 자체에서 글꼴을 키울 경우
+           아무런 변화가 없다. 하지만 %는 폰트 크기도 같이 올라가므로 
+           %를 사용하는 것이 좋다.*/
+      }
+
+      .box {
+        width: 80%;
+        /* font-size: 30px; */
+        background-color: coral;
+        margin: 0 auto;
+      }
+
+      .content {
+        width: 10.2rem; /* rem은 body 기준 */
+        height: 10em; /* em은 부모기준 - 없으면 body기준  */
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="content">Text</div>
+    </div>
+  </body>
+</html>

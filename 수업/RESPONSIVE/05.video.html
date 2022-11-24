@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>비디오 반응형</title>
+    <style>
+      .videoWrapper {
+        width: 100%;
+        /* 높이를 입력하면 고정값이 됨 */
+        /* 동영상 가로,세로 길이로 동영상의 비율을 알아야 함 ! */
+      }
+      .video {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding-top: 56.25%;
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .videoWrapper02 {
+        width: 100%;
+      }
+
+      .video02 {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding-top: 66.7%;
+      }
+      video {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="videoWrapper">
+      <div class="video">
+        <iframe
+          src="https://www.youtube.com/embed/66ceFHi8kxg"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </body>
+</html>

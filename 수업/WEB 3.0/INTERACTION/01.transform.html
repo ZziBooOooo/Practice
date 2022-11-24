@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transform- css animation</title>
+  </head>
+
+  <style>
+    /*
+    * transform
+        생성되어 있는 객체의 회전, 크기조절, 위치변형 시키는 css 속성
+        이벤트적인 요소에서도 활용이 가능 
+
+    * transform-origin
+        기준점 변경
+        roatate나 scale 같은경우 객체의 중심을 기준으로 하기 때문에
+        기준점을 바꾸는 경우가 있다.
+        특정 좌표값이 아닌 px 혹은 %를 넣을 수 도 있다. (기본값: 50% 50% / left, top)
+    
+    - rotate : 객체회전
+        객체를 중심으로 수치만큼 회전
+        단위(deg), x축과 y축에 대한 그룹속성
+
+    - rotate3d : x, y, z축에 대한 그룹속성
+      
+    // 위치를 가지고 있는 속성에는 기본적으로 x, y축이 따로 설정
+
+
+    * 벤더프리픽스
+        css3의 속성들은 실험적 요소들이 많기 때문에 브라우저마다 
+        호환되는 범위가 서로 다르다.
+        브라우저마다 똑같은 화면을 출력하기 위해 임시방편으로 핵을 걸어서 사용
+
+        webkit(사파리), moz(파이어폭스), o(오페라), ms(익스플로어, 엣지)
+        벤더프리픽스 > 기본 순으로 사용
+    
+    * scale
+        객체를 중심으로 비율을 늘리거나 줄인다.
+        기본값 : 1(100%), 위치값은 변화하지 않는다.
+        기준점을 바꿔서 사용가능
+
+    * skew
+        객체비틀기 
+        z축은 존재하지 않음
+        해당 방향으로 각도만큼 비튼다.
+        그룹속성에서 값이 하나라면 y축은 적용되지 않는다.(x축에만 적용)
+        둘 다 값을 넣어줘야 한다.
+
+    * traslate
+        객체이동
+        %나 px단위로 이동하며 양수는 left, 음수는 right로 이동
+        z축에서는 %를 사용할 수 없다.
+
+        position과 같은 좌표의 이동값을 옮기는 속성이지만, %로 이동할 경우 차이가 있다.
+        translate는 자기자신의 크기를 기준으로 이동
+        position은 부모요소를 기준으로 좌표값이 정해짐
+
+    */
+
+    .box {
+      width: 300px;
+      height: 300px;
+      background-color: rgb(180, 202, 120);
+      position: relative;
+
+      /* 벤더프리픽스 - 확장프로그램 존재
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);  */
+      /*
+      transform: rotate(45deg);
+      transform-origin: left top;
+      */
+
+      transform: translateX(50%);
+    }
+
+    .box2 {
+      width: 300px;
+      height: 300px;
+      background-color: rgb(243, 214, 117);
+      position: relative;
+      left: 50%;
+    }
+
+    .position,
+    .translate {
+      width: 1000px;
+      padding: 25px;
+      background-color: rgb(233, 152, 193);
+      position: relative;
+      margin: 20px 0;
+    }
+
+    .position div,
+    .translate div {
+      background-color: rgb(236, 236, 236);
+      display: inline-block;
+      width: 150px;
+      height: 150px;
+    }
+
+    .position div:nth-child(3) {
+      position: absolute; /*부모에 position이 있으므로 부모기준 (0,0)이 된다.*/
+      top: 0;
+      left: 0; /* 영역에서 아예 배제 */
+      background-color: rgb(167, 167, 167);
+    }
+
+    .translate div:nth-child(3) {
+      transform: translate(30px, 30px); /*영역을 유지하며 이동*/
+    }
+  </style>
+  <body>
+    <div class="box">box</div>
+
+    <div class="box2">box2</div>
+
+    <div class="position">
+      <div>box1</div>
+      <div>box2</div>
+      <div>box3</div>
+      <div>box4</div>
+      <div>box5</div>
+      <div>box6</div>
+    </div>
+
+    <div class="translate">
+      <div>box1</div>
+      <div>box2</div>
+      <div>box3</div>
+      <div>box4</div>
+      <div>box5</div>
+      <div>box6</div>
+    </div>
+  </body>
+</html>

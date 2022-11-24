@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 
+        ** 시맨틱 
+            목적에 맞는 태그를 사용해 구조를 잡는 것
+
+            - 검색엔진 최적화
+            - 웹 접근성 효율 증가
+            - 관리에 용이
+            
+        * 제목 (h태그)
+            h1 ~ h6 
+            숫자의 의미는 제목의 크기, 숫자가 커질수록 텍스트 크기는 작아짐
+            h2, h3 숫자의 순서대로 영역 설정
+            숫자를 건너뛰어서 제목을 구성할 수는 없다.
+            h1이후에 h3을 넣을 수는 없다
+            단순히 글자의 크기, 스타일에 의해 임의로 사용하지 않아야 한다.
+            h1은 로고(사이트의 제목) - 1회만 사용
+            h2 ~ h6은 구조에 따라 반복가능
+
+        * header 
+            사이트 내에서 메인메뉴, 로고와 같이 페이지와 관계없이 같은 레이아웃을
+            제공해야하는 구조를 가진 영역
+
+        * nav 
+            메인메뉴와 같은 영역을 감싸는 
+            메뉴만들 때, div>ul>li 순에서 nav>ul>li로 변경
+            다만, 일부 li의 경우에는 사용하지 않는다.(topmenu, 컨텐츠리스트)
+
+        * main 
+            웹페이지 내에서 컨텐츠를 이루는 부분
+
+        * section 
+            하나의 주제에 들어가는 컨텐츠들을 묶는 태그
+
+        * article
+            독립적으로 분리될 수 있는 컨텐츠(게시판, 공지사항)
+
+        * aside
+            메인컨텐츠 외의 부수적으로 들어가는 영역태그
+
+        * footer
+            하단영역태그
+            하단영역의 로고는 제목태그로 표현하지 않는다.
+            디자인 요소이기 때문에 img, background등 다양하게 표현 가능
+
+            */
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="logo">
+          <a href="#" title="홈으로 이동"> LOGO </a>
+        </h1>
+
+        <nav class="gnb">
+          <ul class="mainMenu">
+            <li>menu</li>
+            <li>menu</li>
+            <li>menu</li>
+            <li>menu</li>
+          </ul>
+        </nav>
+      </header>
+
+      <main class="container">
+        <section class="content01">
+          <h2>content01</h2>
+          <article>
+            <h3>content02</h3>
+            content01
+          </article>
+          <article>
+            <h3>article02</h3>
+            content02
+          </article>
+        </section>
+
+        <article>
+          <h2>dd</h2>
+        </article>
+      </main>
+
+      <footer></footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- ** 동영상 -->
+
+    <!--
+        브라우저는 3개의 동영상 확장명을 지원
+        mp4 : 모든 브라우저 호환
+        ogv : 익스, 사파리 제외 호환
+        webm : 익스, 사파리 제외 호환
+
+        호환성 문제에 따라 mp4만 사용해도 문제되지 않음
+        비디오 태그는 단독으로 사용할 수 있지만,
+        소스파일이 많을 경우 태그의 내부에 source 태그를 별도로 사용
+
+        * 속성
+        - controls : 재생, 소리, 화면조정 등을 위한 컨트롤창 생성
+
+        - autoplay : 자동재생
+
+        - muted : 음소거 // 웹접근성 - 음성이 있는 동영상일 경우에는 autoplay, muted를 동시에 사용해야 한다.
+
+        - loop : 반복 (true/false)
+
+        - poster : 썸네일 (시작전에만 보임, 자동재생일 경우에는 확인할 수 없음)
+                   포스터는 재생이 시작되면 일시정지 혹은 종료 후에도 확인할 수 없다.
+                   css로 크기를 조절할 수 없다.
+                   크기조절이 필요하다면 이미지태그를 사용, 그래픽툴에서 수정 후 가져와야 한다.
+
+        - preload : 웹페이지 로딩 시 동영상에 정보를 로드하는 속성
+
+        - metadata : 웹페이지 로딩 시 동영상에 일부정보만 로드 (길이, 크기)
+
+        - auto : 웹페이지 로딩 시 동영상에 모든 정보를 로드
+
+        // 자동재생 속성을 사용하면서 preload값이 none이나 metadata인 경우
+        auto로 강제로 속성이 변경됨
+        값이 없으면 auto가 기본값
+
+        playsinline : 모바일속성
+        pc나 안드로이드에서 비디오를 볼 때 자동재생시 현재 보이는 화면에서 재생이 되지만,
+        ios 아이폰/아이패드에서는 전체화면으로 자동변환이 된다.
+        이를 방지하기 위해 넣는 속성이다.
+
+        모바일 지원 페이지에서 동영상 자동재생 지원
+        autoplay muted loop playsinline > 한 묶음!
+    
+    -->
+
+    <video src="video/video.mp4" controls="controls"></video>
+
+    <video poster="video/poster.jpg" controls>
+      <source src="video/video.mp4" />
+    </video>
+
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/DwKg2fTqICQ"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </body>
+</html>

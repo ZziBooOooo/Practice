@@ -1,0 +1,319 @@
+@import url(../css/font.css);
+
+main {
+  width: 100%;
+}
+
+.mainImgBox {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../image/Tissot_models2 2.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
+
+.mainBtn {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 3%;
+}
+.mainBtn a {
+  font-size: 55px;
+  color: white;
+}
+
+.mainVideoBox {
+  width: 80%;
+  margin: 0 auto;
+  padding: 95px 0 170px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mainVideoBox div {
+  padding-bottom: 95px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mainVideoBox div p {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.mainVideoBox div span {
+  font-size: 22px;
+}
+
+.videoWrapper img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 베스트셀러 / 골드/ 다이아몬드 박스*/
+
+.mainWatchBox {
+  width: 1540px;
+  margin: 0 auto;
+  margin-bottom: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.watchTitleBox {
+  /*  width: 45%; */
+  display: flex;
+  justify-content: space-between;
+
+  span {
+    margin: 0 30px;
+    button {
+      background-color: transparent;
+      border: none;
+      font-size: 28px;
+    }
+  }
+}
+
+.watchTitleBox span button:hover {
+  cursor: pointer;
+}
+
+.watchTitleBox span button:after {
+  /* 알아두 */
+  content: "";
+  display: block;
+  height: 1.5px;
+  background-color: transparent;
+  margin: 5px auto;
+  transform: scalex(0);
+  transition: 0.5s;
+}
+.watchTitleBox span:hover button:after {
+  background-color: #cc0000;
+  transform: scalex(1);
+}
+
+.watchImg {
+  width: 100%;
+  margin-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  div {
+    width: 1400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 15px;
+    div {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+.test {
+  width: 100%;
+  overflow: hidden;
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.watchImg div a img:hover {
+  transform: scale(1.1);
+  transition: 1s;
+}
+.test img:hover {
+  transform: scale(1.1);
+  transition: 1s;
+}
+.watchImg button {
+  background-color: transparent;
+  border: none;
+  font-size: 28px;
+}
+
+.watchImg button:hover {
+  cursor: pointer;
+}
+
+.circlebox {
+  margin-top: 50px;
+  font-size: 13px;
+}
+
+.circlebox button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.circlebox button:nth-child(1),
+.circlebox button:last-child {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.circlebox button:hover {
+  transform: scale(1.1);
+  transition: 1s;
+}
+
+.categoryBox {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 175px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.categoryBox p {
+  margin-bottom: 90px;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.categoryImgBox {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.categoryImgBox a div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  span {
+    margin-top: 35px;
+  }
+
+  div {
+    img {
+      padding: 0 5px;
+    }
+  }
+}
+
+section.formBox {
+  width: 100%;
+  background-color: #f5f5f5;
+  display: flex;
+  padding: 48px 0;
+  margin-bottom: 72px;
+  position: relative;
+}
+
+.formBox div {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 48px;
+  }
+  span {
+    font-size: 18px;
+  }
+}
+.formBox div span {
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.formBox div .newsForm,
+.formBox div .storeForm {
+  display: flex;
+  flex-direction: row;
+
+  input {
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid rgb(85, 85, 85);
+    padding: 3px;
+    background-color: transparent;
+    outline: none;
+    color: rgb(148, 148, 148);
+    font-size: 14px;
+    text-align: center;
+  }
+
+  i {
+    margin-left: 7px;
+    color: rgb(68, 68, 68);
+  }
+} /*# sourceMappingURL=common.css.map */
+
+.formBoxLine {
+  height: 140px;
+  width: 1px;
+  background-color: rgb(197, 197, 197);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
+}
+
+.mainNewsBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+
+  p {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 28px;
+  }
+  i {
+    font-size: 33px;
+    margin-bottom: 78px;
+  }
+}
+
+.newsImgBox {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 115px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  p {
+    font-size: 20px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 400;
+  }
+}
+
+.newsImgWrapper {
+  width: 100%;
+  overflow: hidden;
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.newsImgWrapper:hover img {
+  transform: scale(1.1);
+  transition: 1s;
+}

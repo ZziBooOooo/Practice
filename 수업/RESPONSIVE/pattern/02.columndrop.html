@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 
+        ** column drop
+
+        보통 가로폭을 100%인 레이아웃에서 가로형 컨텐츠인 경우 자주 쓰인다
+        크기가 줄어들때마다 컨텐츠들이 하나씩 아래로 떨어진다
+        모바일에서는 전체가 수직으로 쌓임
+        컨텐츠의 내용, 디자인에 따라 분기점이 생길 수 있으나
+        mostlyfluid보다 분기점은 훨씬 적다
+        
+        */
+      body,
+      html {
+        font-size: 24px;
+        font-weight: bold;
+        color: whitesmoke;
+        margin: 0;
+        padding: 0;
+      }
+      .clearfix::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+
+      .wrapper {
+        width: 100%;
+        padding: 1%;
+        box-sizing: border-box;
+        background-color: rgb(36, 36, 36);
+      }
+
+      header {
+        width: 30%;
+        height: 500px;
+        background-color: coral;
+        float: left;
+      }
+
+      main {
+        width: 50%;
+        height: 500px;
+        background-color: skyblue;
+        float: left;
+      }
+      footer {
+        width: 20%;
+        height: 500px;
+        background-color: rgb(158, 147, 137);
+        float: left;
+      }
+
+      @media screen and (max-width: 1024px) {
+        header {
+          width: 15%;
+        }
+        main {
+          width: 85%;
+        }
+        footer {
+          width: 100%;
+          height: 100px;
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        header {
+          width: 100%;
+          height: 100px;
+        }
+        main {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper clearfix">
+      <header>header</header>
+      <main>main</main>
+      <footer>footer</footer>
+    </div>
+  </body>
+</html>

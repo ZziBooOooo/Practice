@@ -1,0 +1,45 @@
+$size: 1400px;
+$bg: rgb(216, 219, 219);
+
+/* @mixin flex {
+  display: flex;
+  align-items: center;
+} */
+
+@mixin flex($n: flex, $a: flex-start) {
+  display: $n;
+  align-items: $a;
+
+  @content; /* include에서 추가한 내용을 가져오는 내장함수 */
+}
+
+/* @include flex(flex, center) {
+  justify-content: space-between; /* 명령추가 
+} */
+
+main {
+  background-color: $bg;
+}
+article {
+  max-width: $size;
+  margin: 0 auto;
+  text-align: center;
+  h2 {
+  }
+  ul {
+    @include flex() {
+      justify-content: center;
+    } /* 기본값 */
+    display: flex;
+    li {
+      @include flex(flex, center);
+      width: 30%;
+      &::after {
+        /* &는 상위 부모를 가리킨다. 여기서는 li */
+        content: "";
+        flex-grow: 1;
+        border: 1px solid black;
+      }
+    }
+  }
+}

@@ -1,0 +1,198 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: "Noto Sans KR", sans-serif;
+  /*   min-width: 768px; */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure {
+  margin: 0;
+}
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  vertical-align: middle;
+}
+a {
+  color: rgb(58, 58, 58);
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a,
+i,
+em,
+strong,
+b,
+code,
+address,
+::after,
+::before {
+  display: inline-block;
+}
+
+header {
+  color: white;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  padding: 28px;
+  padding-bottom: 0;
+  background-color: black;
+}
+
+.headerLeft {
+  width: 10%;
+  p {
+    font-size: 16px;
+    a {
+      color: white;
+    }
+  }
+}
+.headerMiddle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  div {
+    a {
+      width: 136px;
+      height: 50px;
+      background-image: url("../image/TISSOT_LOGO_white\ 1.png");
+    }
+  }
+
+  ul {
+    display: flex;
+    li {
+      margin: 28px 0;
+
+      a {
+        color: white;
+        margin: 0 30px;
+      }
+    }
+  }
+}
+
+.headerRight {
+  width: 10%;
+  display: flex;
+  justify-content: flex-end;
+  a {
+    margin: 0 8px;
+    width: 19px;
+    color: white;
+  }
+}
+
+.headerRight a:last-child {
+  margin-right: 0;
+}
+
+footer {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+.footerWrap1 {
+  padding: 38px 0;
+  width: 100%;
+  background-color: rgba(245, 245, 245, 0.4);
+}
+.footerwrap {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+
+  div {
+    a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      i {
+        font-size: 30px;
+        margin-bottom: 20px;
+      }
+
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.footerMiddle {
+  margin-top: 50px;
+
+  width: 40%;
+  margin: 0 auto;
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+}
+
+.footerMiddleIcon {
+  display: flex;
+  justify-content: space-around;
+  i {
+    font-size: 33px;
+    padding: 0 20px;
+  }
+}
+
+.footerBottom {
+  width: 100%;
+  background-color: rgb(27, 27, 27);
+  padding: 22px 0;
+
+  p {
+    color: rgb(231, 231, 231);
+    text-align: center;
+  }
+}
+
+.footerBottomText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footerBottomText p:first-child {
+  margin-bottom: 45px;
+}
+
+@media screen and (max-width: 768px) {
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /*
+        * align-self
+            align-items 가 container에서 지정하는 자식요소의 정렬 속성이라면
+            align-self는 해당 아이템에 개별적으로 정렬하는 속성이다.
+
+            기본적으로 자식요소는 -items의 값을 상속받도록 되어 있다.
+        */
+
+      .container {
+        display: flex;
+        height: 500px;
+        align-items: center;
+      }
+
+      .item:nth-of-type(2) {
+        align-self: flex-start;
+      }
+    </style>
+  </head>
+  <body></body>
+</html>

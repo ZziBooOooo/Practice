@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /*
+    * tinyTweaks
+
+        다른 패턴들과 달리 레이아웃의 변화가 거의 없는 디자인에 적합
+        텍스트의 크기 혹은 이미지의 크기가 디바이스의 크기에 따라 변화하는 정도
+        원페이지형 레이아웃이나 레이아웃이 거의 없는 블로그형 사이트에 많이 사용
+    
+    */
+
+      body,
+      html {
+        font-size: 62.5%; /* 1rem=10px */
+
+        /* 폰트사이즈를 반응형으로 변경하는 방법
+            - 기준이 되는 모든 페이지의 width를 선정(모바일기준, pc기준)
+              body에 적용할 폰트 사이즈의 수치
+
+              ex) 1920 기준 10px 적용시 > 10/1920
+                  단위는 vw ( 브라우저의 가로 크기에 대응 )
+
+              브라우저 창을 축소시키면 글자도 비율에 맞춰 계속 줄어드므로
+              분기점에서 다시 계산을 해서 적용시킬 수 있다.
+        
+        */
+      }
+
+      .wrapper {
+        width: 100%;
+        background-color: pink;
+        text-align: center;
+        padding: 2rem 0px;
+      }
+
+      h1 {
+        font-size: 5rem;
+      }
+
+      .text1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .text2 {
+        font-size: 2rem;
+      }
+
+      @media screen and (max-width: 979px) {
+        body,
+        html {
+          font-size: 50%; /* rem단위이므로 %로 조절가능! */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Lorem ipsum dolor sit amet.</h1>
+      <p class="text1">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br />Nemo vero
+        beatae molestias in quae, magni,<br />
+        veritatis mollitia dolorem officia ducimus cum!<br />
+        Vitae alias necessitatibus eveniet repudiandae eum, eius perspiciatis
+        deleniti.
+      </p>
+      <p class="text2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.<br />
+        Minus nemo aperiam atque nulla deleniti.<br />
+        Doloribus officiis placeat nam atque accusantium, ab aliquam,<br />
+        eum distinctio praesentium, velit porro nostrum repellendus nemo.
+        <br />Lorem ipsum dolor sit amet consectetur adipisicing<br />
+        elit. Eaque, sit a eius nihil mollitia<br />
+        necessitatibus asperiores distinctio, dolores quia<br />
+        non nesciunt in ipsa accusamus<br />
+        facilis assumenda veritatis dignissimos molestias. Omnis!
+      </p>
+    </div>
+  </body>
+</html>

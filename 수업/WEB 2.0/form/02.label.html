@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Label</title>
+  </head>
+  <body>
+    <!--
+        일반 텍스트와 입력요소를 하나의 영역으로 취급하게함
+        웹표준과 접근성 준수를 위해 label을 사용해야 한다.
+
+        1. 명시적 작성법
+            label의 for속성과 input의 id를 서로 연결 -> 떨어져있어도 연결된다.
+    -->
+    <form action="">
+      <label for="male"> 남자 </label>
+      <input type="radio" name="gender" value="male" id="male" />
+
+      <label for="female"> 여성 </label>
+      <input type="radio" name="gender" value="female" id="female" />
+    </form>
+
+    <!--
+        2. 암시적 작성법 (오래된 버전에서는 지원하지 않는 경우가 있어 명시적 작성법을 권장한다)
+            레이블 태그안에 input과 텍스트를 함께 넣는다.
+    -->
+    <form action="">
+      <label> 남자 <input type="radio" name="gender" value="male" /></label>
+      <label> 여성 <input type="radio" name="gender" value="female" /></label>
+    </form>
+  </body>
+</html>

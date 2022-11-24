@@ -1,0 +1,41 @@
+<!DOCTYPE html> <!-- 주석 : html의 버전을 알려주는 태그 -->
+<html lang="en"> <!-- 언어설정 en: 영어, ko: 한국어-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> <!-- title : 사이트 제목 -->
+</head>
+<body>
+    <!-- 태그마다 정해진 속성 
+    - inline : content자체의 크기만큼만 가짐 이외의 영역을 가질 수 없음 ex)img, span
+    - block : content 크기와 상관없이 페이지의 가로 한 줄을 다 채움 
+              다른 태그들을 담을 수 있는 목적을 포함 ex) div
+
+    block 속성 안에는 inline 속성이 들어갈 수 있지만 반대는 가능하지 않다.
+
+-->
+
+<div> div는 block 속성 </div>
+<div> div는 block 속성 </div>
+<div> div는 block 속성 </div>
+
+
+<span> span은 inline 속성 </span>
+<span> span은 inline 속성 </span>
+<span> span은 inline 속성 </span>
+
+
+<div>
+    <div> block</div>
+    <span> inline</span>
+</div>
+
+<span>
+    <div> block </div>
+    <span> inline </span>
+</span>
+
+
+</body>
+</html>

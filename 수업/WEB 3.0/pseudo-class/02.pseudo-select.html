@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /*
+    * 가상선택자
+        사용자의 행동에 영향을 받는 요소를 생성하거나(event)
+        특정한 위치의 순번을 가진 선택자를 찾을 때 (select)를 
+        통틀어서 가상선택자라고 한다.
+    
+      * 이벤트요소
+        
+        * a태그
+        :visitied - 방문했던 사이트
+        :link - 방문하지 않은 사이트
+
+        * 모든선택자에 들어가는 이벤트
+        :hover - 마우스가 올라가 있을 때
+        :active - 마우스로 클릭한 상태이거나 요소가 활성화 되어있을 때
+        :focus - 키보드이벤트, 해당 객체가 포커싱 되어있을 때,
+                 특정 행동을 하는 객체(버튼,입력 등)에 적용
+
+        * 특정 위치의 선택자
+        nth-child() - 순번을 의미, 숫자+n : 해당숫자의 배수, odd : 홀수, even : 짝수
+                      태그, 선택자와 관계없이 부모요소에서 해당하는 순번만 만족
+        nth-of-type(n) - 무보요소를 기준으로 자식요소인 선택자 태그중에서만 순번을 찾음
+
+        last-child() - 
+        first-child() - 
+
+    */
+
+      a:visited {
+        color: rgb(248, 195, 96);
+      }
+      a:link {
+        color: rgb(100, 98, 230);
+      }
+
+      /*
+      a {
+         color: black; 우선순위 밀림 
+      } */
+
+      a:active {
+        background-color: coral;
+        color: gray;
+      }
+
+      a:focus {
+        background-color: purple;
+        color: rgb(255, 255, 255);
+      }
+
+      ul {
+        list-style: none;
+        padding: 24px;
+        background-color: coral;
+        width: 100%;
+      }
+
+      li {
+        width: 100%;
+        height: 50px;
+        margin-bottom: 20px;
+        background-color: pink;
+      }
+
+      li:last-child {
+        margin-bottom: 0;
+      }
+
+      li:nth-child(2) {
+        background-color: orange;
+      }
+
+      .list {
+        padding: 25px;
+        background-color: pink;
+        width: 100%;
+      }
+
+      .list p:nth-child(2) {
+        background-color: rgb(253, 136, 136);
+      }
+
+      .list p:nth-of-type(3) {
+        background-color: rgb(255, 255, 255);
+      }
+    </style>
+  </head>
+  <body>
+    <a href="www.235.co.kr" id="red">방문하기</a>
+    <a href="https://www.naver.com">방문하기</a>
+    <div>box</div>
+    <p>text</p>
+    <button>button</button>
+    <input type="text" />
+    <div>text</div>
+
+    <ul>
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+      <li>item</li>
+    </ul>
+
+    <div class="list">
+      <p>Lorem ipsum dolor sit amet consectetur</p>
+      <p>Lorem ipsum dolor sit amet consectetur</p>
+      <span>adipisicing elit.</span>
+      <div>Culpa tempora reprehenderit beatae,</div>
+      <a href="#"> dicta cupiditate veritatis deleniti nesciunt</a>
+      <p>quidem maxime temporibus dolores,</p>
+      <p>quisquam, commodi maiores iste a fuga</p>
+      <span>ullam ipsam doloremque?</span>
+    </div>
+  </body>
+</html>

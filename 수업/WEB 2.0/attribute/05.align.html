@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        컨텐츠 정렬방법
+
+        1. display:inline-block;
+        장점 : 간단하게 컨텐츠를 가로로 정렬
+        단점 : 컨텐츠 사이마다 여백이 존재. -> 없애기 위한 작업이 필요(font-size)-개행문자(태그와 태그 사이에
+        엔터를 쳤을 때 나오는 공백이 화면에 출력)
+
+        2. float:left;
+        장점 : 간단하게 컨텐츠를 정렬
+        단점 : 아래 
+      
+        */
+        div.align01{
+            background-color: rgb(250, 215, 238);
+            padding: 25px;
+        }
+
+        div.align01 div{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(155, 124, 184);
+            display: inline-block;
+        }
+
+        div.align02{  
+            background-color: rgb(73, 124, 158);
+            padding: 25px;
+            overflow: hidden;
+
+        }   
+            
+        div.align02 div{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(215, 233, 250);
+            float: left; /*float = 붕뜨다 라고생각 > 부모는 자식이 없다고 여김 
+            부모가 자식만큼의 높이를 가지지 않음 => 부모에 overflow 속성지정
+            부모에 높이값을 지정하면 자식의 콘텐츠가 길어질때마다 일일히 수정 (1차원적인 방법)
+            overflow:hidden = body와 같은 조건 만들기. 자식의 영역값을 자동으로 인식
+
+            하지만 flex가 짱
+            */
+        }
+            
+        
+
+    </style>
+</head>
+<body>
+    <div class="align01">
+        <div class="align01-item">item</div>
+        <div class="align01-item">item</div>
+        <div class="align01-item">item</div>
+        <div class="align01-item">item</div>
+    </div>
+
+    <div class="align02">
+        <div>item</div>
+        <div>item</div>
+        <div>item</div>
+        <div>item</div>
+    </div>
+</body>
+</html>

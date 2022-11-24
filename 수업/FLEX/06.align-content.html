@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css" />
+    <style>
+      /*
+        * align-content : 두 줄 이상의 컨텐츠를 정렬하는 속성
+
+            align-items는 한 줄에서만 사용하며, 두 줄 이상일 경우는 
+            컨텐츠 사이의 여백을 설정할 수 없다.
+
+            wrap 속성에 따라 align-content의 속성이 우선적용된다.
+            (wrap일때는 content 우선적용, nowrap일때는 미적용)
+
+            - stretch : 기본값
+            - flex-start : 시작점 정렬
+            - flex-end : 끝점 정렬
+            - center : 가운데
+            - space-around : 둘레에 여백을 균등하게 분배
+            - space-between : 자식에 여백을 균등하게 분배
+            - space-evenly : 균등하게 정렬(ie 미지원)
+
+        */
+
+      .container {
+        display: flex;
+        height: 500px;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        align-items: center;
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">aaaaaaaaaaaaaaaa</div>
+      <div class="item">bbbbbbbbbbbbbb</div>
+      <div class="item">ccddddddddddc</div>
+      <div class="item">ddbbbbbbbbbbbbbbd</div>
+    </div>
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dolores
+    deserunt aspernatur delectus temporibus vero quidem ipsam consectetur et
+    nulla sapiente, natus aliquam inventore, accusamus necessitatibus,
+    voluptatem ut laborum voluptas!
+  </body>
+</html>

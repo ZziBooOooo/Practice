@@ -1,0 +1,9 @@
+.container {
+  background-color: lightgray;
+}
+
+.item {
+  padding: 12px;
+  border: solid 2px rgb(65, 65, 65);
+  background-color: skyblue;
+}

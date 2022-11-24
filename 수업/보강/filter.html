@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="filter-1">
+      <!-- <img src="img-01.jpg" alt="" /> -->
+      <!-- <style>
+        .filter-1 > img {
+          width: 300px;
+        }
+
+        .filter-1:hover > img {
+          filter: grayscale(100%);
+        }
+      </style> -->
+
+      <!--       <p>filter-blur</p>-->
+
+      <!-- <style>
+      .filter-1 > p {
+        font-size: 5rem;
+        filter: blur(1px);
+        transition: 0.5s;
+      }
+    </style> -->
+
+      <!-- grayscale, blur, drop-shadow 등 -->
+
+      <div>
+        <h3>blend mode</h3>
+      </div>
+    </div>
+
+    <style>
+      .filter-1 > div {
+        position: relative;
+      }
+
+      .filter-1 > div:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: -100%;
+        background-color: rgb(255, 21, 150);
+        z-index: -1;
+        transition: 0.5s;
+      }
+
+      .filter-1 > div:hover::after {
+        top: 0%;
+      }
+
+      .filter-1 > div h3 {
+        color: rgb(216, 216, 216);
+        font-size: 5rem;
+        mix-blend-mode: difference;
+      }
+    </style>
+  </body>
+</html>

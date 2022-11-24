@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+</head>
+
+<style>
+
+    body,html,div,p,ul,ol,li{ /*css reset*/
+        margin: 0px;
+        height: 0px;
+    }
+
+    ul{
+        list-style : none;
+    }
+
+
+</style>
+<body>
+
+    <!--
+        // 모든 태그들은 기본적으로 목적에 맞는 기본 스타일들을 가지고 생성된다.
+        일반적으로 기본 속성들은 레이아웃을 설정할 때 방해가 되기때문에 없애고 시작을 한다 > reset.css
+        reset요소들은 스타일의 최상단에 위치해야한다.
+        외부링크 연결시에도 커스텀 css보다 먼저 연결되어야한다.
+
+        * 리스트 태그
+        큰 주제 안에서 여러개의 목록들이 존재하는 경우 사용
+
+        * 리스트의 종류
+        - 순서필요 X
+          <ul> (unorder list) 
+
+        - 순서필요 O
+          <ol> (order list)
+        
+        - 용어에 대한 설명
+          <dl> (description list)    
+
+
+        >> <ul>과 <ol>의 자식으로는 <li>태그만 사용이 가능하다.   
+           이미지, 텍스트 등 다른태그는 <li>안에 사용 
+    -->
+    
+</body>
+
+    <ul>
+        <li>맥주</li>
+        <li>과자</li>
+        <li>과일</li>
+        <li>고기</li>
+    </ul>
+
+    <ol>
+        <li>순서</li>
+        <li>순</li>
+        <li>서</li>
+        <li>순서</li>
+    </ol>
+
+    <dl> <!-- dl에는 dt, dd, div만 올 수 있다. 그러나, div는 dt와 dd의 상위에 있어야하며 형제요소는 있을 수 없다-->
+        <dt>아메리카노</dt> <!-- description term-->
+        <dd>2500원</dd> <!-- description detail-->
+        <dd>커피 설명</dd>
+    </dl>
+</html>

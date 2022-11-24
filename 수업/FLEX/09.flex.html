@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css" />
+    <style>
+      /*
+        ** flex : 그룹속성
+                  grow, shrink, basis의 그룹속성 - 순서에 유의 (단위를 같이 쓰기 때문에)
+
+                  grow를 제외한 다른 값은 기본값이 있어 생략이 가능하다.
+                  ex) flex : 1; = flex-grow : 1;
+                  
+                  shrink:1 이 적용되면 basis는 값이 auto가 아닌 0이 적용
+                  
+                  flex : 1; / grow1 shrink1 basis 0
+                  flex : 1 1 auto; / grow1 shrink1 basis auto
+                  flex : 1 150px; / grow1 shrink1 basis 150px
+                  flex : 1 150; / grow1 shrink1 basis 0 -> 단위없으면 basis 인식 X
+                  
+
+        
+        */
+
+      .container {
+        display: flex;
+      }
+
+      .item {
+        flex: 1 1 auto;
+      }
+
+      .item:nth-of-type(1) {
+        width: 20%;
+      }
+      .item:nth-of-type(2) {
+        width: 40%;
+      }
+      .item:nth-of-type(3) {
+        width: 20%;
+      }
+      .item:nth-of-type(4) {
+        width: 20%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+    </div>
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dolores
+    deserunt aspernatur delectus temporibus vero quidem ipsam consectetur et
+    nulla sapiente, natus aliquam inventore, accusamus necessitatibus,
+    voluptatem ut laborum voluptas!
+  </body>
+</html>

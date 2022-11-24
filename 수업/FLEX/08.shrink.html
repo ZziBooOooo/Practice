@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css" />
+    <style>
+      /*
+        * shrink : item이 감소하는 너비의 비율설정
+
+                   다양한 요소에서 영향을 받기 때문에
+                   정확한 계산을 하기 까다로운 편
+
+                // item 의 크기가 px이거나 0일경우 적용되지 않는다.
+
+
+        * basis : 기본 넓이값(영역이 배분되기 전)
+                  값이 auto일때는 width, height를 적용할 수 있다.
+
+
+
+        */
+
+      .container {
+        display: flex;
+        width: 50%;
+        padding: 12px;
+      }
+
+      .item {
+        flex-basis: 150px;
+        height: 100px;
+      }
+
+      .item:nth-of-type(1) {
+        flex-shrink: 2;
+      }
+      .item:nth-of-type(2) {
+        flex-shrink: 1;
+      }
+      .item:nth-of-type(3) {
+        flex-shrink: 0;
+      }
+      .item:nth-of-type(4) {
+        flex-shrink: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+    </div>
+
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore dolores
+    deserunt aspernatur delectus temporibus vero quidem ipsam consectetur et
+    nulla sapiente, natus aliquam inventore, accusamus necessitatibus,
+    voluptatem ut laborum voluptas!
+  </body>
+</html>

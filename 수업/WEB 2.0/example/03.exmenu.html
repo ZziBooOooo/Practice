@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MENU</title>
+
+    <style>
+      body,
+      html,
+      div,
+      li,
+      ul,
+      a {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      .container {
+        width: 1000px;
+        background-color: rgb(168, 168, 226);
+        margin: 100px auto;
+        overflow: hidden;
+      }
+
+      .container ul {
+        float: right;
+      }
+
+      .topMenu li {
+        /* 메뉴옆 아이콘은 특별한 의미가 있는 이미지가 아니다. 따라서, 새로 이미지태그를 만들기 보다는
+                        백그라운드이미지로 처리하는것이 좋다.*/
+        float: left;
+      }
+
+      .topMenu a {
+        color: rgb(37, 37, 37);
+        font-size: 14px;
+        display: block;
+        background: url("images/arrow_icon.png") no-repeat 5px center / 12px
+          auto; /* 크기지정하려면 위치먼저*/
+        padding: 0 24px;
+      }
+
+      li:nth-child(4) a {
+        padding-right: 0px;
+      }
+
+      /* 영역에 포함되어야할때는 padding
+           단순히 여백이 필요한 경우는 margin */
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul class="topMenu">
+        <li><a href="#">로그인</a></li>
+        <li><a href="#">회원가입</a></li>
+        <li><a href="#">사이트맵</a></li>
+        <li><a href="#">이메일</a></li>
+      </ul>
+    </div>
+  </body>
+</html>

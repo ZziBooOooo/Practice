@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+    <style>
+        /*
+        display 속성
+        block <-> inline 
+        
+        // inline에는 block을 담지 않는다
+        */
+        span.box{
+            width: 100px;
+            height: 100px;
+            margin: 50px; /* inline 은 width와 height을 받아오지 못함 & margin은 top과 bottom이 적용되지 않음 , padding은 가능*/
+                          /*따라서, 위의 속성들은 적용되지 않는다. span은 inline 이기 때문에
+                           적용되게 하려면 display 속성을 이용 -> 변경할 수는 있지만 본질은 변하지 않는다.
+                           ex) span에 display:block을 설정하더라도 div를 담는 것은 불가능하다.*/
+            background-color: rgb(128, 172, 157);     
+            display: block;
+
+            /*
+            block 특징
+            width:100% (기본값) , height은 컨텐츠의 높이만큼
+            영역, 여백 등의 설정은 모두 받아옴
+            */
+
+
+            /*
+            inline-block 특징
+            inline-block에서 생기는 여백은 margin,padding에서 생기는 여백이 아니다.
+            inline속성은 주로 텍스트를 넣기 위해 사용되기 때문에 inline 하나를 폰트라고 생각한다.
+            -> 폰트는 자간이 존재- 이 여백이 바로 자간이다.
+            따라서, inline-block 속성을 사용하려면 font-size를 없애야 한다.
+            안에 텍스트를 넣고싶다면 -> font-size를 다시 설정
+
+            */
+        }
+
+        div.inline-item{
+            width: 200px;
+            height: 50px;
+            background-color: rgb(226, 193, 144);
+            display: inline-block;  
+        }
+
+        div.parent{
+            font-size: 0px;
+        }
+
+        div.box2{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(177, 121, 138);
+        }
+
+        /*
+        opacity는 영역은 존재하지만 화면상에선 안보임
+        display:none은 영역과 화면상에서 사라짐
+        주로, 스크립트에서 사용하며 다시 나오게하려면 block속성을 주면 된다.
+        
+        */
+
+        div.box3{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(159, 121, 177);
+        }
+    </style>
+</head>
+<body>
+        <span class="box">span</span>
+
+        <div class="parent">
+        <div class="inline-item">item</div>
+        <div class="inline-item">item</div>
+        <div class="inline-item">item</div>
+        </div>
+
+            <div class="box2">box2</div>
+            <div class="box3">box3</div>
+</body>
+</html>
