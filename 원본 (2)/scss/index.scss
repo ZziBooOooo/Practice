@@ -236,6 +236,7 @@ main {
           background-color: red; */
           vertical-align: middle;
 
+          // 애니메이션 끝난 후에도 유지되도록
           &:hover {
             .svg1 {
               stroke-dasharray: 200px;
@@ -255,7 +256,8 @@ main {
               }
             }
             .svg2 {
-              animation: test2 3s forwards;
+              animation: test2 2s forwards;
+
               // animation-iteration-count: infinite;
             }
 
@@ -263,7 +265,7 @@ main {
               0% {
                 transform: scale(0);
               }
-              50% {
+              90% {
                 transform: scale(1);
               }
               100% {

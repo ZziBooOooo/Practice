@@ -243,14 +243,14 @@ main .main_second .main_Second_videobox .main_Second_videobox_square {
   }
 }
 .main_third .main_third_box .main_third_box_text2 a svg:hover .svg2 {
-  -webkit-animation: test2 3s forwards;
-          animation: test2 3s forwards;
+  -webkit-animation: test2 2s forwards;
+          animation: test2 2s forwards;
 }
 @-webkit-keyframes test2 {
   0% {
     transform: scale(0);
   }
-  50% {
+  90% {
     transform: scale(1);
   }
   100% {
@@ -261,7 +261,7 @@ main .main_second .main_Second_videobox .main_Second_videobox_square {
   0% {
     transform: scale(0);
   }
-  50% {
+  90% {
     transform: scale(1);
   }
   100% {
