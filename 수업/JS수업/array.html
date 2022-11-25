@@ -69,6 +69,28 @@
       } else {
         elpass.textContent += "불합격";
       }
+
+      // -------------------------------------------------------------------------------------
+
+      let sClass2 = [60, 90, 20];
+      let totalValue2 = 0;
+
+      for (i = 0; i < sClass.length; i++) {
+        // 총점 반복문활용
+        totalValue2 += sClass[i];
+      }
+      console.log(totalValue2);
+
+      avg2 = totalValue2 / 3;
+      avg2 = avg2.toFixed(2);
+      console.log(avg2);
+
+      avg2 = totalValue2 / 3;
+      avg2 = Math.round(avg);
+      console.log(avg2);
+
+      grend = avg > 60 ? "합격" : "불합격"; //삼항연산자
+      console.log(grend);
     </script>
   </body>
 </html>

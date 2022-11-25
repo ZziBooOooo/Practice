@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>for</title>
+  </head>
+  <body>
+    <article class="ex1">
+      <h2>
+        1부터 100까지 출력
+
+        <button>출력</button>
+      </h2>
+      <div></div>
+    </article>
+
+    <article class="ex2">
+      <h2>
+        1부터 100까지 짝수만 출력
+        <button>출력</button>
+      </h2>
+      <div></div>
+    </article>
+
+    <article class="ex3">
+      <h2>
+        1부터 100까지 끝자리가 3,6,9를 출력
+        <button>출력</button>
+      </h2>
+      <div></div>
+    </article>
+
+    <script>
+      let result = [];
+      const ex1 = document.querySelector(".ex1 div");
+      const ex2 = document.querySelector(".ex2 div");
+      const ex3 = document.querySelector(".ex3 div");
+      const elbtns = document.querySelectorAll("button");
+      //console.log(elbtns);
+      // DOM에 있는 요소들(태그포함, 문자, 빈공간 등 모두) : Node
+      // NodeList : 유사배열
+      // 엘리먼트는 태그 자체
+
+      function numFunc() {
+        result = [];
+        for (i = 1; i <= 100; i++) {
+          result.push(i);
+        }
+        ex1.textContent += result;
+      }
+
+      function numEven() {
+        result = [];
+        for (i = 1; i <= 100; i++) {
+          if (i % 2 == 0) {
+            result.push(i);
+          }
+        }
+        ex2.textContent += result;
+      }
+
+      function num369() {
+        result = [];
+        for (i = 1; i <= 100; i++) {
+          if (i % 10 == 3 || i % 10 == 6 || i % 10 == 9) {
+            result.push(i);
+          }
+        }
+        ex3.textContent += result;
+      }
+
+      /* elbtns[0].onclick = numFunc; */
+      /* elbtns[0].addEventListener("click", numFunc);
+      elbtns[1].addEventListener("click", numEven);
+      elbtns[2].addEventListener("click", num369); */
+
+      // 배열 메소드 forEach
+      /* elbtns.forEach(function (셀렉터(버튼), 키값(0), 전체셀렉터(전체- 사용할 일이 없다.)) {
+
+      }); */
+
+      elbtns.forEach(function (btn, key, all) {
+        console.log(btn);
+        console.log(key);
+        console.log(all);
+
+        btn.onclick = function () {
+          /* console.log(key);
+        if (key == 0) {
+          numFunc();
+        } else if (key == 1) {
+          numEven();
+        } else {
+          num369();
+        } */
+
+          switch (key) {
+            case 0:
+              numFunc();
+              break;
+            case 1:
+              numEven();
+              break;
+            default:
+              num369();
+          }
+        };
+        // };
+      });
+
+      // -----------------------------------------------------
+
+      /* for (i = 1; i <= 100; i++) {
+        ex1.textContent += `${i}, `;
+      } */
+
+      /* for (i = 1; i <= 100; i++) {
+        result.push(i);
+      }
+      ex1.textContent += result; */
+
+      // -----------------------------------------------------
+
+      /* for (i = 1; i <= 100; i++) {
+        if (i % 2 == 0) {
+          ex2.textContent += `${i}, `;
+        }
+      } */
+
+      /* result = [];
+      for (i = 1; i <= 100; i++) {
+        if (i % 2 == 0) {
+          result.push(i);
+        }
+      }
+      ex2.textContent += result; */
+
+      // -----------------------------------------------------
+
+      /* for (i = 1; i <= 100; i++) {
+        if (i % 10 == 3 || i % 10 == 6 || i % 10 == 9) {
+          ex3.textContent += `${i}, `;
+        }
+      } */
+
+      /* result = [];
+      for (i = 1; i <= 100; i++) {
+        if (i % 10 == 3 || i % 10 == 6 || i % 10 == 9) {
+          result.push(i);
+        }
+      }
+      ex3.textContent += result; */
+    </script>
+
+    <!--  -->
+    <article class="gugu">
+      <h2>구구단</h2>
+      <div></div>
+
+      <button>2단 출력</button>
+    </article>
+    <script>
+      const elGugu = document.querySelector(".gugu > div"),
+        elBtnGugu = document.querySelector(".gugu > button");
+
+      let a = 2;
+      let b;
+      let gugu = "";
+
+      function ongugu() {
+        /* gugu += `<br>`; */
+        for (i = 1; i < 10; i++) {
+          b = i * 2;
+          /* console.log(i);
+          console.log(b); */
+          console.log(gugu);
+
+          gugu += `2 * ${i} = ${b} <br>`;
+
+          elGugu.innerHTML = gugu;
+        }
+      }
+
+      elBtnGugu.addEventListener("click", ongugu);
+    </script>
+  </body>
+</html>
+
+function(){ }
