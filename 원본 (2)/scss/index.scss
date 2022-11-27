@@ -192,7 +192,7 @@ header {
 
 body {
   width: 100%;
-  background-image: url(../images/backgrounds/quality.jpg);
+  background-image: url(../images/backgrounds/quality.png);
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -375,7 +375,7 @@ main {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url(../images/backgrounds/quality2.jpg);
+  background-image: url(../images/backgrounds/quality2.png);
   display: flex;
   justify-content: space-around;
 
@@ -396,6 +396,7 @@ main {
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
+      align-items: flex-start;
       color: #faf3e6;
       font-weight: 500;
 
@@ -403,12 +404,39 @@ main {
         font-size: 24px;
         line-height: 1.3;
       }
-      a {
+      button {
+        display: flex;
+        align-items: center;
+        height: 35px;
+        padding: 0;
         margin-top: 30px;
         color: #faf3e6;
-        font-size: 18px;
+        font-size: 14px;
+        font-weight: 600;
+        transition: 0.5s;
+
+        span {
+          margin-right: 10px;
+        }
+
+        &:hover {
+          transform: scale(1.05);
+          .svg1 {
+            stroke-dasharray: 200px;
+            animation: test 2s infinite;
+            background-color: red;
+            // animation-iteration-count: infinite;
+          }
+
+          .svg2 {
+            animation: test2 2s infinite;
+
+            // animation-iteration-count: infinite;
+          }
+        }
 
         svg {
+          margin-top: 5px;
           width: 25px;
           height: 25px;
           /* transform: translateY(25%);
@@ -417,19 +445,6 @@ main {
           stroke-dashoffset: 200px;
 
           // 애니메이션 끝난 후에도 유지되도록
-          &:hover {
-            .svg1 {
-              stroke-dasharray: 200px;
-              animation: test 2s infinite;
-              // animation-iteration-count: infinite;
-            }
-
-            .svg2 {
-              animation: test2 2s infinite;
-
-              // animation-iteration-count: infinite;
-            }
-          }
         }
       }
     }
@@ -633,7 +648,7 @@ main {
   @mixin white-gradient {
     background: linear-gradient(
       to right,
-      rgb(252, 252, 252) 0%,
+      rgb(255, 255, 255) 0%,
       rgba(255, 255, 255, 0) 100%
     );
   }
@@ -652,7 +667,7 @@ main {
 
   // Styling
   .slider {
-    background: rgb(252, 252, 252);
+    background: rgb(255, 255, 255);
     box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
     height: 60vh;
     display: flex;
@@ -724,7 +739,7 @@ main {
       .slideText p:nth-of-type(1) {
         font-size: 55px;
         font-weight: 600;
-        color: #ff7402;
+        color: rgb(255, 93, 93);
         margin-bottom: 10px;
         position: relative;
         z-index: 99;
@@ -748,6 +763,7 @@ main {
       }
       .slideText p:nth-of-type(2) {
         font-weight: 400;
+        font-size: 18px;
         color: $main-color;
       }
     }
@@ -818,6 +834,7 @@ main {
   width: 100%;
   height: 90vh;
   background-image: url(../images/backgrounds/quality3.jpg);
+
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -825,28 +842,58 @@ main {
   align-items: flex-end;
 
   .main6_textbox {
-    padding: 5%;
-    color: white;
+    color: #f8f3e8;
+    margin: 10%;
+    margin-bottom: 5%;
   }
 
   .main6_textbox p:nth-of-type(1) {
-    font-size: 48px;
-    margin-bottom: 20px;
+    font-size: 55px;
+    margin-bottom: 35px;
+    font-weight: 600;
   }
   .main6_textbox p:nth-of-type(2) {
-    font-size: 16px;
-    margin-bottom: 20px;
+    font-size: 22px;
+    margin-bottom: 35px;
+    font-weight: 400;
   }
   .main6_textbox {
     button {
-      color: white;
-      font-size: 20px;
+      color: #f8f3e8;
+
       display: flex;
       padding: 0;
       justify-content: flex-start; // width: 200px;
+      align-items: center;
+      height: 20px;
+
+      svg {
+        margin-top: 5px;
+      }
+      .main6_svg1 {
+        stroke-dashoffset: 200px;
+      }
+
       .btn_p {
-        font-size: 20px;
+        font-size: 14px;
         margin-right: 10px;
+        transition: 0.5s;
+        margin-bottom: 0;
+      }
+
+      &:hover {
+        .main6_svg1 {
+          stroke-dasharray: 200px;
+          animation: test 2s infinite;
+        }
+
+        .main6_svg2 {
+          animation: test2 2s infinite;
+        }
+
+        .btn_p {
+          transform: scale(1.05);
+        }
       }
     }
   }
@@ -867,17 +914,6 @@ main {
     flex-direction: column;
     align-items: center;
     position: relative;
-    span {
-      display: inline-block;
-      background-color: #ffd550;
-      border-radius: 8px;
-      width: 275px;
-      height: 60px;
-      position: absolute;
-      top: 50%;
-      left: -1%;
-      transform: translateY(-80%) rotate(-3deg);
-    }
 
     p {
       font-size: 60px;
@@ -885,27 +921,54 @@ main {
       font-weight: bold;
       margin: 50px 0;
       z-index: 99;
+
+      &:before {
+        content: "";
+        display: block;
+        background-color: #ffd550;
+        border-radius: 8px;
+        width: 290px;
+        height: 60px;
+        position: absolute;
+        top: 50%;
+        left: -1%;
+        transform: translateY(-85%) rotate(-3deg);
+        z-index: -1;
+      }
     }
 
     button {
-      width: 120px;
-      height: 40px;
-      border-radius: $border-radius;
+      width: 140px;
+      height: 50px;
+      border-radius: 30px;
       background-color: #154147;
       color: white;
       font-size: 16px;
-      // font-weight: bold;
+      font-weight: 600;
+      transition: 0.5s;
+      overflow: hidden;
+
+      span {
+        display: block;
+      }
+
+      &:hover {
+        transform: scale(1.05);
+        span {
+          animation: slideup 1s forwards;
+        }
+      }
     }
   }
 }
 .main_8 {
   display: flex;
   width: 100%;
-  height: 90vh;
+  height: 100vh;
 
   .main_8_imgbox {
     width: 50%;
-    height: 90vh;
+    height: 100vh;
     background-image: url(../images/backgrounds/quality4.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -919,38 +982,57 @@ main {
 
   .main_8_textbox {
     width: 50%;
-    height: 90vh;
+    height: 100vh;
+    padding: 3% 5%;
+    background-color: #296d4f;
 
     div {
-      padding: 3%;
-      height: 90vh;
       display: flex;
+      height: 100%;
       flex-direction: column;
-      background-color: #296d4f;
+
       align-items: flex-start;
-      justify-content: flex-end;
+      justify-content: space-between;
 
       .text8_1 {
         color: #ffd550;
+        font-size: 18px;
       }
 
       .text8_2 {
         color: #ffd550;
-        font-size: 45px;
-        font-weight: bold;
-        margin-bottom: 30px;
+        font-size: 65px;
+        font-weight: 600;
       }
 
       button {
-        color: white;
-        font-size: 20px;
         display: flex;
         padding: 0;
         justify-content: flex-start; // width: 200px;
+        margin-top: 45px;
+        transition: 0.5s;
         .btn8_p {
           color: #ffd550;
-          font-size: 14px;
+          font-size: 18px;
           margin-right: 10px;
+          font-weight: 600;
+        }
+
+        svg {
+          stroke-dasharray: 200px;
+        }
+
+        &:hover {
+          transform: scale(1.05);
+
+          .main8_svg {
+            stroke-dashoffset: 200px;
+            animation: test 2s infinite;
+          }
+
+          .main8_svg2 {
+            animation: test2 2s infinite;
+          }
         }
       }
     }
@@ -959,44 +1041,24 @@ main {
 
 .Main_9 {
   position: relative;
-  height: 95vh;
+  height: 105vh;
   margin: 0;
   background-color: #fce8bd;
-  display: flex;
-  flex-direction: column;
 
+  padding: 5% 10%;
   .Main_9_textbox {
     font-family: FoundersGrotesk;
     font-size: 60px;
     color: #154726;
     font-weight: 700;
-    margin: 5% 10%;
+
+    margin-bottom: 8%;
   }
 }
 
-/* .main_9 {
-  position: relative;
-  height: 100%;
-  background: #eee;
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  color: #000;
-  margin: 0;
-  background-color: #a7ddfd;
-  display: flex;
-  flex-direction: column;
-
-  .main9_textbox {
-    font-family: FoundersGrotesk;
-    font-size: 60px;
-    color: #154726;
-    font-weight: 700;
-    margin: 5%;
-  }
-} */
-
 .swiper-container {
-  width: 80%;
+  width: 100%;
+  height: 50vh;
 
   // background-color: #154147;
 
@@ -1026,15 +1088,24 @@ main {
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
+  overflow: hidden;
+  border-radius: $border-radius;
 
   .swiper_img_box {
-    width: 100%;
-    height: 450px;
+    width: 25vw;
+    height: 40vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: $border-radius;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    transition: 1s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.02);
+      border-radius: $border-radius;
+    }
   }
 
   .first {
@@ -1060,22 +1131,45 @@ main {
 }
 .swiper_1 {
   // background-color: red;
+  font-size: 24px;
+  font-weight: 600;
   margin-bottom: 10px;
 }
 .swiper_2 {
   // background-color: rgb(255, 166, 0);
   margin-bottom: 10px;
-  font-weight: 600;
+  // font-weight: 500;
 }
 .swiper_3 {
   // background-color: rgb(255, 208, 0);
   margin-bottom: 10px;
   margin-right: 5px;
+  font-weight: 500;
+  transition: 0.5s;
 }
 
 .swiper_3_div {
   display: flex;
-  width: 200px;
+
+  .main9_svg {
+    stroke-dasharray: 200px;
+    cursor: pointer;
+  }
+
+  &:hover {
+    .swiper_3 {
+      transform: scale(1.05);
+      cursor: pointer;
+    }
+
+    .main9_svg {
+      stroke-dashoffset: 200px;
+      animation: test 2s infinite;
+    }
+    .main9_svg2 {
+      animation: test2 2s infinite;
+    }
+  }
 }
 
 .swiper-slide img {
@@ -1084,7 +1178,7 @@ main {
 
   object-fit: cover;
   border-radius: $border-radius;
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
 }
 
 .swiper-button-next:after {
@@ -1119,12 +1213,43 @@ main {
 
 .main_9_bottom_btnbox {
   display: flex;
-  margin-left: 10%;
-  margin-top: 5%;
+  align-items: center;
+  justify-content: center;
+  // margin-left: 10%;
+  // margin-top: 5%;
 
-  p {
-    margin-right: 5px;
+  position: absolute;
+  bottom: 10%;
+  cursor: pointer;
+  transition: 0.5s;
+
+  .main9_svg {
+    stroke-dasharray: 200px;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+
+    .main9_svg {
+      stroke-dashoffset: 200px;
+      animation: test 2s infinite;
+    }
+
+    .main9_svg2 {
+      animation: test2 2s infinite;
+    }
+  }
+
+  button {
+    width: 120px;
+    height: 50px;
     color: $main-color;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  svg {
+    padding-top: 5px;
   }
 }
 
@@ -1152,15 +1277,28 @@ footer {
   border: none;
   outline: none;
   font-size: 20px;
-
+  color: #faf3e6;
   background-color: #395740;
-  border-radius: $border-radius;
+  border-radius: 24px;
   padding: 10px;
   width: 100%;
   height: 30px;
+  position: relative;
 }
 .footer_input::placeholder {
   color: #faf3e6;
+  transition: 0.5s;
+}
+.footer_input:focus {
+  color: #faf3e6;
+  border: 1px solid #aab8aa;
+
+  &::placeholder {
+    position: absolute;
+    top: 3%;
+    left: 3%;
+    font-size: 14px;
+  }
 }
 
 .footer1_firstBox {
@@ -1271,14 +1409,25 @@ footer {
 
 .footer2_thirdBox {
   width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   p {
     color: #93a08d;
   }
 }
 
+.footer2_thirdBox_1 {
+  p {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+}
+
 .footer2_thirdBox_2 {
   p {
+    font-size: 14px;
     color: #93a08d;
   }
 }
