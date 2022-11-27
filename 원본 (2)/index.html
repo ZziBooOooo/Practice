@@ -15,6 +15,7 @@
   </head>
   <body>
     <script type="text/javascript" src="./js/main4.js" defer></script>
+    <script type="text/javascript" src="./js/main5.js" defer></script>
     <header>
       <div class="header_desktop">
         <div class="header_desktop left">
@@ -328,79 +329,91 @@
             in North America and Europe.
           </p>
         </div>
-        <div>
-          <div>
-            <img class="full" src="./images/contents/avocado.png" alt="" />
-          </div>
-          <p class="vegetable_title test">avocados</p>
-          <p class="vegetable_origin test">North America & Europe</p>
-          <button>View Product</button>
-        </div>
-        <div>
-          <div>
-            <img class="full" src="./images/contents/cucumber.png" alt="" />
-          </div>
-          <p class="vegetable_title test">avocados</p>
-          <p class="vegetable_origin test">North America & Europe</p>
-          <button>View Product</button>
-        </div>
-        <div>
-          <div>
-            <div>
-              <img class="full" src="./images/contents/limes.png" alt="" />
+
+        <div class="slider">
+          <div class="slide-track">
+            <div class="slide">
+              <div class="slideImgWrap">
+                <img src="./images/contents/avocado.png" alt="" />
+              </div>
+              <div class="slideText">
+                <p class="vegeText">Avocado</p>
+                <p>North America & Europe</p>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slideImgWrap">
+                <img src="./images/contents/cucumber.png" alt="" />
+              </div>
+              <div class="slideText">
+                <p class="vegeText">Cucumber</p>
+                <p>North America</p>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slideImgWrap">
+                <img src="./images/contents/limes.png" alt="" />
+              </div>
+              <div class="slideText">
+                <p class="vegeText">Lime</p>
+                <p>North America</p>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slideImgWrap">
+                <img src="./images/contents/mandarins.png" alt="" />
+              </div>
+              <div class="slideText">
+                <p class="vegeText">Mandarin</p>
+                <p>Europe</p>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slideImgWrap">
+                <img src="./images/contents/oranges.png" alt="" />
+              </div>
+              <div class="slideText">
+                <p>Orange</p>
+                <p>Europe</p>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slideImgWrap">
+                <img src="./images/contents/apple.png" alt="" />
+              </div>
+              <div class="slideText">
+                <p>Apple</p>
+                <p>North America</p>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slideImgWrap">
+                <img src="./images/contents/lemon.png" alt="" />
+              </div>
+              <div class="slideText">
+                <p>Lemon</p>
+                <p>Europe</p>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slideImgWrap">
+                <img src="./images/contents/grapefruit.png" alt="" />
+              </div>
+              <div class="slideText">
+                <p>GrapeFruit</p>
+                <p>Europe</p>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slideImgWrap">
+                <img src="./images/contents/mango.png" alt="" />
+              </div>
+              <div class="slideText">
+                <p>Mango</p>
+                <p>Europe</p>
+              </div>
             </div>
           </div>
-          <p class="vegetable_title test">avocados</p>
-          <p class="vegetable_origin test">North America & Europe</p>
-          <button>View Product</button>
-        </div>
-        <div>
-          <div>
-            <img class="full" src="./images/contents/mandarins.png" alt="" />
-          </div>
-          <p class="vegetable_title test">avocados</p>
-          <p class="vegetable_origin test">North America & Europe</p>
-          <button>View Product</button>
-        </div>
-        <div>
-          <div>
-            <img class="full" src="./images/contents/oranges.png" alt="" />
-          </div>
-          <p class="vegetable_title test">avocados</p>
-          <p class="vegetable_origin test">North America & Europe</p>
-          <button>View Product</button>
-        </div>
-        <div>
-          <div>
-            <img class="full" src="./images/contents/apple.png" alt="" />
-          </div>
-          <p class="vegetable_title test">avocados</p>
-          <p class="vegetable_origin test">North America & Europe</p>
-          <button>View Product</button>
-        </div>
-        <div>
-          <div>
-            <img class="full" src="./images/contents/lemon.png" alt="" />
-          </div>
-          <p class="vegetable_title test">avocados</p>
-          <p class="vegetable_origin test">North America & Europe</p>
-          <button>View Product</button>
-        </div>
-        <div>
-          <div>
-            <img class="full" src="./images/contents/grapefruit.png" alt="" />
-          </div>
-          <p class="vegetable_title test">avocados</p>
-          <p class="vegetable_origin test">North America & Europe</p>
-          <button>View Product</button>
-        </div>
-        <div>
-          <div>
-            <img class="full" src="./images/contents/mango.png" alt="" />
-          </div>
-          <p class="vegetable_title test">avocados</p>
-          <p class="vegetable_origin test">North America & Europe</p>
-          <button>View Product</button>
         </div>
       </div>
 
@@ -1198,7 +1211,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 
     <script>
-      const scrollContainer2 = document.querySelector(".Main_5");
+      /*  const scrollContainer2 = document.querySelector(".Main_5");
 
       //   evt.preventDefault();
       //   console.log(evt);
@@ -1217,7 +1230,7 @@
 
         // console.log(scrollContainer2);
         // console.log(scrollContainer2.scrollLeft);
-      });
+      }); */
 
       var swiper = new Swiper(".mySwiper", {
         slidesPerView: 3,
