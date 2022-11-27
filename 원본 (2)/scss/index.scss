@@ -190,6 +190,76 @@ header {
   }
 }
 
+.menuBtn {
+  width: 100px;
+  height: 35px;
+  background-color: $main-color;
+  position: fixed;
+  right: 0;
+  border-radius: $border-radius;
+  color: white;
+  margin-right: 1%;
+  z-index: 999;
+  transition: 0.5s;
+  overflow: hidden;
+  // display: none;
+  div {
+    display: flex;
+    justify-content: space-evenly;
+
+    span {
+      display: block;
+    }
+    .menu1span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background-color: white;
+      position: absolute;
+      right: 15%;
+      top: 40%;
+    }
+    .menu2span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background-color: rgb(255, 255, 255);
+      position: absolute;
+      right: 15%;
+      top: 60%;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.05);
+
+    span {
+      animation: slideup 1s forwards;
+    }
+    .menu1span {
+      animation: linespan 1s forwards;
+      transform-origin: 0% 50%;
+    }
+
+    .menu2span {
+      animation: linespan 1s forwards;
+      transform-origin: 0% 50%;
+      animation-delay: 0.1s;
+    }
+  }
+}
+
+@keyframes linespan {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 body {
   width: 100%;
   background-image: url(../images/backgrounds/quality.png);
@@ -358,7 +428,24 @@ main {
     }
   }
 }
+.active {
+  animation: textup 3s forwards;
+  color: #faf3e6;
+}
 
+@keyframes textup {
+  0% {
+    color: #faf3e6;
+    opacity: 0;
+    transform: translateY(20%);
+  }
+
+  100% {
+    color: #faf3e6;
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
 .bg {
   position: absolute;
   top: 0;
@@ -390,6 +477,7 @@ main {
       font-size: 90px;
       color: #faf3e6;
       font-weight: 600;
+      opacity: 0;
     }
 
     .main_third_box_text2 {
@@ -399,6 +487,8 @@ main {
       align-items: flex-start;
       color: #faf3e6;
       font-weight: 500;
+      transition: 5s;
+      opacity: 0;
 
       p {
         font-size: 24px;
@@ -645,6 +735,25 @@ main {
   display: flex;
   transition: 0.3s ease-out;
 
+  .active2 {
+    animation: textup2 3s forwards;
+    color: $main-color;
+  }
+
+  @keyframes textup2 {
+    0% {
+      color: $main-color;
+      opacity: 0;
+      transform: translateY(20%);
+    }
+
+    100% {
+      color: $main-color;
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+
   @mixin white-gradient {
     background: linear-gradient(
       to right,
@@ -796,21 +905,35 @@ main {
   }
 }
 .Main_5_textBox {
-  min-width: 40vw;
+  min-width: 35vw;
   height: 100%;
   margin-right: 5%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: space-around;
   position: relative;
   z-index: 90;
+
+  span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all 0.4s ease-in-out;
+  }
+
+  .fade {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .Main5_text_1 {
-  font-size: 90px;
+  // width: 30vw;
+  font-size: 110px;
   color: $main-color;
   font-weight: 700;
+  opacity: 0;
 }
 
 .Main5_text_2 {
@@ -845,6 +968,7 @@ main {
     color: #f8f3e8;
     margin: 10%;
     margin-bottom: 5%;
+    opacity: 0;
   }
 
   .main6_textbox p:nth-of-type(1) {
@@ -965,6 +1089,7 @@ main {
   display: flex;
   width: 100%;
   height: 100vh;
+  overflow: hidden;
 
   .main_8_imgbox {
     width: 50%;
@@ -972,6 +1097,11 @@ main {
     background-image: url(../images/backgrounds/quality4.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    transition: 1s;
+
+    &:hover {
+      transform: scale(1.01);
+    }
 
     /* img {
       // max-width: 100%;

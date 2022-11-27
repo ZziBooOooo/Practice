@@ -9,8 +9,8 @@ let leftImg = document.querySelector(".leftImg");
 
 let elDiv = document.querySelector(".leftImg_wrapper");
 
-console.log(leftImgWrapper);
-console.log(leftImg);
+/* console.log(leftImgWrapper);
+console.log(leftImg); */
 
 let image = [
   ["5555.png", "6666.png"],
