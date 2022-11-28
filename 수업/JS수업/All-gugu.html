@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <article class="all-gugu">
+      <h2>2 ~ 9 단</h2>
+      <div>
+        <!-- <p>2단</p>
+        <p>3단</p>
+        <p>4단</p> -->
+      </div>
+
+      <style>
+        .all-gugu div {
+          display: flex;
+          flex-wrap: wrap;
+        }
+
+        .all-gugu p {
+          border: 2px solid black;
+          background-color: rgb(236, 189, 197);
+          margin: 3%;
+          padding: 3%;
+        }
+      </style>
+    </article>
+
+    <script>
+      const allguguDiv = document.querySelector(".all-gugu div");
+      //   allguguDiv.innerHTML = 구구단 출력
+
+      let guguTag = ""; //구구단을 담을 변수
+
+      for (i = 2; i <= 9; i++) {
+        guguTag += "<p>";
+        for (j = 1; j <= 9; j++) {
+          guguTag += `${i} * ${j} = ${i * j} <br>`;
+        }
+        guguTag += "</p>";
+      }
+
+      allguguDiv.innerHTML = guguTag;
+    </script>
+  </body>
+</html>

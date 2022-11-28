@@ -82,9 +82,9 @@
       }); */
 
       elbtns.forEach(function (btn, key, all) {
-        console.log(btn);
-        console.log(key);
-        console.log(all);
+        // console.log(btn);
+        // console.log(key);
+        // console.log(all);
 
         btn.onclick = function () {
           /* console.log(key);
@@ -159,33 +159,74 @@
       <h2>구구단</h2>
       <div></div>
 
-      <button>2단 출력</button>
+      <button data-num="2">2단 출력</button>
+      <button data-num="3" data-name="3단">3단 출력</button>
+      <button data-num="12" data-name="12단">12단 출력</button>
+      <!-- data-set으로 버튼만 추가하면 구구단출력 가능 -->
     </article>
     <script>
       const elGugu = document.querySelector(".gugu > div"),
         elBtnGugu = document.querySelector(".gugu > button");
+      elBtnGugus = document.querySelectorAll(".gugu > button");
 
       let a = 2;
       let b;
       let gugu = "";
 
-      function ongugu() {
+      function ongugu(n) {
+        gugu = ""; // 값이 안쌓이도록 초기화
         /* gugu += `<br>`; */
-        for (i = 1; i < 10; i++) {
-          b = i * 2;
-          /* console.log(i);
-          console.log(b); */
-          console.log(gugu);
-
-          gugu += `2 * ${i} = ${b} <br>`;
-
-          elGugu.innerHTML = gugu;
+        for (i = 1; i <= 9; i++) {
+          gugu += `${n} * ${i} = ${i * n} <br>`;
         }
+        elGugu.innerHTML = gugu;
       }
 
-      elBtnGugu.addEventListener("click", ongugu);
+      /* elBtnGugu.addEventListener("click", () => {
+             ongugu(2);
+           }); */
+
+      /*       elBtnGugus[0].onclick = function () {
+             ongugu(2);
+           };
+           elBtnGugus[1].onclick = function () {
+             ongugu(3);
+           };
+      */
+      /* for (j = 0; j < 2; j++) {
+             console.log(j);
+             elBtnGugus[j].onclick = function () {
+               console.log(j);
+               ongugu(j);
+             };
+           } */
+
+      elBtnGugus.forEach(function (btn, key) {
+        btn.onclick = function () {
+          console.log(btn);
+          console.log(key);
+
+          // 버튼에 data-num 받아오기 - dataset!!
+
+          let num2or3 = btn.dataset.num;
+          console.log(btn.dataset);
+          console.log(btn.dataset.name); // .으로 값에 접근가능, 대괄호 방식도 존재
+
+          ongugu(num2or3);
+
+          // switch (key) {
+          //   case 0:
+          //     // btn.onclick = function () {
+          //     //   ongugu(2);
+          //     // };
+          //     ongugu(2);
+          //     break;
+          //   case 1:
+          //     ongugu(3);
+          //     break;
+          // }
+        };
+      });
     </script>
   </body>
 </html>
-
-function(){ }

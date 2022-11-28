@@ -1,0 +1,219 @@
+@import url(font.css);
+@import url(_reset.css);
+
+$main-color: #154726;
+$sub-color: #faf3e6;
+$yellow: #ffd550;
+$border-radius: 20px;
+
+* {
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+body,
+html {
+  font-family: "FoundersGrotesk";
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.header_desktop {
+  background-color: $sub-color;
+  color: $main-color;
+  padding: 8px;
+  width: 90%;
+  border-radius: 0 0 16px 16px;
+  display: flex;
+  justify-content: space-around;
+  font-weight: 500;
+
+  .left {
+    display: flex;
+    width: 25%;
+    justify-content: space-around;
+    align-items: center;
+
+    p {
+      a {
+        color: $main-color;
+      }
+      &:after {
+        display: block;
+        content: "";
+        width: 100%;
+        height: 2px;
+        border-radius: 30px;
+        transform: scaleX(0);
+        transition: transform 500ms ease-in-out;
+      }
+      &:hover {
+        &:after {
+          transform: scaleX(1);
+          transform-origin: 0% 50%;
+          background-color: $main-color;
+        }
+      }
+    }
+  }
+}
+
+@keyframes hoverline {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.middle {
+  width: 50%;
+
+  div {
+    width: 120px;
+    height: 40px;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: $main-color;
+    }
+  }
+}
+
+.right {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 25%;
+
+  button {
+    border: none;
+    color: $sub-color;
+    background-color: $main-color;
+    padding: 3%;
+    border-radius: $border-radius;
+    width: 130px;
+
+    // height: 30px;
+    cursor: pointer;
+    transition: 0.5s;
+    overflow: hidden;
+
+    span {
+      display: block;
+      font-weight: 600;
+    }
+
+    &:hover {
+      transform: scale(1.02);
+
+      span {
+        animation: slideup 1s forwards;
+        font-weight: 600;
+      }
+    }
+  }
+
+  p {
+    a {
+      color: $main-color;
+    }
+
+    &:after {
+      display: block;
+      content: "";
+      width: 100%;
+      height: 2px;
+
+      border-radius: 30px;
+      background-color: $main-color;
+      transform: scaleX(0);
+      transition: transform 500ms ease-in-out;
+    }
+    &:hover {
+      &:after {
+        transform: scaleX(1);
+        transform-origin: 0% 50%;
+      }
+    }
+  }
+}
+
+.menuBtn {
+  width: 100px;
+  height: 35px;
+  background-color: $main-color;
+  position: fixed;
+  right: 0;
+  border-radius: $border-radius;
+  color: white;
+  margin-right: 1%;
+  z-index: 999;
+  transition: 0.5s;
+  overflow: hidden;
+  // display: none;
+  div {
+    display: flex;
+    justify-content: space-evenly;
+
+    span {
+      display: block;
+    }
+    .menu1span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background-color: white;
+      position: absolute;
+      right: 15%;
+      top: 40%;
+    }
+    .menu2span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background-color: rgb(255, 255, 255);
+      position: absolute;
+      right: 15%;
+      top: 60%;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.05);
+
+    span {
+      animation: slideup 1s forwards;
+    }
+    .menu1span {
+      animation: linespan 1s forwards;
+      transform-origin: 0% 50%;
+    }
+
+    .menu2span {
+      animation: linespan 1s forwards;
+      transform-origin: 0% 50%;
+      animation-delay: 0.1s;
+    }
+  }
+}
+
+@keyframes linespan {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

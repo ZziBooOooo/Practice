@@ -16,7 +16,7 @@ window.addEventListener("scroll", () => {
     a.style.backgroundColor = "Tomato";
   } */
   let currentScrollValue = document.documentElement.scrollTop;
-  //   console.log(currentScrollValue);
+  console.log(currentScrollValue);
   if (currentScrollValue >= 1550) {
     /*  a.style.backgroundColor = "Tomato"; */
     a.classList.add("active");
@@ -38,3 +38,12 @@ window.addEventListener("scroll", () => {
     menuBtn.style.display = "block";
   } */
 });
+
+/*
+컨텐츠만큼 위에서 떨어진 정도와 (ottsetTop)
+현재 스크롤의 위치를 비교했을 때 (scrollTop)
+이벤트? 클래스 추가
+위처럼 숫자를 직접 대입 X
+
+
+*/
