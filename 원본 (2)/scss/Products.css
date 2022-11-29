@@ -118,10 +118,8 @@ html {
 body {
   background-color: #fce8bd;
   position: relative;
-  width: 100%;
-}
-
-main {
+  background-image: url(../images/backgrounds/product.jpg);
+  background-size: contain;
   width: 100%;
 }
 
@@ -178,4 +176,64 @@ main {
 .background .storeText:hover .main1_svg2 {
   -webkit-animation: test2 1.5s infinite;
           animation: test2 1.5s infinite;
+}
+
+.main2 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+.main2 .main2_imageBox {
+  width: 50%;
+  height: 100vh;
+  background-image: url(../images/backgrounds/quality5.jpg);
+  background-size: cover;
+}
+.main2 .main2_textBox {
+  width: 50%;
+  height: 100vh;
+  background-color: #ff5b4e;
+  padding: 3% 10% 3% 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.main2 .main2_textBox p:nth-of-type(1) {
+  color: #892c2b;
+  font-size: 16px;
+}
+.main2 .main2_textBox p:nth-of-type(2) {
+  color: #5b1a1d;
+  font-size: 65px;
+  font-weight: 600;
+}
+
+.main3 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+.main3 .main3_imageBox {
+  width: 50%;
+  height: 100vh;
+  background-image: url(../images/backgrounds/quality6.jpg);
+  background-size: cover;
+}
+.main3 .main3_textBox {
+  width: 50%;
+  height: 100vh;
+  background-color: #97c74b;
+  padding: 3% 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.main3 .main3_textBox p:nth-of-type(1) {
+  color: #154726;
+  font-size: 16px;
+}
+.main3 .main3_textBox p:nth-of-type(2) {
+  color: #154726;
+  font-size: 65px;
+  font-weight: 600;
 }/*# sourceMappingURL=Products.css.map */
