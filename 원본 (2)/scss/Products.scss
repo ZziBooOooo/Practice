@@ -1,0 +1,146 @@
+$main-color: #154726;
+@import "_media";
+
+@keyframes test {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 200px;
+  }
+}
+
+@keyframes test2 {
+  0% {
+    transform: scale(0);
+  }
+
+  40% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes slideup {
+  0% {
+    transform: translateY(150%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes hoverline {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes test {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 200px;
+  }
+}
+@keyframes test2 {
+  0% {
+    transform: scale(0);
+  }
+
+  40% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+header {
+  position: relative;
+  z-index: 5;
+}
+html {
+  width: 100%;
+}
+body {
+  background-color: #fce8bd;
+  position: relative;
+
+  width: 100%;
+}
+main {
+  width: 100%;
+}
+
+.background {
+  /*   background-color: #fce8bd; */
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+
+  .mainTitle {
+    font-size: 160px;
+    color: $main-color;
+    font-weight: 700;
+    position: relative;
+    z-index: 0;
+  }
+
+  .p_After:after {
+    content: "";
+    display: block;
+    width: 43%;
+    height: 90%;
+    border-radius: 10px;
+    background-color: #ffd550;
+    position: absolute;
+    top: 10%;
+    left: 3%;
+    transform: rotate(-2deg);
+    z-index: -1;
+  }
+  .storeText {
+    width: 110px;
+    position: absolute;
+    bottom: 5%;
+
+    display: flex;
+    justify-content: space-between;
+    color: $main-color;
+    transition: 0.5s;
+
+    svg {
+      stroke-dasharray: 200px;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+
+      .main1_svg1 {
+        stroke-dashoffset: 200px;
+        animation: test 1.5s infinite;
+      }
+
+      .main1_svg2 {
+        animation: test2 1.5s infinite;
+      }
+    }
+  }
+}

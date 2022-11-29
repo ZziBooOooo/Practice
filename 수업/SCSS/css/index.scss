@@ -43,3 +43,41 @@ article {
     }
   }
 }
+
+.bg {
+  margin: 100px auto;
+  width: 1400px;
+  > div {
+    display: flex;
+    p {
+      width: 300px;
+      height: 200px;
+    }
+
+    $array: (
+      1: "80-1.jpg",
+      2: "80-1.jpg",
+      3: "80-1.jpg",
+    );
+    /* @each $i, $name in array {
+      p:nth-of-type(#{$i}) {
+        background: url("../../../클론/TISSOT/image/PRX\ 파워매틱\ #{$name}")
+          0
+          0 /
+          cover
+          no-repeat;
+      }
+    } */
+
+    @for $i from 1 to 4 {
+      //3번반복
+      p:nth-of-type(#{$i}) {
+        background: url("../../../클론/TISSOT/image/PRX\ 파워매틱\ #{$nth($array,$i)}")
+          0
+          0 /
+          cover
+          no-repeat;
+      }
+    }
+  }
+}

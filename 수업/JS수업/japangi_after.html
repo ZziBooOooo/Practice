@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <article class="self">
+      <h2>자판기</h2>
+      <div>
+        <p class="price">1000원</p>
+        <p class="btn">
+          <button data-price="300">밀크커피(300)</button>
+          <button data-price="400">고급밀크커피(400)</button>
+          <button data-price="600">블랙커피(600)</button>
+          <button>초기화</button>
+        </p>
+
+        <p>
+          조건 - 총금액 : 1000원 <br />
+          원하는 커피 2~3잔 선택<br />
+          선택 시 총금액에서 커피값을 뺀다<br />
+          잔액 부족 시 메세지 출력 (잔액부족)<br />
+          초기화 버튼 클릭 시 다시 시작
+        </p>
+      </div>
+
+      <style>
+        body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .self {
+          width: 600px;
+          border: 3px solid rgb(187, 187, 187);
+          border-radius: 15px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background-color: rgb(214, 228, 245);
+        }
+        .price {
+          background-color: rgb(240, 191, 218);
+          text-align: center;
+          color: white;
+          padding: 10px 0;
+          border-radius: 15px;
+        }
+
+        .btn {
+          background-color: rgb(231, 231, 231);
+          padding: 20px;
+          border-radius: 15px;
+        }
+
+        .btn button {
+          background-color: white;
+          border: none;
+          border-radius: 15px;
+          padding: 10px;
+          cursor: pointer;
+        }
+
+        .btn button:active {
+          background-color: rgb(199, 199, 199);
+          transform: scale(0.95);
+        }
+
+        .btn button:last-child {
+          background-color: rgb(215, 197, 233);
+        }
+
+        .self p:last-child {
+          white-space: pre-line;
+          text-align: left;
+          line-height: 2;
+          margin-bottom: 50px;
+        }
+      </style>
+    </article>
+
+    <script>
+      const elCoffee = document.querySelectorAll(".btn button");
+      const elPrice = document.querySelector(".price");
+      let allPrice = 1000;
+
+      /*
+      * JS 언어 특징 (숫자 + 문자열 조합)
+      -,*,/ 연산 => 문자열을 숫자로 형변환
+      + 연산 => 숫자를 문자열로 변환
+      
+      
+      */
+
+      function coffee(num, money) {
+        // 해당버튼 누른 값보다 allPrice가 작을때.
+        if (allPrice < money) {
+          alert("금액이 부족합니다.");
+          return; // 종료
+        }
+        if (num == 3) {
+          allPrice = 1000;
+        } else {
+          allPrice = allPrice - money;
+        } // 아래의 if문을 else로 처리해도 가능
+
+        elPrice.textContent = allPrice;
+      }
+
+      elCoffee.forEach(function (el, key) {
+        el.onclick = function () {
+          coffee(key, Number(el.dataset.price)); // 함수 일처리부분을 다른 함수로 뺀다.
+          // 이때, 값을 넘겨주지 않으면 위의 coffee함수에서 key와 Number(el.dataset.price)
+          // 가 없어서 연산이 불가능하다.
+          // key를 num으로, Number(el.dataset.price)을 money로 받아 함수내용을 실행했다.
+        };
+      });
+    </script>
+  </body>
+</html>

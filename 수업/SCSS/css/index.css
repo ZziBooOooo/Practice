@@ -34,4 +34,19 @@ article ul li::after {
   content: "";
   flex-grow: 1;
   border: 1px solid black;
+}
+
+.bg {
+  margin: 100px auto;
+  width: 1400px;
+}
+.bg > div {
+  display: flex;
+}
+.bg > div p {
+  width: 300px;
+  height: 200px;
+}
+.bg > div p:nth-of-type(array) {
+  background: url("../../../클론/TISSOT/image/PRX 파워매틱 ") 0 0/cover no-repeat;
 }/*# sourceMappingURL=index.css.map */
