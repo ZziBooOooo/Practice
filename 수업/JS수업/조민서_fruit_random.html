@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="box">
+      <p class="title">과일뽑기 😊</p>
+      <div class="text1">당첨 :</div>
+      <p>💗 아래 박스 중 한가지를 선택하세요 💗</p>
+      <div class="smallBox">
+        <div class="small_box1"><p class="box_p">🍉</p></div>
+        <div class="small_box2"><p class="box_p">🍋</p></div>
+        <div class="small_box3"><p class="box_p">🍍</p></div>
+        <div class="small_box4"><p class="box_p">🍏</p></div>
+        <div class="small_box5"><p class="box_p">🍑</p></div>
+      </div>
+
+      <div class="resultBox">
+        <p>🎉 당첨! 🎉</p>
+      </div>
+
+      <div class="resultBox_fail">
+        <p>꽝 👻</p>
+      </div>
+    </div>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap");
+
+      body {
+        background-color: rgb(183, 209, 175);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: "Noto Sans KR", sans-serif;
+      }
+
+      .text1 {
+        font-size: 24px;
+        font-weight: 500;
+      }
+
+      .resultBox {
+        background-color: rgba(82, 82, 82, 0.671);
+        width: 50%;
+        height: 40%;
+        border-radius: 15px;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        color: white;
+        font-weight: bold;
+        opacity: 0;
+        transition: 1s;
+        font-size: 30px;
+      }
+
+      .resultBox_fail {
+        background-color: rgba(82, 82, 82, 0.671);
+        width: 50%;
+        height: 40%;
+        border-radius: 15px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        color: white;
+        font-weight: bold;
+        opacity: 0;
+        flex-direction: column;
+        transition: 1s;
+        font-size: 30px;
+      }
+
+      .active {
+        opacity: 1;
+        z-index: 3;
+      }
+
+      .active_fail {
+        opacity: 1;
+        z-index: 3;
+      }
+
+      .box {
+        position: relative;
+        width: 60%;
+        height: 500px;
+        background-color: rgb(240, 240, 240);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        padding: 30px;
+      }
+
+      .smallBox {
+        /* background-color: gray; */
+        width: 90%;
+        height: 70%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1;
+      }
+
+      .smallBox div {
+        width: 150px;
+        height: 150px;
+        background-color: rgb(224, 190, 210);
+        border-radius: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.5s;
+      }
+
+      .smallBox div:nth-of-type(even) {
+        background-color: rgb(236, 202, 106);
+      }
+
+      .smallBox div:hover {
+        transform: scale(1.05);
+      }
+      .box_p {
+        opacity: 0;
+        font-size: 20px;
+      }
+
+      .hide {
+        opacity: 1;
+      }
+
+      .title {
+        background-color: rgb(223, 223, 223);
+        width: 25%;
+        border: 8px;
+        /* border: 2px solid rgb(255, 255, 255); */
+        border-radius: 16px;
+        padding: 15px 30px;
+        font-size: 36px;
+        cursor: pointer;
+        transition: 0.3s;
+        font-weight: bold;
+        color: rgb(54, 54, 54);
+        margin-bottom: 20px;
+        text-align: center;
+      }
+    </style>
+
+    <script>
+      const fruitarray = ["🍉", "🍋", "🍍", "🍏", "🍑"];
+      const textdiv = document.querySelector(".text1");
+      const buttonbox = document.querySelectorAll(".smallBox div p");
+      const resultBox = document.querySelector(".resultBox");
+      const resultBoxFail = document.querySelector(".resultBox_fail");
+
+      function shuffleArray(array) {
+        array.sort(() => Math.random() - 0.5);
+      }
+
+      function pHide(p_tag, key) {
+        p_tag.classList.toggle("hide");
+      }
+
+      function init(a, key) {
+        a.addEventListener("click", () => {
+          if (a.textContent == currentFruit) {
+            resultBox.classList.toggle("active");
+            resultBox.innerHTML += `${a.textContent}을 맞췄습니다`;
+            buttonbox.forEach(function (p_tag, key) {
+              pHide(p_tag, key);
+            });
+          } else {
+            buttonbox.forEach(function (p_tag, key) {
+              pHide(p_tag, key);
+            });
+
+            resultBoxFail.classList.toggle("active_fail");
+            resultBoxFail.innerHTML += `당신의 선택은 ${a.textContent}`;
+          }
+        });
+      }
+
+      let randomNum = Math.floor(Math.random() * fruitarray.length);
+      let currentFruit = fruitarray[randomNum];
+
+      shuffleArray(fruitarray);
+      textdiv.textContent += ` ${currentFruit}`;
+
+      buttonbox.forEach((a, key) => {
+        a.textContent = fruitarray[key];
+        init(a, key);
+      });
+    </script>
+  </body>
+</html>

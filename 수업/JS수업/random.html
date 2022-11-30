@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+      ** 소수점관련 함수
+      Math.ceil()
+      Math.round()
+      Math.floor()
+
+      */
+
+      /* console.log(ranFun(100)); */
+
+      let data = [
+        {
+          src: "./img/1.png",
+        },
+        {
+          src: "./img/2.png",
+        },
+        {
+          src: "./img/3.png",
+        },
+        {
+          src: "./img/4.png",
+        },
+        {
+          src: "./img/5.png",
+        },
+        {
+          src: "./img/6.png",
+        },
+        {
+          src: "./img/7.png",
+        },
+        {
+          src: "./img/8.png",
+        },
+        {
+          src: "./img/9.png",
+        },
+        {
+          src: "./img/10.png",
+        },
+      ];
+
+      /* console.log(data[0].src); */
+
+      function ranFun(n) {
+        return Math.ceil(Math.random() * n);
+      }
+
+      let imgURL = ranFun(10) - 1;
+      let inter;
+
+      let elImg = document.createElement("img");
+      elImg.src = data[imgURL].src;
+      document.body.prepend(elImg);
+
+      const elPhoto = document.querySelector("img");
+      clearTimeout(inter); // inter가 실행되었다가 사라짐 반복 -> 마우스올릴때마다 시간차 적용가능
+      elPhoto.onmouseover = function () {
+        inter = setTimeout(() => {
+          let imgURL2 = ranFun(10) - 1;
+          elPhoto.src = data[imgURL2].src;
+        }, 200);
+      };
+
+      // .prepend는 앞쪽으로 추가
+
+      /* let ranNum = Math.ceil(Math.random() * 10);
+      console.log(ranNum);
+
+      console.log(data[`${ranNum - 1}`].src);
+      elImg.src = data[`${ranNum - 1}`].src; */
+    </script>
+  </body>
+</html>
