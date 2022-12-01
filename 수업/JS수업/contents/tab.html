@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <article>
+      <h2>block, none</h2>
+      <button id="ex_btn">버튼</button>
+      <div
+        id="ex_con"
+        class="on"
+        style="padding: 60px; border: 2px solid black"
+      >
+        contents
+      </div>
+    </article>
+
+    <script>
+      // id로는 쿼리셀렉터 없이 바로 사용가능
+      ex_btn.onclick = function () {
+        if (ex_btn.classList.contains("on")) {
+          ex_btn.classList.toggle("on");
+          ex_con.style = "padding: 60px; border: 2px solid black display:none;";
+        } else {
+          ex_con.style = ex_btn.classList.toggle("on");
+          ("padding: 60px; border: 2px solid black display:block;");
+        }
+      };
+    </script>
+  </body>
+</html>

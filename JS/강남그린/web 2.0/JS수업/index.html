@@ -26,12 +26,17 @@
       console.log(str1.indexOf("a", 2)); // 2번째 a의 index값 반환
 
       let str2 = "typescript";
+      let arry = [10, 20, 30, 40, 50, 60, 70, 80];
       console.log(str2.replace("t", "j"), str2.split("s")); // split은 배열로 반환
       console.log(str2.split("s")[0]);
       console.log(str2.slice(4));
       console.log(str2.slice(4, 5));
       console.log(str2.toUpperCase());
       console.log(str2.match("t")); // 여러개면 배열로 반환 < ?
+
+      console.log(arry);
+      console.log(arry.splice(4, 1, 100)); // index, length, value
+      console.log(arry); // 원본의 데이터가 변경됨
     </script>
   </body>
 </html>

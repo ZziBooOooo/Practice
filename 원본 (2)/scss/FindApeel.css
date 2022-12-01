@@ -454,7 +454,7 @@ main {
   width: 100%;
   background-color: #faf3e6;
   padding: 5% 10%;
-  height: 95vh;
+  height: 120vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -546,7 +546,7 @@ main {
 }
 .main4 .main4_secondBox {
   background-color: #ffd550;
-  height: 65%;
+  height: 50vh;
   border-radius: 18px;
   display: flex;
   flex-direction: column;

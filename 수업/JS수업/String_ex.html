@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .str img {
+        width: 300px;
+      }
+    </style>
+    <div class="str">
+      <img src="./img/1.png" alt="" />
+    </div>
+
+    <script>
+      /* .getAttribute - 요소의 '속성값'을 가져오는 메서드 */
+      const elStr = document.querySelector(".str img");
+      let imgUrl = elStr.getAttribute("src");
+      console.log(imgUrl);
+      let reUrl = imgUrl.replace("1", "2"); // 문자만 변경, DOM적용 전
+      //   elStr.src = reUrl;
+      elStr.setAttribute("src", reUrl);
+
+      /*  console.log(elStr.src); // 브라우저가 인지하고 있는 이미지의 주소
+       console.log(elStr.getAttribute("src")); // 문서에 저장된 이미지의 주소
+
+       * 수정방법
+       elStr.src='변경내용'
+       elStr.setAttribute('src','2.png') */
+
+      /*
+       * 문자 구간 선택
+       이미지의 이름이 단순히 숫자로만 되어있지 않다.
+       */
+
+      console.log(imgUrl.lastIndexOf("/"));
+      console.log(imgUrl.lastIndexOf("."));
+
+      let imgUrl2 = elStr.getAttribute("src");
+
+      let sIdx = imgUrl.lastIndexOf("/");
+      let eIdx = imgUrl.lastIndexOf(".");
+      let c = imgUrl.slice(sIdx + 1, eIdx);
+      let c2 = imgUrl2.slice(sIdx + 1, eIdx);
+
+      let reUrl2 = imgUrl2.replace("c2", "3");
+      console.log(reUrl2);
+      elStr.setAttribute("src", reUrl2);
+      console.log(c2);
+
+      /*
+       * 브라우저 URL값
+       loaction
+
+      location.href(전체주소);
+      location.hash(해시문자);
+      location.pathname(도메인제외문자); */
+
+      let url = location.href;
+      console.log(url);
+
+      let sIdx2 = url.lastIndexOf("/");
+      console.log(sIdx2);
+      console.log(url.substr(sIdx2 + 1));
+    </script>
+  </body>
+</html>
