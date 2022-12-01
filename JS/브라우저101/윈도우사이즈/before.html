@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="background-color: rgb(186, 221, 246);
+                font-size: 24px;
+                font-weight: bold;">
+        <div>
+            window.screen :
+            <span class="screen">
+            </span> 
+        </div>
+        <div>
+            window.outer :
+            <span class="outer">
+            </span> 
+        </div>
+        <div>
+            window.inner : 
+            <span class="inner">
+            </span> 
+        </div>
+        <div>
+            documentElement.clientWidth :
+            <span class="clinetWidth">
+            </span> 
+        </div>  
+    </div>
+    <script>
+
+        function screenSize(){
+            let screenValue=document.querySelector('.screen');
+            let outerValue=document.querySelector('.outer');
+            let innerValue=document.querySelector('.inner');
+            let clinetWidthValue=document.querySelector('.clinetWidth');
+
+            screenValue.innerText = `${window.screen.width} , ${window.screen.height}` 
+
+            outerValue.innerText = `${window.outerWidth} , ${window.outerHeight}` 
+
+            innerValue.innerText = `${window.innerWidth} , ${window.innerHeight}` 
+
+            clinetWidthValue.innerText = `${document.documentElement.clientWidth} , ${document.documentElement.clientHeight}` 
+            
+        }
+        window.addEventListener('resize',screenSize);
+        
+    </script>
+    
+</body>
+</html>

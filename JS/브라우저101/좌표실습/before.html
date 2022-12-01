@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            background-color: rgb(24, 24, 24);
+        }
+        .square{
+            width: 150px;
+            height: 150px;
+            background-color: rgb(255, 70, 190);
+            margin-bottom: 3px;
+            border-radius: 5px;
+        }
+        .special{
+            background-color:rgb(92, 201, 255);
+        }
+
+        .buttons{
+            position: fixed;
+            top: 8px;
+            right: 8px;
+        }
+    
+        .btn{
+            
+            width: 150px;
+            height: 25px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="square a"></div>
+    <div class="square b"></div>
+    <div class="square c"></div>
+    <div class="square d"></div>
+    <div class="square e"></div>
+    <div class="square special"></div>
+    <div class="square g"></div>
+    <div class="square h"></div>
+
+
+    <div class="buttons">
+        <button class="btn scrollBy">Scroll by 100px</button>
+        <button class="btn scrollTo">Scroll to 100px</button>
+        <button class="btn scrollInto">Scroll into special</button>
+    </div>
+
+    <script>
+        /*
+        이벤트 종류에 DOMContentLoaded와 defer, load의 차이점
+        앞의 2개는 html만 완료되면 호출이된다
+        load는 이미지, 폰트 등의 리소스까지 완료되어야 호출된다
+        
+        */
+    const btnBy = document.querySelector('.scrollBy');
+    const btnTo = document.querySelector('.scrollTo');
+    const btnInto = document.querySelector('.scrollInto');
+    const special = document.querySelector('.special');
+
+    btnBy.addEventListener('click', () => {
+        window.scrollBy(0,100);
+    })
+
+    btnTo.addEventListener('click', () => {
+        window.scrollTo(0,100);
+    })
+
+    btnInto.addEventListener('click', () => {
+        /* 
+        let target = special.getBoundingClientRect(); 
+        window.scrollTo(0,target.top) */
+
+        special.scrollIntoView(); // solution
+    })
+
+    </script>
+</body>
+</html>

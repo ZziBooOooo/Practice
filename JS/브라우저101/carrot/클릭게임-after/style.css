@@ -1,0 +1,115 @@
+button {
+  /* 거의 공통적으로 들어가는 애들은 이렇게 미리 하는것이 좋은!*/
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+body {
+  text-align: center;
+}
+.game {
+  margin: auto; /* 게임,팝업을 중간으로 배치하기 위함*/
+  display: flex; /* 팝업까지 game-field가 넘어가지 않도록*/
+  flex-direction: column;
+  width: 800px;
+  height: 500px;
+  background: url(img/background.png) center/cover;
+  border-radius: 20px;
+}
+
+.game_header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+.game_button {
+  width: 60px;
+  height: 60px;
+  background-color: wheat;
+  border: 4px solid black;
+  font-size: 24px;
+  transition: transform 300ms ease-in;
+}
+.fa-stop {
+  display: none;
+}
+.game_timer {
+  padding: 4px;
+  width: 100px;
+  background-color: white;
+  text-align: center;
+  border: 5px solid black;
+  font-size: 32px;
+  margin-top: 8px;
+  border-radius: 20px;
+  line-height: 100%;
+  visibility: hidden;
+  user-select: none;
+  cursor: auto;
+}
+.game_score {
+  width: 50px;
+  height: 50px;
+  margin-top: 8px;
+  font-size: 46px;
+  background-color: darksalmon;
+  color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100%;
+  border: 3px solid black;
+  visibility: hidden;
+  user-select: none;
+  cursor: auto;
+}
+
+.game_button:hover {
+  transform: scale(1.1);
+}
+
+.game_field {
+  width: 100%;
+  height: 100%;
+  margin-top: 40px;
+  position: relative;
+}
+
+.pop-up {
+  margin: auto; /* 게임,팝업을 중간으로 배치하기 위함*/
+  width: 400px;
+  height: 140px;
+  padding: 20px;
+  background-color: #00000090;
+  border-radius: 20px;
+
+  color: white;
+  text-align: center;
+  transform: translateY(-150%); /* 팝업의 위치를 변경 */
+}
+
+.pop-up-hide {
+  display: none;
+}
+
+.pop-up_refresh {
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  background-color: wheat;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+.pop-up_message {
+  display: block; /* 그 다음줄에 나오게 하기 위해서 */
+  font-size: 38px;
+}
+.carrot,
+.bug {
+  transition: transform 100ms ease-in;
+}
+
+.carrot:hover,
+.bug:hover {
+  transform: scale(1.1);
+}

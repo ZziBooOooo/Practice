@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll</title>
+    <style>
+        body{
+            background-color: black;
+            text-align: center;
+        }
+
+        img{
+            display: block;
+            margin: auto;
+        }
+        button{
+            outline: none;
+            background-color: tomato;
+            color: whitesmoke;
+            font-size: 26px;
+            margin: 16px 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- button과 img는 인라인블럭이다. -->
+    <button>Find a rabbit </button>
+    <img src="img/carrot.png" alt="carrot">
+    <img src="img/carrot.png" alt="carrot">
+    <img src="img/carrot.png" alt="carrot">
+    <img src="img/carrot.png" alt="carrot">
+    <img src="img/carrot.png" alt="carrot">
+    <img src="img/carrot.png" alt="carrot">
+    <img id="rabbit" src="img/rabbit.png" alt="rabbit">
+    <img src="img/carrot.png" alt="carrot">
+    <img src="img/carrot.png" alt="carrot">
+    <img src="img/carrot.png" alt="carrot">
+    <img src="img/carrot.png" alt="carrot">
+
+    <script>
+        const button = document.querySelector('button'); // 클래스명이아닌 태그선택자 시용 
+        const rabbit = document.querySelector('#rabbit');
+        button.addEventListener('click', () => {
+            rabbit.scrollIntoView({
+                behavior:'smooth',
+                block:'center'});
+        })
+
+    </script>
+</body>
+</html>

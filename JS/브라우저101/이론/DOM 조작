@@ -1,0 +1,26 @@
+* querySelector
+
+* createElement
+
+* setAttribute
+
+* textContent
+
+* appendChild
+
+* insertBefore
+
+* innerHTML
+
+* removeChild
+
+* textContent innerHTML 차이점
+- 이때 innerText는 익스플로어에 특화되어 개발된 api로 사용안하는게 좋음
+- textContent 문자열의 데이터만 읽어옴 (문자열 그 자체만)
+  최상위 부모컨테이너에서 설정하면 안에 들어있던 모든 자식 요소들의 노드가 삭제되니까
+  제일 말단의 텍스트나 인풋같은 요소들에서 쓰는게 좋음
+
+- innerHTML은 요소 안에 있는 모든 태그들을 문자열 형태로 읽어오는 것
+  보안문제가 있음 
+  동적으로 프로그래밍 요소들을 제어할 때 유용하지만 사용자에게서 텍스트 인풋을 받아올때는 절대 쓰면 안됨
+  해커가 자바스크립트코드가 포함된 html태그들을 넣을 수 있기 때문

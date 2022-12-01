@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        div에는 굳이 class를 적지않아도 됐었다..
+        그냥 div 자체에 스타일 적용하면 되는겅 ㅠ
+        */
+        body{
+            background-color: rgb(24, 24, 24);
+        }
+        .square{
+            width: 150px;
+            height: 150px;
+            background-color: rgb(255, 70, 190);
+            margin-bottom: 3px;
+            border-radius: 5px;
+        }
+        .f{
+            background-color:rgb(92, 201, 255);
+        }
+        .content{
+            display: flex;
+            width: 100%;
+            padding: 0;
+        }
+        .all{
+            width: 300px;
+            margin: 0;
+        }
+        .buttons{
+            position: fixed;
+            top: 8px;
+            right: 8px;
+        }
+    
+        .btn{
+            
+            width: 150px;
+            height: 25px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+    <div class="all">
+    <div class="square a"></div>
+    <div class="square b"></div>
+    <div class="square c"></div>
+    <div class="square d"></div>
+    <div class="square e"></div>
+    <div class="square f"></div>
+    <div class="square g"></div>
+    <div class="square h"></div>
+    </div>
+
+    <div class="buttons">
+        <button class="btn scrollBy">Scroll by 100px</button>
+        <button class="btn scrollTo">Scroll to 100px</button>
+        <button class="btn scrollInto">Scroll into special</button>
+    </div>
+</div>
+    <script>
+        // screen은 모니터화면을 기준으로
+        // page는 전체 문서를 기준으로
+        // JS는 왼쪽상단이 기준, css는 오른쪽 하단이 기준
+
+        // getBoundingClientRect : 요소의 기본 정보를
+        // 반환해주는  메서드이다.
+
+        // printxy 안만들고 화살표함수로 바로 작성해도 됐었따.
+
+
+    let target = document.querySelector('.f');
+
+    function printxy(event){
+        const rect = target.getBoundingClientRect(); 
+        console.log(rect);
+        console.log(`clinet X : ${event.clientX} \nclinet Y : ${event.clientY}`);
+        console.log(`page X : ${event.pageX} \npage Y : ${event.pageY}`);
+    }
+
+    target.addEventListener('click',printxy); 
+
+
+    </script>
+</body>
+</html>

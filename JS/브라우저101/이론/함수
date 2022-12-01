@@ -1,0 +1,11 @@
+function add(num1, num2) {
+    return num1 + num2;
+}
+
+/* 
+    함수도 object중에 하나이다.
+    함수를 선언하면 메모리에는 코드블럭 안의 내용이 저장되고
+    add라는 메모리에 함수를 가리키는 레퍼런스가 저장된다. (오브젝트랑 같음)
+*/
+
+const doSomething = add; // doSomething 이라는 메모리에 add를 가리키고있는 레퍼런스가 저장 

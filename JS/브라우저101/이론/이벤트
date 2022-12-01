@@ -1,0 +1,47 @@
+** 메소드 
+stopPropagation & stopImmediatePropogation 웬만하면 절대 쓰지마라!
+
+outer.addEventListener('click', event => {
+    if (event.target !== event.currentTarget) {
+        return;
+    }
+}) // 이런식으로 부모의 요소의 이벤트는 포함시키지 않을 수 있다. (강의에서 소스코드 다운)
+
+** 브라우저의 행동취소 => preventDefault();
+그런데 이것을 쓰면 unable preventDefault 에러가 뜨는 경우가 있다. ex) 이벤트리스너에서 'wheel'
+이것은 passive event listener이기 때문!
+
+그래도 쓰고싶다면 addEventListener에서 옵션을 추가할 수 있다.
+passive를 true로하면 passive로 등록이 되는것 
+(passive가 true이면 브라우저한테 너의기능을 취소하는 일은 절대 없다라고 말해주는것)
+따라서, passive가 true일때 preventDefault를 쓰게되면 사용자가 에러를 보게 되는 것!
+
+그런데~~~ passive true인 아이를 굳이 false로 만드는 것은 좋지않다!
+
+
+** 이벤트 위임
+1. div에 이벤트리스너 등록
+2. div안의 버튼(5개)에 이벤트리스너 등록
+3. 버튼 클릭 시 버튼에 등록된 이벤트 콜백함수 실행
+4. div에 등록된 이벤트 콜백함수도 실행됨 
+>> div에 이벤트를 일어나게 한것이 아닌데 이벤트 콜백함수가 실행된것은
+   자식요소에 이벤트가 발생하면 부모에게도 등록된 콜백함수가 실행된다. ( 이벤트 버블링 )
+
+위의 이론을 바탕으로 이벤트 위임을 구현할 수 있다.
+버튼 5개에 모두 이벤트리스너를 등록하지 않아도
+부모인 div에만 이벤트리스너를 등록하면 div안의 버튼을 클릭해도 부모에게 등록된 이벤트가 발생한다.
+
+이때, 문제가 있다.
+div안에는 버튼말고도 여백공간이 있다. 이때, 여백공간을 클릭하면 여백공간 역시 div이므로
+이벤트함수가 실행될것이다. (우리는 버튼 누를때만 함수를 실행하고 싶음)
+따라서, event.target.tagName을 이용해서 현재 클릭된 요소가 버튼일때만 처리해주면 된다!!!
+
+
+** 이벤트
+keypress >> 이벤트 더이상 사용하지 않음 !
+beforeinput이나 keydown
+
+keydown은 사용자가 누르는 즉시
+keyup은 사용자가 눌렀다 떼는 즉시 >> 둘의 차이 더 정확히 알아두기
+
+event.isCopmposing

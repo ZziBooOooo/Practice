@@ -1,0 +1,135 @@
+body{
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(225, 224, 220);
+
+}
+
+.listBox{
+    width: 300px;
+    height: 530px;
+    padding: 16px;
+    background-color: rgb(241, 241, 241);
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    
+}
+
+.titleBox{
+    display: flex;
+    justify-content: center;
+}
+
+.title{
+    font-size: 22px;
+    font-weight: bold;
+    color: rgb(57, 57, 57);
+}
+.mainBox{
+    height: 380px;
+    margin: 0 16px;
+    padding-top: 16px;
+    margin-top: 16px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    overflow: auto;
+}
+.mainBox::-webkit-scrollbar{
+    width: 10px;
+}
+.mainBox::-webkit-scrollbar-thumb {
+    background-color: rgb(134, 134, 134);
+    border-radius: 10px;
+    background-clip: padding-box;
+   
+  }
+  .mainBox::-webkit-scrollbar-track {
+    background-color: rgb(249, 249, 249);
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 5px white;
+}
+.inputBox{
+    height: 30px;
+    background-color: rgb(225, 213, 195);
+    margin: 0 16px;
+    border-radius: 4px;
+}
+.inputText{
+    width: 100%;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+}
+.inputText:focus{
+    outline: none;
+}
+.addBox{
+    display: flex;
+    justify-content: center;
+}
+.add{
+    margin: 16px;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    font-size: 32px;
+    color: rgb(57, 57, 57);
+    background-color: rgb(203, 203, 203);
+    border-radius: 50%;
+    border: 0;
+    cursor: pointer;
+    text-align: center;
+}
+
+.add:hover{
+    transform: scale(1.2, 1.2);
+    transition-duration: 0.3s;
+}
+
+.listdiv{
+    font-size: 16px;
+    padding:  0 16px;
+    padding-bottom: 10px;
+    position: relative;
+    font-weight: bold;
+    color: rgb(57, 57, 57);
+}
+
+.listdiv {
+    animation: 1s anim-lineUp ease-out ;
+  }
+  @keyframes anim-lineUp {
+    0% {
+      opacity: 0;
+      transform: translateY(80%);
+    }
+    20% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+
+.deletebtn{
+    position: absolute;
+    right: 16px;
+    background-color:transparent;
+    border: none;
+    color: rgb(148, 148, 148);
+    font-weight: bold;
+}
+.deletebtn:hover{
+    transform: scale(1.2, 1.2);
+    transition-duration: 0.3s;
+    color: rgb(62, 62, 62);
+}

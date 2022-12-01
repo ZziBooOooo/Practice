@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tag{
+            display: inline-block;
+            background-color: rgb(243, 227, 147);
+            padding: 16px;
+            margin-top: 16px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tag">Window Size</div>
+    <script>
+    const tagContent = document.querySelector('.tag');
+
+    function updateWindowSize(){
+        tagContent.innerHTML = `
+    window Size = ${window.screen.width} , ${window.screen.height} <br>
+    window Outer = ${window.outerWidth} , ${window.outerHeight} <br>
+    window Inner = ${window.innerWidth} , ${window.innerHeight} <br>
+    documentElement clientWidth = ${document.documentElement.clientWidth} , ${document.documentElement.clientHeight}  
+    `;
+    }
+
+    window.addEventListener('resize', () => {
+        /* 원래 여기에 코드를 작성했었는데 그러면 처음 브라우저 실행했을 때 아무것도 나오지않는다.(resize가 되어야만 실행되므로.) 따라서, 아래에 같은 내용을 한번 더 작성하기 보다는 updateWindowSize함수를 만들어 사용하는 것이 효율적이다.
+        */
+
+        updateWindowSize();
+    })
+
+    updateWindowSize();
+
+
+    </script>
+</body>
+</html>

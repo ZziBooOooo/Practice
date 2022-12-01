@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catch Carrot!</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/497450481c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="status_box">
+        <button class="startBtn">
+          <i class="fa fa-play"></i>
+        </button>
+        <span class="timer">00:10</span>
+        <span class="left_carrot">10</span>
+      </div>
+      <div class="imgBox"></div>
+
+      <div class="retryBox retryBox_toggle">
+        <button class="retry">
+          <i class="fa fa-rotate-left"></i>
+        </button>
+        <span class="retryText"> Try Again💀 </span>
+      </div>
+
+      <div class="winBox winBox_toggle">
+        <button class="retry_win">
+          <i class="fa fa-rotate-left"></i>
+        </button>
+        <span class="winText">You Win✨</span>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!-- 솔루션에서는 시맨틱태그 이용
+     내가 main div안에 모든 요소들을 다 넣은 것과 달리
+     게임섹션/팝업섹션으로 나눠서 작성했다.
+-->
