@@ -7,29 +7,132 @@
     <title>Document</title>
   </head>
   <body>
-    <article>
+    <!-- <article>
       <h2>block, none</h2>
-      <button id="ex_btn">버튼</button>
-      <div
-        id="ex_con"
-        class="on"
-        style="padding: 60px; border: 2px solid black"
-      >
-        contents
+      <button id="ex_btn">보기</button>
+      <div id="ex_con">contents</div>
+
+      <style>
+        #ex_con {
+          padding: 60px;
+          border: 2px solid black;
+          display: none;
+        }
+        #ex_con.on {
+          padding: 60px;
+          border: 2px solid black;
+          display: block;
+        }
+      </style>
+    </article> -->
+
+    <!--  <script>
+      // id로는 쿼리셀렉터 없이 바로 사용가능
+
+      ex_btn.onclick = function () {
+        /* let blean = ex_btn.classList.contains("on");
+        if (blean) {
+          ex_con.classList.toggle("on");
+        } else {
+          ex_con.classList.toggle("on");
+        } */
+
+        let blean = ex_con.classList.contains("on");
+        if (blean) {
+          ex_btn.textContent = "닫기";
+        } else {
+          ex_btn.textContent = "보기";
+        }
+        ex_con.classList.toggle("on");
+      };
+    </script> -->
+
+    <article class="tab">
+      <div class="btns">
+        <button>tab01</button>
+        <button>tab02</button>
+        <button>tab03</button>
+      </div>
+
+      <div class="content">
+        <div>content 01</div>
+        <div>content 02</div>
+        <div>content 03</div>
       </div>
     </article>
 
+    <style>
+      .tab {
+        margin: 200px auto;
+        background-color: rgb(177, 214, 211);
+        border-radius: 20px;
+        width: 500px;
+      }
+
+      .tab button {
+      }
+
+      .tab button.on {
+        background-color: rgb(204, 204, 204);
+        color: white;
+        border-radius: 8px;
+      }
+
+      .tab .content {
+        min-height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .tab .content > div {
+        font-size: 2rem;
+        height: 200px;
+        background-color: rgb(234, 242, 248);
+        border-radius: 10px;
+        margin: 10px;
+        text-align: center;
+        display: none;
+      }
+
+      .tab .content > div.on {
+        display: block;
+      }
+    </style>
     <script>
-      // id로는 쿼리셀렉터 없이 바로 사용가능
-      ex_btn.onclick = function () {
-        if (ex_btn.classList.contains("on")) {
-          ex_btn.classList.toggle("on");
-          ex_con.style = "padding: 60px; border: 2px solid black display:none;";
-        } else {
-          ex_con.style = ex_btn.classList.toggle("on");
-          ("padding: 60px; border: 2px solid black display:block;");
-        }
-      };
+      const btns = document.querySelectorAll(".btns button");
+      const elContent = document.querySelectorAll(".content div");
+      console.log(btns);
+      console.log(elContent);
+      let idx = 0;
+
+      btns.forEach((btn, key) => {
+        btn.onclick = () => {
+          // 먼저 버튼에 클래스 모두 삭제
+          /* btns.forEach(function (v, n) {
+            btns[n].classList.remove("on");
+            elContent[n].classList.remove("on");
+          }); */
+          console.log(key);
+          console.log(idx);
+
+          btns[idx].classList.remove("on");
+          elContent[idx].classList.remove("on");
+
+          // 왜 remove위에 하면 안될까!?
+          // -> 처음에는 remove할게 없어서 위에가 실행이 안됨
+          // -> 이후에 클릭한 후 그 때의 key값이 index로 들어가서
+          // -> 그때 이전 선택했던 버튼의 클래스가 지워지는 것.
+
+          // 이후에 클릭한 버튼에만 클래스 추가
+          btns[key].classList.add("on");
+          elContent[key].classList.add("on");
+
+          console.log(key);
+          console.log(idx);
+          idx = key;
+        };
+      });
     </script>
   </body>
 </html>
