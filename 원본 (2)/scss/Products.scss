@@ -115,7 +115,7 @@ body {
     z-index: -1;
   }
   .storeText {
-    width: 110px;
+    width: 85px;
     position: absolute;
     bottom: 5%;
 
@@ -193,7 +193,7 @@ body {
     width: 50%;
     height: 100vh;
     background-color: #97c74b;
-    padding: 3% 10%;
+    padding: 3% 5%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -270,7 +270,7 @@ body {
   display: flex;
   align-items: center;
   background-color: #fce8bd;
-  padding: 10%;
+  padding: 10% 5%;
   position: relative;
   z-index: 99;
   display: flex;
@@ -642,6 +642,307 @@ body {
       }
       span {
         animation: slideup 0.8s forwards;
+      }
+    }
+  }
+}
+@import "_media";
+
+@include tablet {
+  /*브라우저 사이즈1023px이하일때*/
+
+  html {
+    overflow-x: hidden;
+  }
+
+  .header_desktop {
+    font-size: 14px;
+    .left {
+      width: 30%;
+    }
+    .middle {
+      width: 20%;
+    }
+    .right {
+      width: 35%;
+
+      button {
+        width: 100px;
+
+        span {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .background {
+    height: 50vh;
+    .mainTitle {
+      font-size: 86px;
+    }
+  }
+
+  .main2 {
+    height: 65vh;
+    .main2_imageBox {
+      height: 65vh;
+    }
+    .main2_textBox {
+      height: 65vh;
+      p:nth-of-type(1) {
+        font-size: 18px;
+      }
+      p:nth-of-type(2) {
+        font-size: 40px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .main3 {
+    height: 65vh;
+    .main3_textBox {
+      height: 65vh;
+      p {
+        font-size: 18px;
+      }
+      .main3_textBox_bottom {
+        p {
+          font-size: 40px;
+          font-weight: 600;
+        }
+      }
+    }
+    .main3_imageBox {
+      height: 65vh;
+    }
+  }
+
+  .Main_4 {
+    flex-direction: column;
+    .Main_4_textBox {
+      height: 30%;
+      .Main4_text_1 {
+        font-size: 60px;
+      }
+    }
+
+    .slider {
+      margin-top: 80px;
+      height: 60%;
+      z-index: 99;
+      // width: 100vw;
+    }
+  }
+
+  .main5 {
+    height: 110vh;
+    padding-top: 10%;
+    justify-content: flex-start;
+    .main5_imgBox {
+      height: 40vh;
+    }
+    .main5_textBox {
+      .main5_text1 {
+        width: 40%;
+        font-size: 40px;
+      }
+    }
+    .main5_text2_box {
+      p {
+        font-size: 18px;
+        line-height: 1.3;
+      }
+      a {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .main6_secondBox {
+    height: 30vh;
+    .main6_contentBox {
+      p:nth-of-type(1) {
+        font-size: 45px;
+      }
+      p:nth-of-type(2) {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+      button {
+        width: 110px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  body {
+    background-image: url("../images/backgrounds/mobile_products.jpg");
+  }
+
+  main {
+    .background {
+      height: 58vh;
+
+      .mainTitle {
+        font-size: 50px;
+      }
+    }
+
+    .main2 {
+      height: 60vh;
+      flex-direction: column;
+      .main2_imageBox {
+        width: 100%;
+        height: 40vh;
+      }
+      .main2_textBox {
+        width: 100%;
+        height: 25vh;
+        padding: 5%;
+        p:nth-of-type(1) {
+          font-size: 16px;
+        }
+        p:nth-of-type(2) {
+          font-size: 36px;
+        }
+      }
+    }
+
+    .main3 {
+      height: 60vh;
+      flex-direction: column;
+      .main3_textBox {
+        width: 100%;
+        height: 30vh;
+        order: 2;
+        padding: 5%;
+        p {
+          font-size: 16px;
+        }
+
+        .main3_textBox_bottom {
+          p {
+            font-size: 36px;
+          }
+          a {
+            font-size: 14px;
+            svg {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+      }
+      .main3_imageBox {
+        width: 100%;
+        height: 40vh;
+      }
+    }
+
+    .Main_4 {
+      padding: 3% 5%;
+      height: 60vh;
+      flex-direction: column;
+      .Main_4_textBox {
+        height: 25%;
+
+        .Main4_text_1 {
+          font-size: 36px;
+        }
+      }
+
+      .slider {
+        height: 35vh;
+        width: 85vw;
+        margin: 10% 0 5% 0;
+        .slide {
+          .slideText {
+            p:nth-of-type(1) {
+              font-size: 36px;
+            }
+
+            p:nth-of-type(1):before {
+              z-index: -2;
+              height: 35px;
+            }
+
+            p:nth-of-type(2) {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+
+      svg {
+        z-index: -1;
+      }
+    }
+
+    .main5 {
+      height: 100vh;
+      justify-content: flex-start;
+      padding: 10% 5%;
+      .main5_imgBox {
+        height: 30vh;
+        margin-bottom: 30px;
+      }
+
+      .main5_textBox {
+        flex-direction: column;
+        margin-bottom: 70px;
+        .main5_text1 {
+          font-size: 32px;
+          margin-bottom: 15px;
+          font-weight: 600;
+        }
+        .main5_text2_box {
+          p {
+            font-size: 18px;
+            line-height: 1.2;
+            margin-bottom: 12px;
+          }
+          a {
+            span {
+              font-size: 14px;
+            }
+            svg {
+              width: 20px;
+              height: 20px;
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+    }
+    .main6_secondBox {
+      height: 50vh;
+    }
+    .main6_contentBox {
+      p:nth-of-type(1) {
+        font-size: 36px;
+        text-align: center;
+      }
+      p:nth-of-type(2) {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+      button {
+        width: 120px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        justify-content: center;
       }
     }
   }

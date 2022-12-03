@@ -95,6 +95,33 @@ header {
   align-items: center;
   width: 25%;
 
+  .mobile_btn {
+    background-color: transparent;
+    width: 30px;
+    height: 50px;
+    position: relative;
+    display: none;
+
+    .menu1span_1 {
+      display: block;
+      width: 30px;
+      height: 2.5px;
+      background-color: #154726;
+      position: absolute;
+      right: 15%;
+      top: 40%;
+    }
+    .menu2span_2 {
+      display: block;
+      width: 30px;
+      height: 2.5px;
+      background-color: #154726;
+      position: absolute;
+      right: 15%;
+      top: 60%;
+    }
+  }
+
   button {
     border: none;
     color: $sub-color;
@@ -394,5 +421,186 @@ footer {
   p {
     font-size: 14px;
     color: #93a08d;
+  }
+}
+
+@import "_media";
+
+@include mobile {
+  .menuBtn {
+    display: none;
+  }
+  header {
+    margin-top: 30px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+  .header_desktop {
+    // margin-top: 30px;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+    .left {
+      display: none;
+    }
+    .right {
+      // display: none;
+      width: 50px;
+
+      p {
+        display: none;
+      }
+
+      & button:nth-of-type(1) {
+        display: none;
+      }
+
+      .mobile_btn {
+        display: block;
+        width: 100px;
+      }
+    }
+    .middle {
+      margin: 0;
+    }
+  }
+
+  .footer1 {
+    flex-direction: column;
+    width: 100%;
+    padding: 3% 10%;
+    margin-bottom: 50px;
+
+    .footer1_firstBox {
+      width: 100%;
+      margin-bottom: 45px;
+    }
+
+    .footer1_secondBox {
+      width: 100%;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      a {
+        margin-bottom: 12px;
+      }
+    }
+    .footer1_thirdBox {
+      width: 100%;
+      font-size: 16px;
+      a {
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  .footer2 {
+    margin-top: 50px;
+    flex-direction: column;
+
+    .footer2_firstBox {
+      width: 100%;
+      margin-bottom: 45px;
+    }
+    .footer2_secondBox {
+      margin: 0;
+      margin-bottom: 45px;
+      width: 100%;
+
+      div {
+        margin-bottom: 10px;
+        justify-content: space-between;
+      }
+
+      .footer2_secondBox_2 {
+        justify-content: flex-end;
+        width: 40%;
+      }
+    }
+    .footer2_thirdBox {
+      width: 100%;
+
+      .footer2_thirdBox_2 {
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+@include tablet {
+  /*브라우저 사이즈1023px이하일때*/
+
+  .menuBtn {
+    display: none;
+  }
+  html {
+    overflow-x: hidden;
+  }
+
+  .header_desktop {
+    font-size: 14px;
+    .left {
+      width: 30%;
+    }
+    .middle {
+      width: 20%;
+    }
+    .right {
+      width: 35%;
+
+      button {
+        width: 100px;
+
+        span {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+  .footer1_firstBox {
+    margin-right: 150px;
+  }
+  .footer1_firstBox p:nth-of-type(1) {
+    font-size: 32px;
+  }
+
+  .footer1_secondBox {
+    a {
+      font-size: 20px;
+    }
+  }
+  .footer_input {
+    font-size: 12px;
+  }
+  .footer1_thirdBox {
+    a {
+      font-size: 14px;
+    }
+  }
+  .footer2_firstBox {
+    margin-right: 150px;
+  }
+  .footer2_secondBox_1 {
+    p {
+      font-size: 14px;
+    }
+  }
+  .footer2_thirdBox_1 {
+    p {
+      font-size: 12px;
+    }
+  }
+  .footer2_thirdBox_2 {
+    p {
+      font-size: 12px;
+    }
+  }
+
+  .footer2_secondBox_2 {
+    p {
+      font-size: 14px;
+    }
   }
 }
