@@ -3,20 +3,42 @@ let currentscroll = window.scrollY;
 
 const a = document.querySelector(".main_third_box_text2");
 const b = document.querySelector(".main_third_box_text1");
+const allMain3 = document.querySelector(".main_third");
 const c = document.querySelector(".main6_textbox");
 const d = document.querySelector(".Main5_text_1");
 
-const header = document.querySelector(".header_desktop");
-const menuBtn = document.querySelector(".menuBtn");
+console.log(b);
 
-/* console.log(a); */
+/* window.addEventListener("scroll", function () {
+  console.log(b);
+  console.log($(b).offset().top);
+  console.log($(b).scrollTop());
+}); */
 
-window.addEventListener("scroll", () => {
-  /* if (currentscroll >= 666) {
+$(window).scroll(function () {
+  var height = $(document).scrollTop();
+  console.log(height);
+  console.log($(b).offset().top);
+
+  console.log($(allMain3).offset().top);
+
+  if (height >= $(a).offset().top - height) {
+    // console.log("여기");
+    a.classList.add("active");
+  }
+
+  if (height >= $(b).offset().top) {
+    console.log("여기");
+    b.classList.add("active");
+  }
+});
+
+// window.addEventListener("scroll", () => {
+/* if (currentscroll >= 666) {
     a.style.backgroundColor = "Tomato";
   } */
-  let currentScrollValue = document.documentElement.scrollTop;
-  /*   console.log(currentScrollValue);
+// let currentScrollValue = document.documentElement.scrollTop;
+/*   console.log(currentScrollValue);
   if (currentScrollValue >= 1550) {
     a.classList.add("active");
   }
@@ -32,11 +54,11 @@ window.addEventListener("scroll", () => {
     d.classList.add("active2");
   } */
 
-  /*   if (currentscroll >= 133) {
+/*   if (currentscroll >= 133) {
     menuBtn.style.position = "fixed";
     menuBtn.style.display = "block";
   } */
-});
+// });
 
 /*
 컨텐츠만큼 위에서 떨어진 정도와 (ottsetTop)

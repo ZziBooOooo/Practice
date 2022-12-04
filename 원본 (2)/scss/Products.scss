@@ -730,9 +730,26 @@ body {
 
     .slider {
       margin-top: 80px;
-      height: 60%;
+      height: 70%;
       z-index: 99;
       // width: 100vw;
+      .slide {
+        .slideImgWrap {
+          img {
+            width: 80%;
+          }
+        }
+        .slideText {
+          transform: translateX(-15%) translateY(-30%);
+          p:nth-of-type(1) {
+            font-size: 36px;
+            margin-top: 20px;
+          }
+          p:nth-of-type(1)::before {
+            height: 40px;
+          }
+        }
+      }
     }
   }
 
@@ -868,16 +885,28 @@ body {
         .slide {
           .slideText {
             p:nth-of-type(1) {
-              font-size: 36px;
+              font-size: 24px;
+              margin-top: 15px;
             }
 
             p:nth-of-type(1):before {
               z-index: -2;
-              height: 35px;
+              height: 28px;
             }
 
             p:nth-of-type(2) {
               font-size: 14px;
+            }
+
+            transform: translateX(-10%);
+          }
+          .slideImgWrap {
+            display: flex;
+            align-items: center;
+            width: 100%;
+
+            img {
+              max-width: 90%;
             }
           }
         }
