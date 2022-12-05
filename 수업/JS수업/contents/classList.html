@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .hot {
+        color: rgb(221, 35, 159);
+      }
+      .cool {
+        color: rgb(64, 64, 230);
+      }
+    </style>
+    <article class="cls">
+      <h2>클래스 추가, 삭제, 변경</h2>
+      <ul>
+        <li>클래스 추가('hot')</li>
+        <li class="hot">클래스 삭제('hot')</li>
+        <li class="hot">클래스 이름('hot') 가져오기</li>
+        <li>모든 li요소에 클래스('hot')을 추가</li>
+        <li>'hot'클래스를 선택자로 만들어 전체 수 구하기</li>
+      </ul>
+    </article>
+
+    <script>
+      const elCls = document.querySelectorAll(".cls li");
+      elCls[0].classList.add("hot");
+      elCls[1].classList.remove("hot");
+      console.log(elCls[2].className);
+      console.log((elCls[2].className += " cool")); //클래스 추가할때 빈칸이 없으면 .hotcool이 된다. - 예전방식
+
+      elCls.forEach((el) => {
+        el.classList.add("hot"); // 원래 hot이 있으면 기존 hot 덮어쓴다.
+      });
+
+      const elHot = document.querySelectorAll(".hot"); // hot을 가지고있는 클래스를 선택한다. 이게 맨 첫줄이었으면 2가 나옴
+      console.log(elHot.length); // hot을 가진 클래스의 개수
+
+      elCls.forEach((el) => {
+        if (el.classList.contains("cool")) {
+          el.onclick = () => {
+            console.log("cool class");
+            el.classList.toggle("hot");
+            console.log(el); // cool이 있으면 hot클래스를 토글
+          };
+        }
+      });
+    </script>
+  </body>
+</html>

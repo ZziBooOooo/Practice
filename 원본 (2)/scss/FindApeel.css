@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @-webkit-keyframes test {
   0% {
     stroke-dashoffset: -100;
@@ -595,4 +596,278 @@ main {
 .main4 .main4_contentBox button:hover span {
   -webkit-animation: slideup 0.8s forwards;
           animation: slideup 0.8s forwards;
+}
+
+/*반응형, 브라우저 크기가 1024px 이상일때*/
+/* @mixin device($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+@include device($mobile, $tablet) {
+  //mobile
+  body {
+    background-color: red; // 이 내용이 @content부분으로 들어감
+  }
+}
+
+@include device(768px, 1024px) {
+  //tablet
+  body {
+    background-color: blue;
+  }
+}
+
+//다른 문서에서 import로 이문서를 불러들여야한다.
+ */
+@media (max-width: 767px) {
+  main .background {
+    height: 50vh;
+  }
+  main .background .mainTitle {
+    font-size: 50px;
+  }
+  main .main2 {
+    height: 80vh;
+  }
+  main .main2 .storeText {
+    font-size: 40px;
+  }
+  main .main2 .mapdiv {
+    flex-direction: column;
+    width: 100%;
+    height: 60vh;
+  }
+  main .main2 .mapdiv .filterbox {
+    width: 100%;
+    height: 25vh;
+  }
+  main .main2 .mapdiv #map {
+    width: 100%;
+  }
+  main .main3 {
+    flex-direction: column;
+    height: 130vh;
+  }
+  main .main3 .main3_leftBox {
+    width: 100%;
+    padding-right: 3%;
+    height: 60vh;
+  }
+  main .main3 .main3_leftBox svg {
+    width: 800px;
+    top: -300px;
+  }
+  main .main3 .main3_leftBox .main3_textBox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+  main .main3 .main3_leftBox .main3_textBox p:nth-of-type(2) {
+    font-size: 36px;
+  }
+  main .main3 .main3_rightBox {
+    width: 100%;
+    height: 70vh;
+    padding-left: 10%;
+  }
+  main .main3 .main3_rightBox .main3_submitBox label {
+    margin-top: 15px;
+  }
+  main .main3 .main3_rightBox .main3_submitBox label span:nth-of-type(1),
+main .main3 .main3_rightBox .main3_submitBox label span:nth-of-type(2),
+main .main3 .main3_rightBox .main3_submitBox label span:nth-of-type(3),
+main .main3 .main3_rightBox .main3_submitBox label span:nth-of-type(4) {
+    font-size: 16px;
+  }
+  main .main3 .main3_rightBox .main3_submitBox button {
+    width: 80px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  main .main3 .main3_rightBox .main3_submitBox button span {
+    font-size: 12px;
+  }
+  main .main3 .selectBox {
+    margin-top: 15px;
+  }
+  main .main3 .submit_2Box #PostalCode {
+    margin-top: 10px;
+  }
+  main .main3 .submit_4Box #Email {
+    margin-top: 10px;
+  }
+  main .main3 .submit_5Box {
+    font-size: 12px;
+    width: 70%;
+    margin-top: 30px;
+    color: rgb(114, 136, 99);
+  }
+  main .main4 {
+    height: 90vh;
+  }
+  main .main4 .main4_firstBox {
+    width: 100%;
+    flex-direction: column;
+  }
+  main .main4 .main4_firstBox .firstBox_text1 {
+    font-size: 48px;
+    width: 100%;
+  }
+  main .main4 .main4_firstBox .firstBox_2 {
+    width: 100%;
+  }
+  main .main4 .main4_firstBox .firstBox_2 p {
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 400;
+    text-align: start;
+  }
+  main .main4 .main4_firstBox .firstBox_2 a {
+    font-size: 14px;
+  }
+  main .main4 .main4_contentBox p:nth-of-type(1) {
+    font-size: 30px;
+  }
+  main .main4 .main4_contentBox p:nth-of-type(2) {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  main .main4 .main4_contentBox button {
+    width: 100px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+  }
+  main .main4 .main4_contentBox button span {
+    font-size: 12px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  main .background {
+    height: 60vh;
+  }
+  main .background .mainTitle {
+    font-size: 80px;
+  }
+  main .main2 {
+    height: 65vh;
+  }
+  main .main2 .storeText {
+    font-size: 40px;
+  }
+  main .main2 .mapdiv {
+    width: 100%;
+    height: 40vh;
+  }
+  main .main2 .mapdiv .filterbox {
+    width: 60%;
+  }
+  main .main2 .mapdiv #map {
+    width: 40%;
+  }
+  main .main3 {
+    height: 70vh;
+  }
+  main .main3 .main3_leftBox {
+    height: 70vh;
+    padding-right: 3%;
+  }
+  main .main3 .main3_leftBox svg {
+    width: 1000px;
+  }
+  main .main3 .main3_leftBox .main3_textBox {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+  main .main3 .main3_leftBox .main3_textBox p:nth-of-type(2) {
+    font-size: 36px;
+  }
+  main .main3 .main3_rightBox {
+    height: 70vh;
+  }
+  main .main3 .main3_rightBox .main3_submitBox label {
+    margin-top: 15px;
+  }
+  main .main3 .main3_rightBox .main3_submitBox label span:nth-of-type(1),
+main .main3 .main3_rightBox .main3_submitBox label span:nth-of-type(2),
+main .main3 .main3_rightBox .main3_submitBox label span:nth-of-type(3),
+main .main3 .main3_rightBox .main3_submitBox label span:nth-of-type(4) {
+    font-size: 16px;
+  }
+  main .main3 .main3_rightBox .main3_submitBox button {
+    width: 80px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  main .main3 .main3_rightBox .main3_submitBox button span {
+    font-size: 12px;
+  }
+  main .main3 .selectBox {
+    margin-top: 15px;
+  }
+  main .main3 .submit_2Box #PostalCode {
+    margin-top: 10px;
+  }
+  main .main3 .submit_4Box #Email {
+    margin-top: 10px;
+  }
+  main .main3 .submit_5Box {
+    font-size: 12px;
+    width: 70%;
+    margin-top: 30px;
+    color: rgb(114, 136, 99);
+  }
+  main .main4 {
+    height: 80vh;
+  }
+  main .main4 .main4_firstBox {
+    width: 100%;
+  }
+  main .main4 .main4_firstBox .firstBox_text1 {
+    font-size: 55px;
+  }
+  main .main4 .main4_firstBox .firstBox_2 {
+    width: 40%;
+  }
+  main .main4 .main4_firstBox .firstBox_2 p {
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 400;
+    text-align: start;
+  }
+  main .main4 .main4_firstBox .firstBox_2 a {
+    font-size: 16px;
+  }
+  main .main4 .main4_contentBox p:nth-of-type(1) {
+    font-size: 36px;
+  }
+  main .main4 .main4_contentBox p:nth-of-type(2) {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  main .main4 .main4_contentBox button {
+    width: 100px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+  }
+  main .main4 .main4_contentBox button span {
+    font-size: 12px;
+  }
 }/*# sourceMappingURL=FindApeel.css.map */

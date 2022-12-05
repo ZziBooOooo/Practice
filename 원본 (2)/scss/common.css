@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url(font.css);
 @import url(_reset.css);
 *::before, *::after {
@@ -42,11 +43,10 @@ header {
   height: 2px;
   border-radius: 30px;
   transform: scaleX(0);
-  transition: transform 500ms ease-in-out;
+  transition: all 500ms;
 }
 .header_desktop .left p:hover:after {
   transform: scaleX(1);
-  transform-origin: 0% 50%;
   background-color: #154726;
 }
 
@@ -86,6 +86,31 @@ header {
   align-items: center;
   width: 25%;
 }
+.right .mobile_btn {
+  background-color: transparent;
+  width: 30px;
+  height: 50px;
+  position: relative;
+  display: none;
+}
+.right .mobile_btn .menu1span_1 {
+  display: block;
+  width: 30px;
+  height: 2.5px;
+  background-color: #154726;
+  position: absolute;
+  right: 15%;
+  top: 40%;
+}
+.right .mobile_btn .menu2span_2 {
+  display: block;
+  width: 30px;
+  height: 2.5px;
+  background-color: #154726;
+  position: absolute;
+  right: 15%;
+  top: 60%;
+}
 .right button {
   border: none;
   color: #faf3e6;
@@ -120,11 +145,10 @@ header {
   border-radius: 30px;
   background-color: #154726;
   transform: scaleX(0);
-  transition: transform 500ms ease-in-out;
+  transition: 500ms;
 }
 .right p:hover:after {
   transform: scaleX(1);
-  transform-origin: 0% 50%;
 }
 
 .menuBtn {
@@ -401,4 +425,173 @@ footer {
 .footer2_thirdBox_2 p {
   font-size: 14px;
   color: #93a08d;
+}
+
+/*반응형, 브라우저 크기가 1024px 이상일때*/
+/* @mixin device($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+@include device($mobile, $tablet) {
+  //mobile
+  body {
+    background-color: red; // 이 내용이 @content부분으로 들어감
+  }
+}
+
+@include device(768px, 1024px) {
+  //tablet
+  body {
+    background-color: blue;
+  }
+}
+
+//다른 문서에서 import로 이문서를 불러들여야한다.
+ */
+@media (max-width: 767px) {
+  .menuBtn {
+    display: none;
+  }
+  header {
+    margin-top: 30px;
+  }
+  body {
+    overflow-x: hidden;
+  }
+  .header_desktop {
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header_desktop .left {
+    display: none;
+  }
+  .header_desktop .right {
+    width: 50px;
+  }
+  .header_desktop .right p {
+    display: none;
+  }
+  .header_desktop .right button:nth-of-type(1) {
+    display: none;
+  }
+  .header_desktop .middle {
+    margin: 0;
+  }
+  .header_desktop .mobile_btn {
+    display: block;
+    width: 100px;
+  }
+  .footer1 {
+    flex-direction: column;
+    width: 100%;
+    padding: 3% 10%;
+    margin-bottom: 50px;
+  }
+  .footer1 .footer1_firstBox {
+    width: 100%;
+    margin-bottom: 45px;
+  }
+  .footer1 .footer1_secondBox {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .footer1 .footer1_secondBox a {
+    margin-bottom: 12px;
+  }
+  .footer1 .footer1_thirdBox {
+    width: 100%;
+    font-size: 16px;
+  }
+  .footer1 .footer1_thirdBox a {
+    margin-bottom: 12px;
+  }
+  .footer2 {
+    margin-top: 50px;
+    flex-direction: column;
+  }
+  .footer2 .footer2_firstBox {
+    width: 100%;
+    margin-bottom: 45px;
+  }
+  .footer2 .footer2_secondBox {
+    margin: 0;
+    margin-bottom: 45px;
+    width: 100%;
+  }
+  .footer2 .footer2_secondBox div {
+    margin-bottom: 10px;
+    justify-content: space-between;
+  }
+  .footer2 .footer2_secondBox .footer2_secondBox_2 {
+    justify-content: flex-end;
+    width: 40%;
+  }
+  .footer2 .footer2_thirdBox {
+    width: 100%;
+  }
+  .footer2 .footer2_thirdBox .footer2_thirdBox_2 {
+    margin-top: 20px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  /*브라우저 사이즈1023px이하일때*/
+  .menuBtn {
+    display: none;
+  }
+  html {
+    overflow-x: hidden;
+  }
+  .header_desktop {
+    font-size: 14px;
+  }
+  .header_desktop .left {
+    width: 30%;
+  }
+  .header_desktop .middle {
+    width: 20%;
+  }
+  .header_desktop .right {
+    width: 35%;
+  }
+  .header_desktop .right button {
+    width: 100px;
+  }
+  .header_desktop .right button span {
+    font-size: 12px;
+  }
+  .footer1_firstBox {
+    margin-right: 150px;
+  }
+  .footer1_firstBox p:nth-of-type(1) {
+    font-size: 32px;
+  }
+  .footer1_secondBox a {
+    font-size: 20px;
+  }
+  .footer_input {
+    font-size: 12px;
+  }
+  .footer1_thirdBox a {
+    font-size: 14px;
+  }
+  .footer2_firstBox {
+    margin-right: 150px;
+  }
+  .footer2_secondBox_1 p {
+    font-size: 14px;
+  }
+  .footer2_thirdBox_1 p {
+    font-size: 12px;
+  }
+  .footer2_thirdBox_2 p {
+    font-size: 12px;
+  }
+  .footer2_secondBox_2 p {
+    font-size: 14px;
+  }
 }/*# sourceMappingURL=common.css.map */

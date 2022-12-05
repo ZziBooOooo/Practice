@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Window_size</title>
+  </head>
+  <body>
+    <img src="../img/7.png" alt="" />
+    <div class="offset">
+      <img src="../img/4.png" alt="" />
+      <img src="../img/5.png" alt="" />
+      <img src="../img/6.png" alt="" />
+      <p></p>
+    </div>
+
+    <style>
+      .offset {
+        position: relative;
+      }
+      .offset img {
+        width: 300px;
+      }
+      .offset p {
+        border: 2px solid rgb(147, 202, 145);
+        box-sizing: border-box;
+        position: absolute;
+        transition: 0.5s;
+        margin: 0;
+        width: 0; /* 초기에 클릭했을때 transition적용하기 위함 */
+        height: 0; /* transition = 변화 */
+        left: 0; /* 변화될 초기값이 없으면 적용되지 않는다. */
+        right: 0;
+      }
+    </style>
+
+    <!--     <script>
+      const elImg = document.querySelector("img");
+      console.log(elImg.offsetWidth); // 이미지 로드 전에 실행되어서 0이 나옴
+
+      window.onload = () => {
+        console.log(elImg.offsetWidth);
+        console.log(elImg.offsetHeight);
+        console.log(elImg.offsetTop);
+
+        console.log(window.innerWidth, window.innerHeight); // 현재 보이는 공간 - 변화 O
+        console.log(window.screen.width, window.screen.height); // 브라우저 전체 - 변화 X
+      };
+    </script>
+ -->
+
+    <script>
+      window.addEventListener("load", function () {
+        const eloffSet = document.querySelectorAll(".offset img"),
+          elLine = document.querySelector(".offset p");
+
+        let pos = { w: 0, h: 0, x: 0, y: 0 };
+
+        console.log(eloffSet[0].parentElement.offsetTop);
+
+        eloffSet.forEach((el) => {
+          el.onclick = () => {
+            pos.w = el.offsetWidth; // 부모에 position이 있으면 부모를 기준으로 계산된다.
+            pos.h = el.offsetHeight;
+            pos.x = el.offsetLeft;
+            pos.y = el.offsetTop;
+
+            elLine.style = `width:${pos.w}px; height:${pos.h}px; left:${pos.x}px; top:${pos.y}px;`;
+          };
+        });
+      });
+    </script>
+
+    <article class="ex">
+      <h2>이미지 슬라이드</h2>
+      <div class="ex-g">
+        <figure>
+          <img src="../img/1.png" alt="" />
+          <img src="../img/2.png" alt="" />
+          <img src="../img/3.png" alt="" />
+        </figure>
+      </div>
+    </article>
+
+    <style>
+      .ex {
+        margin: 200px auto;
+        width: 400px;
+        background-color: rgba(96, 96, 97, 0.151);
+      }
+      .ex-g {
+        border: 5px solid black;
+        box-sizing: border-box;
+      }
+
+      .ex-g figure {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        transition: 0.5s;
+      }
+
+      .ex-g figure img {
+        width: 100%;
+        flex-shrink: 0;
+      }
+    </style>
+
+    <script>
+      window.addEventListener("load", () => {
+        const elFigure = document.querySelector(".ex figure");
+        const elPhoto = document.querySelectorAll(".ex img");
+
+        elPhoto.forEach((el, key) => {
+          el.onclick = () => {
+            let num = elPhoto[key].offsetWidth;
+            elFigure.style = `transform:translateX(-${num}px)`;
+          };
+        });
+      });
+    </script>
+  </body>
+</html>
