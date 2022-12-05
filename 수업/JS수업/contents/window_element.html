@@ -99,6 +99,7 @@
         margin: 0;
         display: flex;
         transition: 0.5s;
+        background-color: rgba(255, 0, 0, 0.11);
       }
 
       .ex-g figure img {
@@ -115,7 +116,10 @@
         elPhoto.forEach((el, key) => {
           el.onclick = () => {
             let num = elPhoto[key].offsetWidth;
-            elFigure.style = `transform:translateX(-${num}px)`;
+            console.log(num);
+            elFigure.style = `transform:translateX(-${num * key}px)`;
+            console.log(num);
+            console.log(`${num * key}`);
           };
         });
       });

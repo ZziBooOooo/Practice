@@ -11,13 +11,21 @@ main {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .mainBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
   margin: 0 3%;
 }
@@ -31,17 +39,33 @@ main {
   width: 80%;
   margin: 0 auto;
   padding: 95px 0 170px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .mainVideoBox div {
   padding-bottom: 95px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .mainVideoBox div p {
@@ -64,19 +88,32 @@ main {
   width: 1540px;
   margin: 0 auto;
   margin-bottom: 170px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .watchTitleBox {
   /*  width: 45%; */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
+
 .watchTitleBox span {
   margin: 0 30px;
 }
+
 .watchTitleBox span button {
   background-color: transparent;
   border: none;
@@ -94,50 +131,78 @@ main {
   height: 1.5px;
   background-color: transparent;
   margin: 5px auto;
-  transform: scalex(0);
+  -webkit-transform: scalex(0);
+          transform: scalex(0);
+  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
 .watchTitleBox span:hover button:after {
   background-color: #cc0000;
-  transform: scalex(1);
+  -webkit-transform: scalex(1);
+          transform: scalex(1);
 }
 
 .watchImg {
   width: 100%;
   margin-top: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
+
 .watchImg div {
   width: 1400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 0 15px;
 }
+
 .watchImg div div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .test {
   width: 100%;
   overflow: hidden;
 }
+
 .test img {
   max-width: 100%;
   height: auto;
 }
 
 .watchImg div a img:hover {
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 1s;
   transition: 1s;
 }
 
 .test img:hover {
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 1s;
   transition: 1s;
 }
 
@@ -168,7 +233,9 @@ main {
 }
 
 .circlebox button:hover {
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 1s;
   transition: 1s;
 }
 
@@ -176,9 +243,16 @@ main {
   width: 80%;
   margin: 0 auto;
   margin-bottom: 175px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .categoryBox p {
@@ -189,18 +263,31 @@ main {
 
 .categoryImgBox {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .categoryImgBox a div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .categoryImgBox a div span {
   margin-top: 35px;
 }
+
 .categoryImgBox a div div img {
   padding: 0 5px;
 }
@@ -208,6 +295,8 @@ main {
 section.formBox {
   width: 100%;
   background-color: #f5f5f5;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 48px 0;
   margin-bottom: 72px;
@@ -215,17 +304,29 @@ section.formBox {
 }
 
 .formBox div {
-  flex-basis: 50%;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .formBox div p {
   font-size: 22px;
   font-weight: bold;
   margin-bottom: 48px;
 }
+
 .formBox div span {
   font-size: 18px;
 }
@@ -238,66 +339,93 @@ section.formBox {
 
 .formBox div .newsForm,
 .formBox div .storeForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
+
 .formBox div .newsForm input,
 .formBox div .storeForm input {
   width: 100%;
   border: 0;
-  border-bottom: 2px solid rgb(85, 85, 85);
+  border-bottom: 2px solid #555555;
   padding: 3px;
   background-color: transparent;
   outline: none;
-  color: rgb(148, 148, 148);
+  color: #949494;
   font-size: 14px;
   text-align: center;
 }
+
 .formBox div .newsForm i,
 .formBox div .storeForm i {
   margin-left: 7px;
-  color: rgb(68, 68, 68);
+  color: #444444;
 }
-
-/*# sourceMappingURL=common.css.map */
 .formBoxLine {
   height: 140px;
   width: 1px;
-  background-color: rgb(197, 197, 197);
+  background-color: #c5c5c5;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .mainNewsBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 80%;
   margin: 0 auto;
 }
+
 .mainNewsBox p {
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 28px;
 }
+
 .mainNewsBox i {
   font-size: 33px;
   margin-bottom: 78px;
 }
 
 .newsImgBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   margin-bottom: 115px;
 }
+
 .newsImgBox div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 0 20px;
 }
+
 .newsImgBox p {
   font-size: 20px;
   margin-top: 20px;
@@ -309,12 +437,16 @@ section.formBox {
   width: 100%;
   overflow: hidden;
 }
+
 .newsImgWrapper img {
   max-width: 100%;
   height: auto;
 }
 
 .newsImgWrapper:hover img {
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 1s;
   transition: 1s;
-}/*# sourceMappingURL=index.css.map */
+}
+/*# sourceMappingURL=index.css.map */

@@ -5,9 +5,15 @@ body {
 }
 
 header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .header_desktop {
@@ -16,33 +22,52 @@ header {
   padding: 8px;
   width: 90%;
   border-radius: 0 0 16px 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
+
 .header_desktop .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 25%;
-  justify-content: space-around;
-  align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .header_desktop .middle {
   width: 50%;
 }
+
 .header_desktop .middle div {
   width: 120px;
   height: 40px;
 }
+
 .header_desktop .middle div svg {
   width: 100%;
   height: 100%;
   fill: #154726;
 }
+
 .header_desktop .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 25%;
 }
+
 .header_desktop .right button {
   border: none;
   color: #faf3e6;
@@ -64,11 +89,21 @@ body {
 }
 
 main {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 main .main_top {
   width: 80%;
   margin-top: 25%;
@@ -76,15 +111,18 @@ main .main_top {
   background-color: rgba(128, 255, 0, 0.048);
   color: white;
 }
+
 main .main_top p {
   margin-bottom: 2%;
   font-size: 16px;
 }
+
 main .main_top h1 {
   margin-bottom: 2%;
   font-size: 50px;
   font-weight: 700;
 }
+
 main .main_top button {
   background-color: #faf3e6;
   color: #154726;
@@ -93,42 +131,72 @@ main .main_top button {
   height: 35px;
   font-weight: 700;
 }
+
 main .main_second {
   width: 100%;
   border-radius: 30px;
   background-color: #fce8bd;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: relative;
 }
+
 main .main_second .main_second_box {
   width: 80%;
   height: 95vh;
   padding: 5% 0;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
+
 main .main_second .main_second_textbox {
   width: 35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
+
 main .main_second .main_second_textbox p:nth-of-type(2) {
   font-size: 60px;
   color: #154726;
   font-weight: 700;
   margin-top: 30%;
 }
+
 main .main_second .main_Second_videobox {
   width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
 }
+
 main .main_second .main_Second_videobox .poster {
   width: 100%;
   height: 100%;
@@ -136,10 +204,12 @@ main .main_second .main_Second_videobox .poster {
      object-fit: cover;
   border-radius: 20px;
 }
+
 main .main_second .main_Second_videobox .main_Second_videobox_square {
   width: 100%;
   height: 74vh;
 }
+
 main button {
   position: absolute;
   width: 100px;
@@ -147,15 +217,23 @@ main button {
   background-color: #ffd550;
   border-radius: 20px;
   color: #154726;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   font-weight: 500;
 }
+
 main button svg {
   width: 20px;
   height: 20px;
@@ -179,120 +257,197 @@ main button svg {
   background-position: center;
   background-size: cover;
   background-image: url(../images/backgrounds/quality2.jpg);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
+
 .main_third .main_third_box {
   color: white;
   width: 80%;
   padding: 5% 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
+
 .main_third .main_third_box .main_third_box_text1 {
   font-size: 75px;
   font-weight: 600;
 }
+
 .main_third .main_third_box .main_third_box_text2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   color: white;
 }
+
 .main_third .main_third_box .main_third_box_text2 a {
   margin-top: 30px;
   color: white;
   font-size: 20px;
 }
+
 .main_third .main_third_box .main_third_box_text2 a svg {
   width: 25px;
   height: 25px;
-  transform: translateY(25%);
+  -webkit-transform: translateY(25%);
+          transform: translateY(25%);
 }
 
 .main_4 {
   width: 100%;
   height: 95vh;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #faf3e6), color-stop(50%, #ffd550));
   background-image: linear-gradient(90deg, #faf3e6 50%, #ffd550 50%);
   border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 .main_4 .main4_box {
   width: 80%;
   position: relative;
   /* display: flex;
-  flex-direction: column; */
+    flex-direction: column; */
 }
+
 .main_4 .main4_box .main4_topbox {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 70px 0;
 }
+
 .main_4 .main4_box .main4_topbox p {
   font-size: 80px;
   font-weight: 600;
   color: #154726;
 }
+
 .main_4 .main4_box .main4_topbox div img {
   width: 100px;
 }
+
 .main_4 .main4_box .main4_box2 {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
+
 .main_4 .main4_box .main4_box2 .main4_left {
   width: 50%;
   margin: 0;
 }
+
 .main_4 .main4_box .main4_box2 .left_Imgbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 .main_4 .main4_box .main4_box2 .left_Imgbox p {
   font-size: 18px;
   color: #154726;
   margin-top: 70px;
 }
+
 .main_4 .main4_box .main4_box2 .left_Imgbox div {
   width: 100%;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 .main_4 .main4_box .main4_box2 .left_Imgbox div img {
   max-width: 100%;
 }
+
 .main_4 .main4_box .main4_right {
   width: 50%;
   margin: 0;
 }
+
 .main_4 .main4_box .main4_right .right_Imgbox {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .main_4 .main4_box .main4_right .right_Imgbox p {
   font-size: 18px;
   color: #154726;
   margin-top: 70px;
 }
+
 .main_4 .main4_box .main4_right .right_Imgbox div img {
   max-width: 100%;
 }
+
 .main_4 .main4_box .main4_btnbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: absolute;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   top: 45%;
   height: 300px;
 }
+
 .main_4 .main4_box .main4_btnbox button {
   font-family: FoundersGrotesk;
   font-size: 16px;
@@ -302,22 +457,36 @@ main button svg {
 .main_5 {
   height: 95vh;
   overflow-x: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   background-color: #fce8bd;
   padding: 0 10%;
   position: relative;
 }
+
 .main_5 div {
   min-width: 25vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .main_5 div img {
   width: 100%;
   height: auto;
 }
+
 .main_5 div button {
   width: 120px;
   background-color: #154726;
@@ -325,40 +494,56 @@ main button svg {
   border-radius: 20px;
   height: 30px;
 }
+
 .main_5 .vegetable_title {
   font-size: 120px;
   color: #154726;
   font-weight: 700;
   margin-bottom: 20px;
 }
+
 .main_5 .vegetable_origin {
   font-size: 16px;
   color: #154726;
   margin-bottom: 20px;
 }
+
 .main_5 .main_5_textBox {
   min-width: 50vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin: 10% 15% 10% 0;
   position: relative;
 }
+
 .main_5 .main5_text_1 {
   font-size: 90px;
   color: #154726;
   font-weight: 700;
   position: absolute;
   top: 50%;
-  transform: translateY(-60%);
+  -webkit-transform: translateY(-60%);
+          transform: translateY(-60%);
 }
+
 .main_5 .main5_text_2 {
   font-size: 16px;
   color: #154726;
   position: absolute;
   bottom: 0;
-  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 /* .test {
@@ -371,29 +556,44 @@ main button svg {
   background-image: url(../images/backgrounds/quality3.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: end;
-  align-items: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
+
 .main_6 .main6_textbox {
   padding: 5%;
   color: white;
 }
+
 .main_6 .main6_textbox p:nth-of-type(1) {
   font-size: 48px;
   margin-bottom: 20px;
 }
+
 .main_6 .main6_textbox p:nth-of-type(2) {
   font-size: 16px;
   margin-bottom: 20px;
 }
+
 .main_6 .main6_textbox button {
   color: white;
   font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 0;
-  justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
+
 .main_6 .main6_textbox button .btn_p {
   font-size: 20px;
   margin-right: 10px;
@@ -405,16 +605,31 @@ main button svg {
   background-image: url(../images/backgrounds/aqua.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .main_7 .main_7_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
 }
+
 .main_7 .main_7_box span {
   display: inline-block;
   background-color: #ffd550;
@@ -424,8 +639,10 @@ main button svg {
   position: absolute;
   top: 50%;
   left: -1%;
-  transform: translateY(-80%) rotate(-3deg);
+  -webkit-transform: translateY(-80%) rotate(-3deg);
+          transform: translateY(-80%) rotate(-3deg);
 }
+
 .main_7 .main_7_box p {
   font-size: 60px;
   color: #154147;
@@ -433,6 +650,7 @@ main button svg {
   margin: 50px 0;
   z-index: 99;
 }
+
 .main_7 .main_7_box button {
   width: 120px;
   height: 40px;
@@ -444,9 +662,12 @@ main button svg {
 }
 
 .main_8 {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   height: 90vh;
 }
+
 .main_8 .main_8_imgbox {
   width: 50%;
   height: 90vh;
@@ -454,40 +675,59 @@ main button svg {
   background-repeat: no-repeat;
   background-size: cover;
   /* img {
-    // max-width: 100%;
-    width: 100%;
-    object-fit: cover;
-  } */
+      // max-width: 100%;
+      width: 100%;
+      object-fit: cover;
+    } */
 }
+
 .main_8 .main_8_textbox {
   width: 50%;
   height: 90vh;
 }
+
 .main_8 .main_8_textbox div {
   padding: 3%;
   height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: #296d4f;
-  align-items: flex-start;
-  justify-content: flex-end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
+
 .main_8 .main_8_textbox div .text8_1 {
   color: #ffd550;
 }
+
 .main_8 .main_8_textbox div .text8_2 {
   color: #ffd550;
   font-size: 45px;
   font-weight: bold;
   margin-bottom: 30px;
 }
+
 .main_8 .main_8_textbox div button {
   color: white;
   font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 0;
-  justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
+
 .main_8 .main_8_textbox div button .btn8_p {
   color: #ffd550;
   font-size: 14px;
@@ -503,9 +743,15 @@ main button svg {
   color: #000;
   margin: 0;
   background-color: #fce8bd;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 .main_9 .main9_textbox {
   font-family: FoundersGrotesk;
   font-size: 60px;
@@ -524,7 +770,9 @@ main button svg {
 }
 
 .swiper-wrapper {
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .swiper-slide {
@@ -532,11 +780,20 @@ main button svg {
   text-align: center;
   font-size: 18px;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: #f7dc83;
   /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -546,12 +803,12 @@ main button svg {
 }
 
 .swiper_2 {
-  background-color: rgb(255, 166, 0);
+  background-color: #ffa600;
   margin-bottom: 20px;
 }
 
 .swiper_3 {
-  background-color: rgb(255, 208, 0);
+  background-color: #ffd000;
   margin-bottom: 20px;
 }
 
@@ -579,6 +836,8 @@ main button svg {
   position: absolute;
   left: 85%;
   top: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -589,7 +848,8 @@ main button svg {
 }
 
 .swiper-button-prev {
-  transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
   position: static;
   top: 0%;
   left: 0;
@@ -600,4 +860,5 @@ footer {
   background-color: #2c4933;
   width: 100%;
   height: 90vh;
-}/*# sourceMappingURL=index.css.map */
+}
+/*# sourceMappingURL=index.css.map */

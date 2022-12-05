@@ -173,6 +173,9 @@ header {
   }
 }
 
+.menuBtn_on {
+  opacity: 1;
+}
 .menuBtn {
   width: 100px;
   height: 35px;
@@ -185,7 +188,9 @@ header {
   z-index: 999;
   transition: 0.5s;
   overflow: hidden;
-  // display: none;
+  opacity: 0;
+
+
   div {
     display: flex;
     justify-content: space-evenly;
