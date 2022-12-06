@@ -30,13 +30,12 @@ img {
 }
 
 a {
-  color: #3a3a3a;
+  color: rgb(58, 58, 58);
   text-decoration: none;
 }
 
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 a,
@@ -54,12 +53,8 @@ address,
 header {
   color: white;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   padding: 28px;
   padding-bottom: 0;
   background-color: black;
@@ -68,47 +63,30 @@ header {
 .headerLeft {
   width: 10%;
 }
-
 .headerLeft p {
   font-size: 16px;
 }
-
 .headerLeft p a {
   color: white;
 }
 
 .headerMiddle {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-
 .headerMiddle div a {
   width: 136px;
   height: 50px;
   background-image: url("../image/TISSOT_LOGO_white 1.png");
 }
-
 .headerMiddle ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 .headerMiddle ul li {
   margin: 28px 0;
 }
-
 .headerMiddle ul li a {
   color: white;
   margin: 0 30px;
@@ -116,14 +94,9 @@ header {
 
 .headerRight {
   width: 10%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
 }
-
 .headerRight a {
   margin: 0 8px;
   width: 19px;
@@ -136,16 +109,9 @@ header {
 
 footer {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
   margin: 0 auto;
 }
 
@@ -158,32 +124,18 @@ footer {
 .footerwrap {
   width: 60%;
   margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
 }
-
 .footerwrap div a {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
-
 .footerwrap div a i {
   font-size: 30px;
   margin-bottom: 20px;
 }
-
 .footerwrap div a p {
   font-size: 18px;
 }
@@ -193,21 +145,11 @@ footer {
   width: 40%;
   margin: 0 auto;
   padding: 50px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-
 .footerMiddle p {
   font-size: 18px;
   font-weight: 400;
@@ -215,13 +157,9 @@ footer {
 }
 
 .footerMiddleIcon {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
 }
-
 .footerMiddleIcon i {
   font-size: 33px;
   padding: 0 20px;
@@ -229,29 +167,20 @@ footer {
 
 .footerBottom {
   width: 100%;
-  background-color: #1b1b1b;
+  background-color: rgb(27, 27, 27);
   padding: 22px 0;
 }
-
 .footerBottom p {
-  color: #e7e7e7;
+  color: rgb(231, 231, 231);
   text-align: center;
 }
 
 .footerBottomText {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .footerBottomText p:first-child {
   margin-bottom: 45px;
-}
-/*# sourceMappingURL=common.css.map */
+}/*# sourceMappingURL=common.css.map */

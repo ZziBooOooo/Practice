@@ -2,7 +2,7 @@ const headerHeight = document.querySelector("header");
 const menuBtn = document.querySelector(".menuBtn");
 // console.log(headerHeight.offsetHeight)
 
-// let a = headerHeight.offsetHeight;
+let a = headerHeight.offsetHeight;
 
 $(window).scroll(() => {
   //   console.log(headerHeight.offsetHeight);
