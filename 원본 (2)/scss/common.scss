@@ -1,5 +1,5 @@
 @import url(font.css);
-@import url(_reset.css);
+@import url(reset.css);
 
 $main-color: #154726;
 $sub-color: #faf3e6;
@@ -173,9 +173,6 @@ header {
   }
 }
 
-.menuBtn_on {
-  opacity: 1;
-}
 .menuBtn {
   width: 100px;
   height: 35px;

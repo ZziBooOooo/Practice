@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <article class="gallery">
+      <h2>Gallery</h2>
+      <div>
+        <!--  <figure>
+          <img src="../img/1.png" alt="" />
+          <figcaption>이미지명</figcaption>
+        </figure> -->
+      </div>
+    </article>
+
+    <style>
+      .gallery {
+        width: 70%;
+        margin: 100px auto;
+      }
+
+      .gallery div {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .gallery figure {
+        margin: 5% 0;
+        width: 30%;
+      }
+
+      .gallery figure img {
+        width: 100%;
+      }
+    </style>
+
+    <script>
+      let data = [
+        { url: "../img/1.png", title: "이미지 1", detail: "fruit-1" },
+        { url: "../img/2.png", title: "이미지 2", detail: "fruit-2" },
+        { url: "../img/3.png", title: "이미지 3", detail: "fruit-3" },
+        { url: "../img/4.png", title: "이미지 4", detail: "fruit-4" },
+        { url: "../img/5.png", title: "이미지 5", detail: "fruit-5" },
+        { url: "../img/6.png", title: "이미지 6", detail: "fruit-6" },
+        { url: "../img/7.png", title: "이미지 7", detail: "fruit-7" },
+        { url: "../img/8.png", title: "이미지 8", detail: "fruit-8" },
+        { url: "../img/9.png", title: "이미지 9", detail: "fruit-9" },
+        { url: "../img/10.png", title: "이미지 10", detail: "fruit-10" },
+      ];
+
+      const elGallery = document.querySelector(".gallery div");
+
+      //   elGallery.innerHTML = `<figure>
+      //                               <img src="../img/1.png" alt="" />
+      //                               <figcaption>이미지명</figcaption>
+      //                           </figure>`;
+
+      // ${data[key].url} > ${div.url}
+      data.forEach((div, key) => {
+        elGallery.innerHTML += `<figure>
+                                <img src="${div.url}" alt="" /> 
+                                <figcaption>${div.title}</figcaption>
+                            </figure>`;
+        console.log(div);
+        console.log(data[key].url);
+      });
+    </script>
+  </body>
+</html>

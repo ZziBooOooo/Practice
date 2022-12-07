@@ -1,5 +1,5 @@
 @import url(font.css);
-@import url(_reset.css);
+@import url(reset.css);
 
 $main-color: #154726;
 $sub-color: #faf3e6;
@@ -81,7 +81,6 @@ body {
   position: relative;
 }
 
-
 main {
   /* display: flex;
   justify-content: center;
@@ -149,13 +148,13 @@ main {
 
     .videoContainer {
       width: 100%;
-     height: 0vh;
+      height: 0vh;
       // display: none;
       background-color: #263e2c;
       position: absolute;
       left: 0;
       top: 0;
-       display: flex;
+      display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
@@ -165,14 +164,13 @@ main {
       transition-delay: 200ms;
       transition-duration: 0.7s;
       transition-timing-function: forwards;
-    
-    
+
       svg {
         position: absolute;
         left: 0;
         top: 0;
       }
-    
+
       iframe {
         position: absolute;
         top: 15%;
@@ -181,7 +179,7 @@ main {
         height: 65%;
         border-radius: $border-radius;
       }
-    
+
       .videoClose {
         width: 50px;
         height: 50px;
@@ -194,19 +192,19 @@ main {
         &:hover {
           transform: scale(1.05);
         }
-    
+
         .fa-xmark {
           font-size: 24px;
           color: #154147;
           transition: 0.5s;
-    
+
           &:hover {
             transform: scale(1.05);
           }
         }
       }
     }
-    
+
     .videoOn {
       // display: block;
       opacity: 1;
@@ -323,7 +321,6 @@ main {
       }
     }
   }
-
 }
 .active {
   animation: textup 3s forwards;
@@ -1547,9 +1544,8 @@ footer {
         }
       }
 
-      .videoContainer{
-
-        iframe{
+      .videoContainer {
+        iframe {
           width: 70%;
           height: 50%;
           top: 20%;

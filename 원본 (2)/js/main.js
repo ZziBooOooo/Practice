@@ -7,6 +7,7 @@
 // let currentscroll = window.scrollY;
 
 const a = document.querySelector(".main_third_box_text1");
+console.log(a);
 const b = document.querySelector(".main_third_box_text2");
 const allMain3 = document.querySelector(".main_third");
 const c = document.querySelector(".main6_textbox");

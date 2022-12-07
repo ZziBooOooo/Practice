@@ -83,11 +83,27 @@
       </div>
     </article>
 
+    <article class="ex2">
+      <h2>이미지 슬라이드</h2>
+      <div class="ex-g2">
+        <figure>
+          <img src="../img/1.png" alt="" />
+          <img src="../img/2.png" alt="" />
+          <img src="../img/3.png" alt="" />
+        </figure>
+      </div>
+
+      <div>
+        <button>prev</button>
+        <button>next</button>
+      </div>
+    </article>
+
     <style>
       .ex {
         margin: 200px auto;
         width: 400px;
-        background-color: rgba(96, 96, 97, 0.151);
+        /* background-color: rgba(96, 96, 97, 0.151); */
       }
       .ex-g {
         border: 5px solid black;
@@ -99,7 +115,8 @@
         margin: 0;
         display: flex;
         transition: 0.5s;
-        background-color: rgba(255, 0, 0, 0.11);
+        /* background-color: rgba(255, 0, 0, 0.11); */
+        position: relative;
       }
 
       .ex-g figure img {
@@ -108,6 +125,33 @@
       }
     </style>
 
+    <style>
+      .ex2 {
+        margin: 200px auto;
+        width: 400px;
+        /* background-color: rgba(96, 96, 97, 0.151); */
+      }
+      .ex-g2 {
+        border: 5px solid black;
+        box-sizing: border-box;
+      }
+
+      .ex-g2 figure {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        transition: 0.5s;
+        /* background-color: rgba(255, 0, 0, 0.11); */
+        position: relative;
+      }
+
+      .ex-g2 figure img {
+        width: 100%;
+        flex-shrink: 0;
+      }
+    </style>
+
+    <!-- ex-1 -->
     <script>
       window.addEventListener("load", () => {
         const elFigure = document.querySelector(".ex figure");
@@ -116,11 +160,59 @@
         elPhoto.forEach((el, key) => {
           el.onclick = () => {
             let num = elPhoto[key].offsetWidth;
-            console.log(num);
+            // console.log(num);
             elFigure.style = `transform:translateX(-${num * key}px)`;
-            console.log(num);
-            console.log(`${num * key}`);
+            // console.log(num);
+            // console.log(`${num * key}`);
           };
+        });
+        /* 2nd solution */
+        // console.log(elPhoto[0].offsetLeft); // 부모에 position이 있으면 부모기준으로 계산
+        // console.log(elPhoto[1].offsetLeft);
+        // console.log(elPhoto[2].offsetLeft);
+
+        // el.onclick = () => {
+        //   let pos = elPhoto[key].offsetLeft;
+        //   elFigure.style = `transform:translateX(-${pos}px)`;
+        // };
+      });
+    </script>
+
+    <!-- ex-2 -->
+    <script>
+      const elFigure2 = document.querySelector(".ex2 figure");
+      const elPhoto2 = document.querySelectorAll(".ex2 img");
+      const btns = document.querySelectorAll(".ex2 button");
+      let t = 0;
+      let num = elPhoto2[0].offsetWidth;
+      // console.log(btns);
+      console.log(num);
+
+      /* 버튼에 따라서 figure을 좌,우측으로 이동시키기 */
+      /* 이동범위 : 1개의 배너 크기만큼 */
+
+      btns.forEach((btn, key) => {
+        btn.addEventListener("click", () => {
+          // console.log(num);
+          if (key == 0) {
+            if (t > 0) {
+              t -= 1;
+            }
+            /* if (t <= -1) {
+              t = 0;
+            } */
+            console.log(t);
+          } else {
+            if (t < 2) {
+              t += 1;
+            }
+            /* if (t >= 3) {
+              t = 2;
+            } */
+            console.log(t);
+          }
+          // elFigure2.style = `transform:translateX(-${t * num}px)`;
+          elFigure2.style = `transform:translateX(${-t * 100}%)`;
         });
       });
     </script>
