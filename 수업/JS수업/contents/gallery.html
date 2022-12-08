@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>figure안에 있는 내용들 script로 추가하기</title>
+  </head>
+  <body>
+    <article class="gallery">
+      <h2>Gallery</h2>
+      <div>
+        <!-- <figure>
+                <img src="../js/img/01.jpg">
+                <figcaption>이미지 명</figcaption>
+            </figure> -->
+      </div>
+    </article>
+
+    <!----------------------------------------popup---------------------------------->
+    <div class="popup">
+      <article>
+        <h2>이미지명</h2>
+        <figure>
+          <img src="../img/10.png" />
+          <figcaption>디테일 설명</figcaption>
+        </figure>
+      </article>
+
+      <div>
+        <button>Prev</button>
+        <button>Next</button>
+      </div>
+    </div>
+
+    <style>
+      .gallery {
+        width: 70%;
+        margin: 100px auto;
+      }
+      .gallery div {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .gallery figure {
+        margin: 5% 0;
+        width: 30%;
+      }
+      .gallery figure img {
+        width: 100%;
+      }
+
+      /* popup */
+
+      figure {
+        margin: 0;
+      }
+      .popup {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.6);
+        display: none;
+      }
+      .popup.active {
+        display: flex;
+      }
+      .popup article {
+        background-color: #fff;
+        padding: 40px;
+        width: 600px;
+      }
+      .popup article img {
+        width: 100%;
+      }
+
+      .popup div button {
+        position: absolute;
+        top: 50%;
+      }
+
+      .popup div button:first-child {
+        left: 5%;
+      }
+      .popup div button:last-child {
+        right: 5%;
+      }
+    </style>
+
+    <script>
+      // 보통은 key값대신 고유번호를 이용한다.
+
+      let data = [
+        {
+          url: "../img/1.png",
+          title: "이미지 01",
+          detail: "어쩌구저쩌구...01",
+        },
+        {
+          url: "../img/2.png",
+          title: "이미지 02",
+          detail: "어쩌구저쩌구...02",
+        },
+        {
+          url: "../img/3.png",
+          title: "이미지 03",
+          detail: "어쩌구저쩌구...03",
+        },
+        {
+          url: "../img/4.png",
+          title: "이미지 04",
+          detail: "어쩌구저쩌구...04",
+        },
+        {
+          url: "../img/5.png",
+          title: "이미지 05",
+          detail: "어쩌구저쩌구...05",
+        },
+        {
+          url: "../img/6.png",
+          title: "이미지 06",
+          detail: "어쩌구저쩌구...06",
+        },
+        {
+          url: "../img/7.png",
+          title: "이미지 07",
+          detail: "어쩌구저쩌구...07",
+        },
+        {
+          url: "../img/8.png",
+          title: "이미지 08",
+          detail: "어쩌구저쩌구...08",
+        },
+        {
+          url: "../img/9.png",
+          title: "이미지 09",
+          detail: "어쩌구저쩌구...09",
+        },
+        {
+          url: "../img/1.png",
+          title: "이미지 10",
+          detail: "어쩌구저쩌구...10",
+        },
+      ];
+
+      const elGallery = document.querySelector(".gallery div");
+
+      let tag = ""; //해당 변수를 줘서 그 안에 집어 넣고 나중에 innerHTML에 출력만 해당 변수를 입력하면 결과물 출력 O
+      data.forEach(function (zzz, key) {
+        tag += `                    <figure>
+                                    <h2>${data[key].title}</h2> 
+                                    <img src="${data[key].url}">  
+                                    <figcaption>${data[key].detail}</figcaption>
+                                    </figure>`;
+      });
+      elGallery.innerHTML = tag;
+
+      let n;
+      const elFigure = document.querySelectorAll(".gallery figure"),
+        elPopCon = document.querySelector(".popup article"),
+        elPopup = document.querySelector(".popup");
+
+      elFigure.forEach(function (value, key) {
+        value.onclick = function () {
+          elPopup.classList.add("active");
+          n = key;
+          console.log(n);
+          dataChange(key); // key값 전달
+        };
+      });
+
+      elPopup.onclick = function (e) {
+        // console.log(e);
+        // console.log(elPopup);
+        // console.log(e.target);
+        if (e.target.classList.contains("popup")) {
+          e.target.classList.remove("active");
+        }
+      };
+
+      function dataChange(a) {
+        // 이미지 클릭했을 때 key값을 a로 전달받아온다.
+        elPopCon.innerHTML = `<h2>${data[a].title}</h2> 
+        <figure>
+          <img src="${data[a].url}" />
+          <figcaption>${data[a].detail}</figcaption>
+        </figure>`;
+      }
+
+      const btns = document.querySelectorAll(".popup button");
+
+      btns.forEach((btn, key) => {
+        btn.onclick = () => {
+          console.log(n);
+          try {
+            if (key == 0) {
+              n -= 1;
+            } else {
+              n += 1;
+            }
+            dataChange(n);
+          } catch {
+            alert("더이상 존재하지 않습니다.");
+          }
+        };
+      });
+
+      // btns.forEach((btn, key) => {
+      //   btn.onclick = () => {
+      //     // * 예외처리
+
+      //     // 에러 발생되지 않을 때 동작되는 코드 - if문 조건으로 넘어가지않게 하는 방법도 있다.
+      //     try {
+      //       if (key == 0) {
+      //         num--; // elFigure.forEach에서 함수호출 전 num=key를 하지않으면 이전버튼은 안먹힘
+      //       } else {
+      //         num++;
+      //       }
+      //       dataChange(num);
+      //     } catch {
+      //       // 에러 발생시 동작되는 코드
+      //       alert("더이상 존재하지 않습니다.");
+      //     }
+      //   };
+      // });
+    </script>
+
+    <article class="gallery2">
+      <div class="thumb">
+        <!-- <figure>
+          <img src="../img/1.png" />
+        </figure> -->
+      </div>
+
+      <div class="detail">
+        <article>
+          <h2>이미지명</h2>
+          <figure>
+            <img src="../img/2.png" />
+            <figcaption>디테일설명</figcaption>
+          </figure>
+        </article>
+      </div>
+    </article>
+
+    <style>
+      figure {
+        margin: 0;
+      }
+      .gallery2 {
+        width: 70%;
+        margin: 200px auto;
+        display: flex;
+        justify-content: space-between;
+      }
+      .gallery2 .thumb {
+        width: 10%;
+      }
+
+      .gallery2 .thumb figure img {
+        width: 100%;
+        background-color: rgb(250, 230, 201);
+        border-radius: 10px;
+      }
+
+      .gallery2 .detail article {
+        width: 80%;
+        padding: 0 5%;
+      }
+
+      .gallery2 .detail article img {
+        width: 100%;
+      }
+    </style>
+
+    <script>
+      const thumbdiv = document.querySelector(".thumb");
+      const imgDiv = document.querySelector(".detail");
+
+      data.forEach((value, key) => {
+        // console.log(value);
+        // console.log(key);
+        thumbdiv.innerHTML += `<figure>
+          <img src="${data[key].url}" />
+        </figure>`;
+
+        const figureBox = document.querySelectorAll(".thumb figure");
+
+        figureBox.forEach((figure, key) => {
+          figure.onclick = () => {
+            imgDiv.innerHTML = `<article>
+          <h2>${data[key].title}</h2>
+          <figure>
+            <img src="${data[key].url}" />
+            <figcaption>${data[key].datail}</figcaption>
+          </figure>
+        </article>`;
+          };
+        });
+      });
+    </script>
+  </body>
+</html>
