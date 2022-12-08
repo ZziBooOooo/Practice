@@ -17,9 +17,25 @@ fetch("./data.json")
     console.log(gallery.data);
     init(gallery.data);
   });
-
+const btn = document.querySelector(".gallery button");
 function init(data) {
-  const elGallery = document.querySelector(".gallery div");
-  console.log(data);
-  elGallery.innerHTML = `<img src=${data[0].url}>`;
+  const imgBox = document.querySelector(".imgBox");
+  console.log(imgBox);
+  let setFun;
+  btn.onclick = function () {
+    i = 0;
+    // data.forEach((value, key) => {
+    // for (let i = 0; i < 10; i++) {
+
+    setFun = setInterval(() => {
+      if (i < 10) {
+        imgBox.innerHTML += `<img src=${data[i].url}>`;
+        // return;
+        i++;
+        console.log("test");
+      } else if (i >= 10) {
+        clearInterval(setFun);
+      }
+    }, 100);
+  };
 }
