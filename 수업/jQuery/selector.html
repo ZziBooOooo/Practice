@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <article class="faq">
+      <h2>FAQ</h2>
+      <ul>
+        <li>
+          Q. 질문 1
+          <div>답변 1</div>
+        </li>
+        <li>
+          Q. 질문 2
+          <div>답변 2</div>
+        </li>
+        <li>
+          Q. 질문 3
+          <div>답변 3</div>
+        </li>
+      </ul>
+    </article>
+
+    <script>
+      $(".faq div").hide(); // display:none 메서드
+      $(".faq li").click(function () {
+        // $(this).find("div").show(); // display:block 메서드
+        $(this).find("div").slideToggle();
+      });
+    </script>
+
+    <article class="fade">
+      <h2>Fade 슬라이드</h2>
+      <div>
+        <img src="../JS수업/img/4.png" width="200px" alt="" />
+        <img src="../JS수업/img/5.png" width="200px" alt="" />
+        <img src="../JS수업/img/6.png" width="200px" alt="" />
+      </div>
+    </article>
+
+    <style>
+      .fade div {
+        position: relative;
+      }
+      .fade div img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        /* display: none; */
+      }
+    </style>
+
+    <script>
+      $(".fade img").not(":first").hide(); // 첫번째 제외 메서드
+
+      let num = 0;
+      let fadeInterval;
+
+      fadeInterval = setInterval(function () {
+        $(".fade img").eq(num).fadeOut(1000);
+
+        /* 삼항연산자 */
+        // (num == 2) ? num = 0 : num++ ;
+        if (num == 2) {
+          num = 0;
+        } else {
+          num++;
+        }
+        $(".fade img").eq(num).fadeIn(1000);
+        console.log(num);
+      }, 3000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<items>
+    <item>
+        <title>이미지01</title>
+        <url>../JS수업/img/1.png</url>
+            <detail>
+           이미지01 내용
+            </detail>
+    </item>
+    <item>
+        <title>이미지02</title>
+        <url>../JS수업/img/2.png</url>
+            <detail>
+              이미지02 내용
+            </detail>
+    </item>
+    <item>
+        <title>이미지03</title>
+        <url>../JS수업/img/3.png</url>
+            <detail>
+              이미지03 내용
+            </detail>
+    </item>
+</items>

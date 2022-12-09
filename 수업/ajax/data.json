@@ -2,61 +2,61 @@
   "data": [
     {
       "id": "0",
-      "url": "../JS수업/img/1.png",
+      "url": "./img/1.png",
       "title": "이미지1",
       "detail": "이미지1 설명"
     },
     {
       "id": "1",
-      "url": "../JS수업/img/2.png",
+      "url": "./img/2.png",
       "title": "이미지2",
       "detail": "이미지2 설명"
     },
     {
       "id": "2",
-      "url": "../JS수업/img/3.png",
+      "url": "./img/3.png",
       "title": "이미지3",
       "detail": "이미지3 설명"
     },
     {
       "id": "3",
-      "url": "../JS수업/img/4.png",
+      "url": "./img/4.png",
       "title": "이미지4",
       "detail": "이미지4 설명"
     },
     {
       "id": "4",
-      "url": "../JS수업/img/5.png",
+      "url": "./img/5.png",
       "title": "이미지5",
       "detail": "이미지5 설명"
     },
     {
       "id": "5",
-      "url": "../JS수업/img/6.png",
+      "url": "./img/6.png",
       "title": "이미지6",
       "detail": "이미지6 설명"
     },
     {
       "id": "6",
-      "url": "../JS수업/img/7.png",
+      "url": "./img/7.png",
       "title": "이미지7",
       "detail": "이미지7 설명"
     },
     {
       "id": "7",
-      "url": "../JS수업/img/8.png",
+      "url": "./img/8.png",
       "title": "이미지8",
       "detail": "이미지8 설명"
     },
     {
       "id": "8",
-      "url": "../JS수업/img/9.png",
+      "url": "./img/9.png",
       "title": "이미지9",
       "detail": "이미지9 설명"
     },
     {
       "id": "9",
-      "url": "../JS수업/img/10.png",
+      "url": "./img/10.png",
       "title": "이미지10",
       "detail": "이미지10 설명"
     }
