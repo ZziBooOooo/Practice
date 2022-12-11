@@ -41,7 +41,7 @@ function init(data) {
     data.forEach((value, key) => {
       setTimeout(() => {
         imgBox.innerHTML += `<img src=${data[key].url}>`;
-      }, 50 * key);
+      }, 100 * key);
     });
   };
 }
