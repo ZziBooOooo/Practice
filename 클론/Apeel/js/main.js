@@ -6,7 +6,7 @@ const allMain3 = document.querySelector(".main_third");
 const c = document.querySelector(".main6_textbox");
 const allMain6 = document.querySelector(".main_6");
 const d = document.querySelector(".Main5_text_1");
-console.log(d);
+// console.log(d);
 const e = document.querySelector(".Main5_text_2");
 const allMain5 = document.querySelector(".Main_5");
 // let ah = a.offsetHeight;
@@ -15,7 +15,7 @@ const allh3 = allMain3.offsetHeight;
 const allh6 = allMain6.offsetHeight;
 const allh5 = allMain5.offsetHeight;
 
-console.log(b);
+// console.log(b);
 
 /* window.addEventListener("scroll", function () {
   console.log(b);

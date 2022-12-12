@@ -43,6 +43,11 @@ header {
     p {
       a {
         color: $main-color;
+
+        // &.on {
+        //   background-color: #f8e7b7;
+        //   border-radius: 10px;
+        // }
       }
       &:after {
         display: block;
@@ -56,10 +61,7 @@ header {
       &:hover {
         &:after {
           transform: scaleX(1);
-<<<<<<< HEAD
           transform-origin: left;
-=======
->>>>>>> 181c4c84d4b4ff0d6299376dac8fb56751b706fd
           background-color: $main-color;
         }
       }
@@ -169,14 +171,10 @@ header {
       transform: scaleX(0);
       transition: 500ms;
     }
-    &:hover {
-      &:after {
-        transform: scaleX(1);
-<<<<<<< HEAD
-        transform-origin: left;
-=======
->>>>>>> 181c4c84d4b4ff0d6299376dac8fb56751b706fd
-      }
+    &:hover:after,
+    &.on:after {
+      transform: scaleX(1);
+      transform-origin: left;
     }
   }
 }
