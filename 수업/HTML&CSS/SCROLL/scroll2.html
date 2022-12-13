@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body style="height: 5000px">
+    <style>
+      p {
+        height: 400px;
+        margin: 0;
+        font-size: 10rem;
+        text-align: center;
+        padding: 200px 0;
+        background-color: rgb(253, 225, 132);
+      }
+      P:nth-child(even) {
+        background-color: rgb(139, 196, 250);
+      }
+    </style>
+
+    <article>
+      <button>0</button>
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button>4</button>
+      <button>5</button>
+    </article>
+    <div>
+      <p>0</p>
+      <p>1</p>
+      <p>2</p>
+      <p>3</p>
+      <p>4</p>
+      <p>5</p>
+    </div>
+    <!-- scroll.html -->
+
+    <script>
+      let pos = { y: 0, y2: 0, state: true };
+      let idx = 0;
+      let play;
+      let tagValue;
+
+      const elPtag = document.querySelectorAll("p");
+
+      window.addEventListener("scroll", function () {
+        // 스크롤 업,다운
+        pos.y = window.pageYOffset;
+        pos.state = pos.y > pos.y2 ? true : false;
+        pos.y2 = pos.y;
+
+        clearTimeout(play);
+        play = setTimeout(function () {
+          if (pos.state) {
+            idx++;
+            tagValue = "white";
+          } else {
+            idx--;
+            tagValue = "black";
+          }
+          console.log(idx);
+          elPtag[idx].style.color = tagValue;
+        }, 100);
+
+        //콘텐츠가 하단에 위치하면 명령 전달
+        let offset = elPtag[3].offsetTop - window.innerHeight;
+        if (offset < window.pageYOffset) {
+          console.log("콘텐츠03");
+        }
+
+        /* 스크롤 -> 여러번 반복 - 없애고 만들고 없애고 만들다 
+            끝부분에서는 마지막 실행하라 1번만 남는다.
+            스크롤을 움직일때는 window.scrollTo()를 가지고 움직이면 된다.
+
+            scrollTo로 페이지를 제어하는 방식, translateY값으로 제어하는 방식 2가지 알아두기
+*/
+      });
+
+      const btn = document.querySelectorAll("button");
+
+      btn.forEach((el, key) => {
+        el.addEventListener("click", () => {
+          window.scrollTo({
+            // scrollTo는 스크롤이벤트 함수안에 있으면 안된다
+            left: 0,
+            top: elPtag[key].offsetTop,
+            behavior: "smooth",
+          });
+        });
+      });
+
+      /* 
+      각각 알아두기!
+      console.log(document.body.scrollHeight); - 문서전체 높이값
+      el.offsetTop; - 콘텐츠 위치값
+      window.pageYOffset - 스크롤값
+      scrollTo();  - 스크롤위치 이동 메서드
+      */
+    </script>
+  </body>
+</html>

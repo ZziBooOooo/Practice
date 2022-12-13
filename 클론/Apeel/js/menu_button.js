@@ -1,4 +1,5 @@
 $("body").prepend("<header>");
+
 // $("body").append("<footer>");
 
 $("header").load("../index.html header>.header_desktop", head); // 콜백함수
@@ -14,7 +15,7 @@ function head() {
     // e.preventDefault();
     $(".right .hyo").eq(idx).addClass("on");
     console.log($(".right .hyo").eq(idx));
-    let idx = $(this).index();
+    let idx = $(this).index(); //.index()는 0,1,2,3..이 아니라 부모로부터 0,1 부모로부터 0,1 이런식으로 들어간다.
     localStorage.idx = idx;
   });
 }

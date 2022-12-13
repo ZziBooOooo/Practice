@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--     <script>
+      let date = new Date();
+      console.log(date);
+      console.log(date.getFullYear());
+      console.log(date.getMonth() + 1); // 1월이 0부터 시작 , 따라서 현재 월은 +1
+      console.log(date.getDate()); //
+      console.log(date.getDay()); // 0부터 6까지, 일요일이 0
+      console.log(["일", "월", "화", "수", "목", "금", "토"][date.getDay()]);
+
+      console.log(date.getHours());
+      console.log(date.getMinutes());
+      console.log(date.getSeconds());
+
+      console.log(date.getTime());
+      console.log(24 * 60 * 60 * 1000); // 하루의 초
+      console.log(date.getTime() / (24 * 60 * 60 * 1000)); // 1970년도부터 현재까지의 일 수
+    </script> -->
+
+    <div class="date-1">수업종료 D-day : <span></span></div>
+    <div class="date-2">
+      참여일수 : <span></span> <button>참여가능여부</button>
+    </div>
+
+    <script>
+      let today = new Date();
+      let startDay = new Date("2022-11-02 09:30:00");
+      let endDay = new Date("2023-04-20 18:20:00");
+      let oneDay = 24 * 60 * 60 * 1000;
+      let dDay = Math.round((endDay - today) / oneDay);
+      let pDay = Math.round((today - startDay) / oneDay);
+
+      const btn = document.querySelector("button");
+      const elSpan = document.querySelectorAll("span");
+
+      elSpan[0].textContent = dDay;
+      elSpan[1].textContent = pDay;
+
+      btn.addEventListener("click", () => {
+        if (startDay < today && endDay > today) {
+          alert("참여가능 - 열공");
+        } else {
+          alert("수강기간이 아닙니다.");
+        }
+      });
+
+      today.setSeconds(today.getSeconds() + 30); // set은 수정
+    </script>
+  </body>
+</html>

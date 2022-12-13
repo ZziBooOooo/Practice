@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="height: 5000px">
+    <script>
+      let pos = { y: 0, y2: 0, state: true };
+      let idx = 0;
+      /*       window.addEventListener("scroll", () => {
+                    pos.y = window.pageYOffset; */
+      /* 스크롤 업다운 */
+      // pos.y2 = pos.y;
+
+      /* if (pos.y > pos.y2) {
+                      pos.state = true;
+                      console.log("down");
+                    } else {
+                      pos.state = false;
+                      console.log("up");
+                    } */
+      // 삼항연산자
+      // pos.y > pos.y2 ? (pos.state = true) : (pos.state = false);
+      /*         pos.state = pos.y > pos.y2 ? true : false;
+
+                    pos.y2 = pos.y; */
+
+      // 쓸 일 있을때 pos.state 가져다 쓰삼
+      /* if (f == true) {
+                      idx++;
+                      f == false;
+                    } */
+
+      /*               console.log(idx);
+                  }); */
+
+      function scrollEvent() {
+        pos.y = window.pageYOffset;
+        pos.state = pos.y > pos.y2 ? true : false;
+        pos.y2 = pos.y;
+        console.log(idx);
+        if (pos.state == true) {
+          idx++;
+          console.log(idx);
+        }
+      }
+
+      window.addEventListener("scroll", function () {
+        clearTimeout(timer);
+        timer = setTimeout(scrollEvent);
+      });
+    </script>
+  </body>
+</html>
