@@ -49,38 +49,30 @@
       // 내가 한 명령 + 스크롤에 의해 움직이는 문서가 겹쳐 움직임이 부자연스러울 것
       const elMain = document.querySelector("main");
       const elSec = document.querySelectorAll("section");
-      document.body.style = `height:${elMain.offsetHeight}px`;
 
       let offset = [];
+      let pos = { y: 0, y2: 0, state: true };
+      let play;
+      let idx = 0;
+
       elSec.forEach((section) => {
         offset.push(section.offsetTop);
       });
 
-      let pos = { y: 0, y2: 0, state: true };
+      elSec.forEach((elSection, key) => {
+        elSection.addEventListener("mousewheel", (event) => {
+          // console.log(event);
+          // wheelDelta 속성 - 스크롤 밑으로 내리면 음수, 올리면 양수
 
-      let play;
-      let idx = 0;
-
-      window.addEventListener("scroll", () => {
-        pos.y = window.pageYOffset;
-        pos.state = pos.y > pos.y2 ? true : false;
-        pos.y2 = pos.y;
-        clearTimeout(play);
-        play = setTimeout(function () {
-          if (pos.state) {
-            idx++;
+          if (event.wheelDelta < 0) {
+            console.log(this.nextElementSibling);
+            console.log("down");
           } else {
-            idx--;
+            console.log("up");
           }
 
-          if (idx <= -1) {
-            idx = 0;
-          } else if (idx >= 5) {
-            idx = 5;
-          }
-          console.log(idx);
-          elMain.style = `transform:translateY(-${offset[idx - 1]}px)`;
-        }, 100);
+          elMain.style = `transform:translateY()`;
+        });
       });
     </script>
   </body>
