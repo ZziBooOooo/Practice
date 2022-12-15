@@ -1,0 +1,71 @@
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(44, 43, 43);
+}
+
+.mainBox {
+  width: 40vw;
+  height: 60vh;
+  padding: 15px;
+  border-radius: 20px;
+  background-color: rgb(248, 184, 46);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  background-color: white;
+  width: 90%;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.contentBox {
+  width: 80%;
+  height: 75%;
+  background-color: white;
+  margin-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  border-radius: 8px;
+}
+.contentUl {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+}
+.new_form {
+  margin-bottom: 10px;
+  width: 100%;
+  /* background-color: blue; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.memoInput {
+  width: 80%;
+}
+
+.submitBtn {
+  border: none;
+  width: 25px;
+  height: 25px;
+  background-color: rgb(171, 212, 94);
+  border-radius: 5px;
+  padding: 5px;
+}
