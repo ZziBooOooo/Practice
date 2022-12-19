@@ -198,6 +198,8 @@ body {
   color: #5b1a1d;
   font-size: 65px;
   font-weight: 600;
+  opacity: 0;
+  transition: 0.5s;
 }
 
 .main3 {
@@ -229,6 +231,8 @@ body {
   font-size: 65px;
   font-weight: 600;
   margin-bottom: 15px;
+  opacity: 0;
+  transition: 0.5s;
 }
 .main3 .main3_textBox .main3_textBox_bottom a {
   color: #154726;
@@ -269,6 +273,20 @@ body {
   stroke-dasharray: 200px;
 }
 
+.active2 {
+  -webkit-animation: textup2 3s forwards;
+          animation: textup2 3s forwards;
+  color: #154726;
+  opacity: 1;
+}
+
+.active3 {
+  -webkit-animation: textup2 3s forwards;
+          animation: textup2 3s forwards;
+  color: #5b1a1d;
+  opacity: 1;
+}
+
 .Main_4 {
   width: 100%;
   max-width: 100vw;
@@ -283,31 +301,22 @@ body {
   transition: 0.3s ease-out;
   overflow: hidden;
 }
-.Main_4 .active2 {
-  -webkit-animation: textup2 3s forwards;
-          animation: textup2 3s forwards;
-  color: #154726;
-}
 @-webkit-keyframes textup2 {
   0% {
-    color: #154726;
     opacity: 0;
     transform: translateY(20%);
   }
   100% {
-    color: #154726;
     opacity: 1;
     transform: translateY(0%);
   }
 }
 @keyframes textup2 {
   0% {
-    color: #154726;
     opacity: 0;
     transform: translateY(20%);
   }
   100% {
-    color: #154726;
     opacity: 1;
     transform: translateY(0%);
   }
@@ -468,6 +477,7 @@ body {
   font-size: 110px;
   color: #154726;
   font-weight: 700;
+  transition: 0.5s;
 }
 
 .Main4_text_2 {

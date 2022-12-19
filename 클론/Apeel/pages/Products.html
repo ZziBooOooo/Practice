@@ -134,7 +134,7 @@
             difference
           </p>
 
-          <p>
+          <p class="main2_second_p">
             Fruits&veggies with<br />
             Apeel stay fresh for<br />
             longer.
@@ -150,7 +150,7 @@
           </p>
 
           <div class="main3_textBox_bottom">
-            <p>
+            <p class="main3_second_p">
               Fruits&veggies with<br />
               Apeel stay fresh for<br />
               longer.
@@ -635,5 +635,33 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      const p1 = document.querySelector(".main2_second_p");
+      const p2 = document.querySelector(".main3_second_p");
+      const p3 = document.querySelector(".Main4_text_1");
+
+      const io = new IntersectionObserver((entries) => {
+        console.log(entries);
+        entries.forEach((entry, key) => {
+          // console.log(entry);
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active2");
+            if (entry.target.classList.contains("main2_second_p")) {
+              entry.target.classList.remove("active2");
+              entry.target.classList.add("active3");
+            }
+          } else {
+            entry.target.classList.remove("active2");
+            entry.target.classList.remove("active3");
+          }
+        });
+      });
+
+      const ps = [p1, p2, p3];
+      ps.forEach((el) => {
+        io.observe(el);
+      });
+    </script>
   </body>
 </html>

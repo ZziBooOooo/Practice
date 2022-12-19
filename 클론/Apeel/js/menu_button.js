@@ -26,7 +26,7 @@ const menuBtn = document.querySelector(".menuBtn");
 let ah = headerHeight.offsetHeight;
 let idx = localStorage.idx || 0;
 
-$(window).scroll(() => {
+/* $(window).scroll(() => {
   if (ah <= $(document).scrollTop()) {
     menuBtn.classList.add("menuBtn_on");
     menuBtn.style = `opacity:1;`;
@@ -34,3 +34,4 @@ $(window).scroll(() => {
     menuBtn.style = `opacity:0;`;
   }
 });
+ */

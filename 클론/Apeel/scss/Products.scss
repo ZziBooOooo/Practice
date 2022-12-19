@@ -173,6 +173,8 @@ body {
       color: #5b1a1d;
       font-size: 65px;
       font-weight: 600;
+      opacity: 0;
+      transition: 0.5s;
     }
   }
 }
@@ -209,6 +211,8 @@ body {
         font-size: 65px;
         font-weight: 600;
         margin-bottom: 15px;
+        opacity: 0;
+        transition: 0.5s;
       }
 
       a {
@@ -263,6 +267,17 @@ body {
   }
 }
 
+.active2 {
+  animation: textup2 3s forwards;
+  color: $main-color;
+  opacity: 1;
+}
+
+.active3 {
+  animation: textup2 3s forwards;
+  color: #5b1a1d;
+  opacity: 1;
+}
 .Main_4 {
   width: 100%;
   max-width: 100vw;
@@ -277,20 +292,13 @@ body {
   transition: 0.3s ease-out;
   overflow: hidden;
 
-  .active2 {
-    animation: textup2 3s forwards;
-    color: $main-color;
-  }
-
   @keyframes textup2 {
     0% {
-      color: $main-color;
       opacity: 0;
       transform: translateY(20%);
     }
 
     100% {
-      color: $main-color;
       opacity: 1;
       transform: translateY(0%);
     }
@@ -476,6 +484,7 @@ body {
   color: $main-color;
   font-weight: 700;
   // opacity: 0;
+  transition: 0.5s;
 }
 
 .Main4_text_2 {
