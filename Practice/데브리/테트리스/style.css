@@ -19,7 +19,7 @@ body {
 }
 
 .playground > ul {
-  border: 1px solid black;
+  border: 1px solid #ccc;
   width: 250px;
   margin: 0 auto;
 }
@@ -36,4 +36,8 @@ body {
   width: 25px;
   height: 25px;
   outline: 1px solid #ccc;
+}
+
+.tree {
+  background-color: #67c23a;
 }

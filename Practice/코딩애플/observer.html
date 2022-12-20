@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      body {
+        background-color: black;
+        height: 600px;
+        font-family: "nanumsquare";
+      }
+
+      div {
+        margin-top: 1000px;
+        color: white;
+        text-align: center;
+        opacity: 0;
+        transition: all 2s;
+      }
+    </style>
+
+    <div><h1>Scroll animation test</h1></div>
+    <div><h1>Scroll animation test2</h1></div>
+    <div><h1>Scroll animation test3</h1></div>
+    <div><img src="../../수업/HTML&CSS/img/7.png" alt="" /></div>
+
+    <script>
+      let observer = new IntersectionObserver((e) => {
+        // console.log(e);
+        e.forEach((box) => {
+          if (box.isIntersecting) {
+            // 화면에 보일때만 실행하고 싶을때 쓴다.
+            // 화면에 보일때는 true, 아니면 false
+            box.target.style.opacity = 1;
+          }
+        });
+      });
+
+      let divs = document.querySelectorAll("div");
+      observer.observe(divs[0]); // html요소가 화면에 등장하는지 감지해줌
+      observer.observe(divs[1]); // 감지되면 IntersectionObserver 내용 실행
+      observer.observe(divs[2]); // 등장, 감지, 퇴장 시에 실행됨
+      observer.observe(divs[3]);
+    </script>
+  </body>
+</html>
