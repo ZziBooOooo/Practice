@@ -640,10 +640,11 @@
       const p1 = document.querySelector(".main2_second_p");
       const p2 = document.querySelector(".main3_second_p");
       const p3 = document.querySelector(".Main4_text_1");
+      const p4 = document.querySelector(".main5_textBox");
 
       const io = new IntersectionObserver((entries) => {
         console.log(entries);
-        entries.forEach((entry, key) => {
+        entries.forEach((entry) => {
           // console.log(entry);
           if (entry.isIntersecting) {
             entry.target.classList.add("active2");
@@ -658,7 +659,7 @@
         });
       });
 
-      const ps = [p1, p2, p3];
+      const ps = [p1, p2, p3, p4];
       ps.forEach((el) => {
         io.observe(el);
       });

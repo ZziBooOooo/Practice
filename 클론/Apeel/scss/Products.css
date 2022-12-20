@@ -477,6 +477,7 @@ body {
   font-size: 110px;
   color: #154726;
   font-weight: 700;
+  opacity: 0;
   transition: 0.5s;
 }
 
