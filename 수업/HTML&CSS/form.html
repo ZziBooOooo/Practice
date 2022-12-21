@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- form.html -->
+
+    <article>
+      <h2>약관동의</h2>
+      <form id="form_join" action="form-join.html">
+        <!-- form태그에는 스타일 주는것 X -->
+        <ul>
+          <li>
+            <input id="terms" type="checkbox" />
+            <label for="terms"> </label>
+            이용약관 동의
+          </li>
+          <li>
+            <input id="privacy" type="checkbox" />
+            <label for="privacy"> </label>
+            개인정보 수집동의
+          </li>
+          <li>
+            <input id="all" type="checkbox" />
+            <label for="all"> </label>
+            전체 동의
+          </li>
+          <li>
+            <input type="submit" value="확인" />
+          </li>
+        </ul>
+      </form>
+    </article>
+
+    <script>
+      window.addEventListener("click", (e) => {
+        /* 화살표함수 안에서는 this를 사용할 수 없다.!!!!  */
+        /*      if (all.checked) {
+          privacy.checked = true;
+          terms.checked = true;
+        } else {
+          privacy.checked = false;
+          terms.checked = false;
+        } */
+
+        /*         terms.checked = all.checked;
+        privacy.checked = all.checked; */
+
+        /* 이벤트위임 */
+        // console.log(e.target.checked);
+        // console.log(e.target.id == "all");
+
+        // ** 이거 왜안됨?
+        /*         if (e.target.id == "all") {
+          privacy.checked = true;
+          terms.checked = true;
+        }
+
+        if (e.target.id == "terms" && e.target.id == "privacy") {
+          console.log("all");
+          all.checked = true;
+        }
+ */
+
+        if (e.target.id == "all") {
+          privacy.checked = all.checked;
+          terms.checked = all.checked;
+        }
+
+        if (terms.checked && privacy.checked) {
+          all.checked = true;
+        } else {
+          all.checked = false;
+        }
+      });
+
+      window.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // 동의 - 체크상태 확인 (true/false)
+        // console.log(terms.checked);  id는 안받아와도 사용가능
+
+        if (!terms.checked) {
+          alert("약관동의 필요");
+          return;
+        }
+
+        if (!privacy.checked) {
+          alert("개인정보 수집동의 필요");
+          return;
+        }
+      });
+
+      // form_join.submit();
+    </script>
+
+    <style>
+      input:not([type="submit"]) {
+        display: none;
+      }
+
+      /*       input[type="submit"] {
+        display: block;
+      } */
+
+      label {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: rgb(234, 234, 234);
+        display: inline-block;
+      }
+      label::after {
+        content: "✔";
+        text-align: center;
+        display: block;
+        font-size: 12px;
+        color: rgb(40, 168, 26);
+      }
+
+      input:checked + label {
+        background-color: rgb(204, 238, 200);
+      }
+    </style>
+  </body>
+</html>
