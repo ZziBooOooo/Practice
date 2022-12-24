@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./main.js"></script>
+  </head>
+  <body>
+    <style>
+      .item {
+        list-style: none;
+      }
+      .item__thumbnail {
+        width: 200px;
+      }
+    </style>
+    <h1 id="test">날씨</h1>
+
+    <button class="btn" data-key="gender" data-value="female">여자</button>
+    <button class="btn" data-key="gender" data-value="male">남자</button>
+
+    <section class="testForm">
+      <button class="btn" data-key="lookStyle" data-value="modern">모던</button>
+      <button class="btn" data-key="lookStyle" data-value="street">
+        스트릿
+      </button>
+      <button class="btn" data-key="lookStyle" data-value="lovely">
+        러블리
+      </button>
+      <button class="btn" data-key="lookStyle" data-value="casual">
+        캐주얼
+      </button>
+    </section>
+
+    <div id="content"></div>
+  </body>
+</html>

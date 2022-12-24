@@ -1,0 +1,49 @@
+{
+  "items": [
+    {
+      "lookStyle": "modern",
+      "gender": "female",
+      "image": "./img/modern1.jpg"
+    },
+    {
+      "lookStyle": "modern",
+      "gender": "female",
+      "image": "./img/modern2.jpg"
+    },
+    {
+      "lookStyle": "street",
+      "gender": "female",
+      "image": "./img/street1.jpg"
+    },
+    {
+      "lookStyle": "street",
+      "gender": "female",
+      "image": "./img/street2.jpg"
+    },
+    {
+      "lookStyle": "lovely",
+      "gender": "female",
+      "image": "./img/lovely1.jpg"
+    },
+    {
+      "lookStyle": "lovely",
+      "gender": "female",
+      "image": "./img/lovely2.jpg"
+    },
+    {
+      "lookStyle": "casual",
+      "gender": "female",
+      "image": "./img/casual1.jpg"
+    },
+    {
+      "lookStyle": "casual",
+      "gender": "female",
+      "image": "./img/casual2.jpg"
+    },
+    {
+      "lookStyle": "casual",
+      "gender": "male",
+      "image": "./img/M_casual1.jpg"
+    }
+  ]
+}
