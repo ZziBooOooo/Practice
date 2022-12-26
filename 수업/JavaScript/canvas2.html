@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas width="1000" height="900"> 지원하지 않습니다 </canvas>
+
+    <script>
+      const canvas = document.querySelector("canvas"),
+        ctx = canvas.getContext("2d");
+      /*  let x = 0;
+      let y = 0;
+
+      function draw() {
+        x += 5;
+        ctx.clearRect(0, 0, 1000, 900);
+
+        if (x > 1000) {
+          x = 0;
+        }
+        requestAnimationFrame(draw);
+      }
+
+      draw(); */
+
+      class RectObject {
+        constructor() {
+          // 사각형의 크기, 색상, 위치값 등 초기세팅
+          (this.x = ran(800)),
+            (this.y = ran(600)),
+            (this.w = ran(200) + 50),
+            (this.h = ran(200) + 50),
+            (this.c = `rgb(${ran(255)},${ran(255)},${ran(255)})`);
+        }
+
+        draw() {
+          ctx.fillStyle = this.c;
+          ctx.fillRect(this.x, this.y, this.w, this.h);
+        }
+      }
+
+      //   const rect = new RectObject(0, 0, 200, 200, "red");
+
+      function ran(n) {
+        return Math.floor(Math.random() * n);
+      }
+
+      let rect = [];
+      for (let i = 0; i < 10; i++) {
+        rect.push(new RectObject());
+      }
+
+      console.log(rect);
+
+      function ani() {
+        ctx.clearRect(0, 0, 1000, 900);
+        rect.forEach((r) => {
+          r.x++;
+          r.draw();
+        });
+        requestAnimationFrame(ani);
+      }
+
+      ani();
+    </script>
+  </body>
+</html>
