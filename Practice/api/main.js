@@ -8,6 +8,7 @@ function onGeoOk(position) {
   fetch(url)
     .then((response) => response.json())
     .then((json) => {
+      console.log(json);
       displayWeather(json);
       setTemperature(json);
     });
@@ -24,6 +25,7 @@ navigator.geolocation.getCurrentPosition(onGeoOk);
 function displayWeather(data) {
   const weatherImg = document.createElement("img");
   weatherImg.src = `./img/weather_Icon/${data.weather[0].icon}.png`;
+  // weatherImg.src = `./img/weather_Icon/04d.gif`;
   test.prepend(weatherImg);
   let mainTemp = Math.floor(data.main.temp);
   test.innerHTML += mainTemp + "℃" + "<br>";
@@ -33,7 +35,8 @@ function displayWeather(data) {
 
 // *** 현재온도값을 받와야함 - data 인자로 받아왔다.
 // 현재온도값에 맞춰서 해당하는 데이터만 필터링해야함
-// json데이터(코디사진)를 이곳으로 불러오는 방법은 ..?
+// json데이터(코디사진)를 이곳으로 불러오는 방법은 ..? -> onGeoOk안에서 setTemperature(json) 실행 &
+// setTemperature() 정의에서 loadItems 실행
 function setTemperature(data) {
   loadItems().then((items) => {
     // console.log(items);
@@ -99,8 +102,15 @@ function onButtonClick(e, items) {
   const dataset = e.target.dataset;
   const dataKey = dataset.key;
   const dataValue = dataset.value;
-
   const styleItems = items.filter((item) => item[dataKey] === dataValue);
 
   displayItems(styleItems);
 }
+
+/* 
+해야할 것
+1. 데이터 수집 -> 남성/여성 & 옷스타일 & 기온 각각 나눠서 수집
+2. 디자인 -> 
+3. -> html css 완료
+4. api 배포시 cors 오류 해결 -> 프록시서버?
+*/
