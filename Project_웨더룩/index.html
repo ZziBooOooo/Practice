@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="bgDiv">
+      <div class="contentBox">
+        <div class="test1"></div>
+        <div class="test2"></div>
+      </div>
+    </div>
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .bgDiv {
+        background-image: url("./휴대폰모형.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 1200px;
+        height: 100vh;
+        /* background-color: red; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .contentBox {
+        width: 75%;
+        height: 50vh;
+        /* background-color: pink; */
+        display: flex;
+      }
+
+      .test1 {
+        width: 50%;
+        background-color: rgb(203, 233, 159);
+        height: 50vh;
+        opacity: 0;
+        transition: 1s;
+      }
+      .test2 {
+        width: 50%;
+        background-color: rgb(175, 175, 248);
+        height: 50vh;
+        opacity: 0;
+        transition: 1s;
+      }
+      .on {
+        animation: 1s contentsOn forwards;
+      }
+      .on2 {
+        animation-delay: 1s;
+        animation: 2s contentsOn forwards;
+      }
+      @keyframes contentsOn {
+        from {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        to {
+          opacity: 0;
+          transform: translateY(-800px);
+        }
+      }
+    </style>
+
+    <script>
+      const test1 = document.querySelector(".test1");
+      const test2 = document.querySelector(".test2");
+      const bgDiv = document.querySelector(".bgDiv");
+
+      bgDiv.addEventListener("mousewheel", () => {
+        if (event.wheelDelta < 0) {
+          test1.classList.add("on");
+          test2.classList.add("on2");
+        }
+      });
+    </script>
+  </body>
+</html>

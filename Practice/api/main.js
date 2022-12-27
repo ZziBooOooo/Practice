@@ -46,6 +46,7 @@ function setTemperature(data) {
 }
 
 function tempFilter(data, items) {
+  console.log(items);
   let mainTemp = Math.floor(data.main.temp);
   let kr_mainTemp;
   if (mainTemp >= 28) {
@@ -109,7 +110,7 @@ function onButtonClick(e, items) {
 
 /* 
 해야할 것
-1. 데이터 수집 -> 남성/여성 & 옷스타일 & 기온 각각 나눠서 수집
+1. 데이터 수집 -> 남성/여성 & 옷스타일 & 기온 각각 나눠서 수집 - ok
 2. 디자인 -> 
 3. -> html css 완료
 4. api 배포시 cors 오류 해결 -> 프록시서버?
