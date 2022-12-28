@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: rgb(12, 12, 12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imgBox {
+  margin: 0;
+}
+.logoImg {
+  opacity: 0;
+  transition: 1s;
+
+  /* animation: LogoShow 3s forwards, translateLogo 1s forwards; */
+}
+
+.logoOn {
+  animation: LogoShow 3s forwards;
+}
+
+.translateLogoOn {
+  transition: 1s;
+  animation: translateLogo 1s forwards;
+}
+@keyframes LogoShow {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes translateLogo {
+  from {
+    transform: translate(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.1);
+    opacity: 1;
+  }
+}
