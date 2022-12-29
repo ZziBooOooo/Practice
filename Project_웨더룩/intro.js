@@ -55,7 +55,8 @@ function hideAndSecondText() {
   }, 600);
 
   setTimeout(() => {
-    TypingBox2.classList.add("animate__flipOutY");
+    TypingBox2.classList.remove("animate__fadeInLeft");
+    TypingBox2.classList.add("animate__bounceOutRight");
   }, 1800);
 
   setTimeout(() => {
