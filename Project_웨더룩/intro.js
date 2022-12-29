@@ -4,8 +4,30 @@ const SecondTyping = document.querySelectorAll(".SecondTyping");
 const p_icons = document.querySelectorAll(".a");
 const icons = document.querySelectorAll(".icon");
 
+function finishIntro() {
+  thirdSec.style.display = "block";
+  thirdSec.classList.add("overlayDisplay");
+}
+function textLogoShow() {
+  textLogo1.classList.add("textLogoOn");
+
+  setTimeout(() => {
+    textLogo2.classList.add("textLogoOn");
+  }, 500);
+
+  setTimeout(() => {
+    logoBox.classList.add("animate__flash");
+    logoBox.style.transform = "rotate(-5deg)";
+  }, 1000);
+
+  setTimeout(() => {
+    finishIntro();
+  }, 3000);
+}
+
 function showIcons() {
   ipad.classList.add("animate__fadeInUpBig");
+  ipad.style.opacity = 1;
   // p_icons.forEach((p) => {
   //   p.classList.add("animate__zoomIn");
   // });
@@ -36,6 +58,10 @@ function showIcons() {
     handIcon.classList.remove("clickAni");
     handIcon.classList.add("animate__bounceOutDown");
   }, 4000);
+
+  setTimeout(() => {
+    textLogoShow();
+  }, 5000);
 }
 
 function showSecondSec() {

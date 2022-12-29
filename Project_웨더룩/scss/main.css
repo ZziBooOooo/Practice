@@ -1,0 +1,174 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", sans-serif;
+  color: rgb(41, 41, 41);
+  background-color: rgb(253, 237, 231);
+  background-image: url("../img/bg/2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.logo {
+  width: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.mainBox {
+  width: 70%;
+  max-width: 1100px;
+  min-width: 780px;
+  height: 60%;
+  min-height: 640px;
+  border: 15px solid rgb(44, 44, 44);
+  border-radius: 20px;
+  background-color: white;
+}
+.mainBox #main_Sec1 {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+.mainBox .topBox {
+  margin-top: 10px;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mainBox .topBox p {
+  margin: 0;
+  font-weight: bold;
+}
+.mainBox .topBox .topBox_right {
+  display: flex;
+  justify-content: space-between;
+  width: 80px;
+}
+.mainBox .topBox .topBox_right p {
+  font-weight: bold;
+  margin: 0;
+}
+.mainBox .topBox .topBox_right i {
+  font-size: 20px;
+  transform: translateY(2px);
+}
+.mainBox .weatherBox {
+  width: 160px;
+  height: 65px;
+  margin-right: 2.5%;
+  background-color: rgba(0, 0, 0, 0.452);
+  border-radius: 12px;
+  position: absolute;
+  top: 10%;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+}
+.mainBox .weatherBox .clickText {
+  display: inline-block;
+  color: white;
+  font-weight: 400;
+  transform: rotate(-4deg);
+  margin-left: 10px;
+}
+.mainBox .weatherBox .weatherBox_secondText {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-10px);
+}
+.mainBox .weatherBox .weatherBox_secondText p {
+  margin: 0;
+  transform: translateY(10px);
+}
+.mainBox .weatherBox .weatherBox_secondText p img {
+  width: 50px;
+}
+.mainBox .weatherBox .weatherBox_secondText span {
+  display: inline-block;
+  color: white;
+  font-weight: bold;
+}
+.mainBox .bottomBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80%;
+  justify-content: space-between;
+}
+.mainBox .bottomBox #mainText {
+  font-size: 42px;
+  font-weight: bold;
+  margin: 0;
+}
+.mainBox .bottomBox .mainContentBox {
+  width: 100%;
+  height: 65%;
+  background: linear-gradient(rgba(250, 146, 196, 0.8274509804), rgba(252, 213, 72, 0.6039215686));
+  margin-top: 15px;
+  border-radius: 18px;
+  position: relative;
+}
+.mainBox .bottomBox .mainContentBox .mainImgBox {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.mainBox .bottomBox .mainContentBox .mainImgBox p {
+  width: 200px;
+  margin: 0;
+}
+.mainBox .bottomBox .mainContentBox .mainImgBox p img {
+  width: 250px;
+}
+.mainBox .bottomBox .mainContentBox .mainImgBox #shirtBox {
+  transform: translate(20%, 10%) rotate(-10deg);
+}
+.mainBox .bottomBox .mainContentBox .mainImgBox #bagBox {
+  transform: translate(1%, -10%) rotate(2deg) scale(1.1);
+}
+.mainBox .bottomBox .mainContentBox .mainImgBox #shoesBox {
+  transform: translate(-25%, 20%);
+}
+.mainBox .bottomBox .mainContentBox .mainImgBox #hatBox {
+  transform: translate(-30%, -15%) rotate(40deg);
+}
+.mainBox .bottomBox .mainContentBox #smallLogoText {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: white;
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.mainBox .bottomBox button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 50px;
+  font-size: 28px;
+  font-weight: bold;
+}
+.mainBox .bottomBox button:hover {
+  cursor: pointer;
+}
+.mainBox .bottomBox button span {
+  margin-right: 3px;
+  color: rgb(41, 41, 41);
+}
+.mainBox .bottomBox button i {
+  font-size: 24px;
+}/*# sourceMappingURL=main.css.map */

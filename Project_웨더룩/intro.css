@@ -236,7 +236,7 @@ body {
 
 #ipad {
   width: 110%;
-  /* opacity: 0; */
+  opacity: 0;
   animation-duration: 3s;
   transition: 1s;
   z-index: 9;
@@ -301,6 +301,7 @@ body {
   align-items: center;
   justify-content: center;
   transform: rotate(-5deg);
+  animation-duration: 1s;
 }
 
 #logoBox p {
@@ -314,4 +315,40 @@ body {
   color: #f9f1cc;
   text-shadow: 5px 5px 0px #ffb650, 10px 10px 0px #ffd662, 15px 15px 0px #ff80bf,
     20px 20px 0px #ef5097, 25px 25px 0px #6868ac, 30px 30px 0px #90b1e0;
+}
+
+#textLogo1,
+#textLogo2 {
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.textLogoOn {
+  opacity: 1 !important;
+}
+
+#thirdSec {
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  display: none;
+  transition: 1s;
+  background-color: rgb(255, 255, 255);
+  z-index: 30;
+}
+
+.overlayDisplay {
+  animation: overlayDisplays 1s forwards;
+}
+
+@keyframes overlayDisplays {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(100%);
+  }
 }
