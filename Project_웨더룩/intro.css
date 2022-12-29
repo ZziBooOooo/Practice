@@ -1,38 +1,87 @@
 body {
   margin: 0;
   height: 100vh;
-  background-color: rgb(12, 12, 12);
+  background-color: rgb(31, 31, 31);
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
-section {
+#firstSec {
   width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+#introCircle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(rgb(248, 69, 188), rgb(255, 204, 64));
+  position: absolute;
+  transition: 2s;
+}
+#smallCircle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgb(250, 250, 250);
+  position: absolute;
+  transition: 2s;
+}
+.circleOn {
+  animation: 1s circleOverlays forwards;
+}
+@keyframes circleOverlays {
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: scale(50, 50);
+  }
+}
+.s_circleOn {
+  animation: 1s s_circleOverlays forwards;
+}
+@keyframes s_circleOverlays {
+  from {
+    transform: scale(0, 0);
+  }
+  to {
+    transform: scale(1.1, 1.1);
+  }
+}
+#imgBox {
+  margin: 0;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  /* background-color: rgb(241, 206, 206); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 1s;
 }
 
-.imgBox {
-  margin: 0;
-}
 .logoImg {
   opacity: 0;
   transition: 1s;
-
-  /* animation: LogoShow 3s forwards, translateLogo 1s forwards; */
+  /* position: absolute; */
+  z-index: 999;
 }
 
 .logoOn {
-  animation: LogoShow 3s forwards;
+  animation: LogoShow 1.5s forwards;
 }
 
 .translateLogoOn {
   transition: 1s;
   animation: translateLogo 1s forwards;
 }
+
 @keyframes LogoShow {
   from {
     transform: scale(0);
@@ -53,4 +102,214 @@ section {
     transform: scale(0.1);
     opacity: 1;
   }
+}
+#TypingBox {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+}
+
+.FirstTyping {
+  opacity: 0;
+  font-size: 150px;
+  color: rgb(247, 247, 247);
+  font-weight: bold;
+}
+#TypingBox2 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+}
+.SecondTyping {
+  opacity: 0;
+  font-size: 150px;
+  color: rgb(255, 252, 246);
+  font-weight: bold;
+}
+
+.typingOn {
+  opacity: 1;
+}
+
+#secondSec {
+  width: 100%;
+  height: 100vh;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  display: none;
+  transition: 1s;
+}
+#bgBox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: white;
+  transition: 1s;
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.SecondSecOn {
+  animation: 1s overlaySecondSec forwards;
+}
+
+@keyframes overlaySecondSec {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.imgsBox {
+  width: 800px;
+  height: 40vh;
+  position: relative;
+}
+.imgsBox p {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: rgb(245, 190, 190); */
+}
+.icon {
+  opacity: 0;
+  transition: 0.5s;
+}
+.icon1 {
+  transform: translateY(-100px);
+  z-index: 8;
+}
+
+.icon2 {
+  left: 0;
+  bottom: 0;
+  /* background-color: transparent !important; */
+  transform: translate(-100%, 70%);
+  width: 100%;
+  z-index: 5;
+}
+.icon3 {
+  left: 0;
+  top: 0;
+  /* background-color: transparent !important; */
+  transform: translate(-80%, -90%) rotate(25deg);
+  width: 100%;
+  z-index: 5;
+}
+#shirt {
+  width: 80%;
+}
+#shoes {
+  width: 80%;
+}
+#hat {
+  width: 100%;
+}
+.icon4 {
+  right: 0;
+  top: 0;
+  /* background-color: transparent !important; */
+  transform: translate(100%, -90%) rotate(370deg);
+  width: 100%;
+  z-index: 5;
+}
+.icon5 {
+  right: 0;
+  bottom: 0;
+  /* background-color: transparent !important; */
+  transform: translate(100%, 70%) rotate(350deg);
+  width: 100%;
+  z-index: 5;
+}
+
+#ipad {
+  width: 110%;
+  /* opacity: 0; */
+  animation-duration: 3s;
+  transition: 1s;
+  z-index: 9;
+}
+
+.handIconBox {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateY(30%);
+  z-index: 10;
+}
+
+#handIcon {
+  opacity: 0;
+  z-index: 10;
+}
+
+.clickAni {
+  animation: 1s clickAniOn forwards;
+}
+
+@keyframes clickAniOn {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95) translateY(20px);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.ipadPlus {
+  animation: 1s ipadPlusOn forwards;
+}
+
+@keyframes ipadPlusOn {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.3);
+  }
+}
+
+#logoBox {
+  width: 60%;
+  height: 40%;
+  /*   background: rgb(63, 161, 251);
+  background: linear-gradient(
+    142deg,
+    rgba(63, 161, 251, 1) 0%,
+    rgba(252, 70, 168, 1) 100%
+  ); */
+  z-index: 20;
+  position: absolute;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#logoBox p {
+  font-family: "Calligraffitti", cursive;
+  font-weight: 700;
+  font-size: 100px;
+  text-shadow: -15px 5px 20px #ced0d3;
+  margin: 0;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: #f9f1cc;
+  text-shadow: 5px 5px 0px #ffb650, 10px 10px 0px #ffd662, 15px 15px 0px #ff80bf,
+    20px 20px 0px #ef5097, 25px 25px 0px #6868ac, 30px 30px 0px #90b1e0;
 }
