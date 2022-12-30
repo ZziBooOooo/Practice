@@ -7,6 +7,10 @@ const icons = document.querySelectorAll(".icon");
 function finishIntro() {
   thirdSec.style.display = "block";
   thirdSec.classList.add("overlayDisplay");
+
+  setTimeout(() => {
+    location.href = "./pages/main.html";
+  }, 2000);
 }
 function textLogoShow() {
   textLogo1.classList.add("textLogoOn");
@@ -22,7 +26,7 @@ function textLogoShow() {
 
   setTimeout(() => {
     finishIntro();
-  }, 3000);
+  }, 2800);
 }
 
 function showIcons() {
@@ -42,26 +46,26 @@ function showIcons() {
   setTimeout(() => {
     handIcon.classList.add("animate__fadeInUpBig");
     handIcon.style.opacity = 1;
-  }, 2000);
+  }, 1500);
 
   setTimeout(() => {
     handIcon.classList.remove("animate__fadeInUpBig");
     handIcon.classList.add("clickAni");
-  }, 3000);
+  }, 2500);
 
   setTimeout(() => {
     ipad.classList.remove("animate__fadeInUpBig");
     ipad.classList.add("ipadPlus");
-  }, 3500);
+  }, 3000);
 
   setTimeout(() => {
     handIcon.classList.remove("clickAni");
     handIcon.classList.add("animate__bounceOutDown");
-  }, 4000);
+  }, 3500);
 
   setTimeout(() => {
     textLogoShow();
-  }, 5000);
+  }, 4000);
 }
 
 function showSecondSec() {
@@ -69,7 +73,7 @@ function showSecondSec() {
 
   setTimeout(() => {
     showIcons();
-  }, 500);
+  }, 400);
 }
 function hideAndSecondText() {
   TypingBox.classList.add("animate__zoomOutDown");
@@ -83,7 +87,7 @@ function hideAndSecondText() {
   setTimeout(() => {
     TypingBox2.classList.remove("animate__fadeInLeft");
     TypingBox2.classList.add("animate__bounceOutRight");
-  }, 1800);
+  }, 1500);
 
   setTimeout(() => {
     // firstSec.style.opacity = "0";
@@ -113,11 +117,11 @@ function translateLogo() {
     $(this).remove();
   });
   setTimeout(() => {
-    $("#imgBox").animate({ top: "0", left: "0" }, 200);
-  }, 400);
+    $("#imgBox").animate({ top: "0", left: "0" }, 100);
+  }, 300);
   setTimeout(() => {
     showFirstText();
-  }, 800);
+  }, 600);
 }
 
 function showLogo() {
@@ -137,5 +141,5 @@ window.addEventListener("load", () => {
   }, 1100);
   setTimeout(() => {
     translateLogo();
-  }, 2500);
+  }, 2000);
 });
