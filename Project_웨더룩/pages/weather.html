@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../scss/main.css" />
+    <link rel="stylesheet" href="../scss/weather.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/497450481c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../JS/weather.js" defer></script>
+  </head>
+  <body>
+    <div class="logoImgBox">
+      <img src="../img/logo3.png" class="logo" alt="" />
+    </div>
+
+    <div class="mainBox">
+      <section id="main_Sec1">
+        <button id="iBox" onclick="location.href='./main.html'">
+          <!-- <i class="fa-solid fa-chevron-left"></i> -->
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <div class="topBox">
+          <p>11:21</p>
+          <div class="topBox_right">
+            <p>KT</p>
+            <p>5G</p>
+            <i class="fa-solid fa-battery-three-quarters"></i>
+          </div>
+        </div>
+
+        <div class="weatherContentBox back-row-toggle splat-toggle">
+          <div class="rain front-row"></div>
+          <div class="rain back-row"></div>
+          <div class="toggles">
+            <!-- <div class="splat-toggle toggle active">SPLAT</div>
+            <div class="back-row-toggle toggle active">BACK<br />ROW</div>
+            <div class="single-toggle toggle">SINGLE</div> -->
+          </div>
+          <div class="imgBox">
+            <div class="wrap">
+              <div class="shape"></div>
+              <div class="shape"></div>
+              <div class="shape"></div>
+            </div>
+            <p class="weatherImgBox"><img src="../img/cloud.png" alt="" /></p>
+          </div>
+          <div class="textBox">
+            <p id="day">12-28</p>
+            <p id="time">오전 11:24</p>
+            <div class="smallTextBox">
+              <p id="region">강남</p>
+              <p id="temp">-5℃</p>
+            </div>
+
+            <p id="weather_des">
+              기온에 따라<br />
+              지정된 텍스트가 들어갑니다~
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

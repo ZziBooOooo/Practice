@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "id": 0,
+            "title": "adidas stan smith1",
+            "price": 160,
+            "photo": "./img/01.jpg"
+        },
+        {
+            "id": 1,
+            "title": "adidas stan smith2",
+            "price": 440,
+            "photo": "./img/02.jpg"
+        },
+        {
+            "id": 2,
+            "title": "adidas stan smith3",
+            "price": 260,
+            "photo": "./img/03.jpg"
+        },
+        {
+            "id": 3,
+            "title": "adidas stan smith4",
+            "price": 310,
+            "photo": "./img/04.jpg"
+        }
+    ]
+}

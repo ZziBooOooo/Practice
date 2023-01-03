@@ -7,8 +7,8 @@ body {
   justify-content: center;
   box-sizing: border-box;
   font-family: "Noto Sans KR", sans-serif;
-  color: rgb(41, 41, 41);
-  background-color: rgb(253, 237, 231);
+  color: rgb(51, 51, 51);
+  // background-color: rgb(253, 237, 231);
   // background-image: url("../img/bg/2.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -29,6 +29,7 @@ body {
   border: 15px solid rgb(44, 44, 44);
   border-radius: 20px;
   background-color: white;
+  opacity: 0;
 
   #main_Sec1 {
     height: 100%;
@@ -65,7 +66,7 @@ body {
 
       i {
         font-size: 20px;
-        transform: translateY(2px);
+        transform: translateY(2.5px);
       }
     }
   }
@@ -75,42 +76,69 @@ body {
   }
 
   .weatherBox {
-    width: 160px;
+    width: 180px;
     height: 65px;
     margin-right: 2.5%;
     background-color: rgba(0, 0, 0, 0.452);
     border-radius: 12px;
-    position: absolute;
-    top: 10%;
-    right: 0;
     display: flex;
     flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 10%;
+    opacity: 0;
+    cursor: pointer;
+    border: none;
+    padding: 5px;
     .clickText {
       display: inline-block;
       color: white;
       font-weight: 400;
-      transform: rotate(-4deg);
       margin-left: 10px;
+      animation: 2s clickTxtAni infinite forwards;
+    }
+
+    @keyframes clickTxtAni {
+      0% {
+        transform: rotate(-5deg) scale(1);
+      }
+      50% {
+        transform: rotate(-5deg) scale(1.02);
+      }
+      100% {
+        transform: rotate(-5deg) scale(1);
+      }
     }
     .weatherBox_secondText {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-around;
+      width: 90%;
+      /*   background-color: red; */
 
-      transform: translateY(-10px);
+      /*  transform: translateY(-5px); */
 
       p {
         margin: 0;
-        transform: translateY(10px);
+        width: 40px;
+        height: 40px;
         img {
-          width: 50px;
+          width: 100%;
         }
       }
 
       span {
         display: inline-block;
         color: white;
-        font-weight: bold;
+        /* font-weight: bold; */
+      }
+
+      & span:nth-of-type(1) {
+        margin-right: 5px;
+      }
+      #region {
+        // width: 60%;
+        font-size: 13px;
       }
     }
   }
@@ -126,15 +154,42 @@ body {
       font-size: 42px;
       font-weight: bold;
       margin: 0;
+      opacity: 0;
     }
 
-    .mainContentBox {
+    .cssanimation,
+    .cssanimation span {
+      animation-duration: 1s;
+      animation-fill-mode: both;
+    }
+
+    .cssanimation span {
+      display: inline-block;
+    }
+
+    .leRotateYZoomIn span {
+      animation-name: leRotateYZoomIn;
+    }
+    @keyframes leRotateYZoomIn {
+      from {
+        transform: perspective(600px) translate3d(0, -60px, -2000px)
+          rotateY(75deg);
+        opacity: 0;
+      }
+      5% {
+        transform: perspective(600px) translate3d(0, -60px, -1500px)
+          rotateY(75deg);
+      }
+    }
+
+    .b_mainContentBox {
       width: 100%;
       height: 65%;
       background: linear-gradient(#fa92c4d3, #fcd5489a);
       margin-top: 15px;
       border-radius: 18px;
       position: relative;
+      opacity: 0;
 
       .mainImgBox {
         display: flex;
@@ -143,6 +198,8 @@ body {
         p {
           width: 200px;
           margin: 0;
+          opacity: 0;
+          transition: 0.5s;
           img {
             width: 250px;
           }
@@ -170,6 +227,7 @@ body {
         margin-right: 10px;
         font-size: 24px;
         margin-bottom: 10px;
+        opacity: 0;
       }
     }
 
@@ -181,6 +239,7 @@ body {
       margin-bottom: 50px;
       font-size: 28px;
       font-weight: bold;
+      opacity: 0;
       &:hover {
         cursor: pointer;
       }
@@ -192,5 +251,48 @@ body {
         font-size: 24px;
       }
     }
+  }
+}
+
+#mainBoxShow {
+  animation: 3s mainBoxShowOn forwards;
+}
+
+@keyframes mainBoxShowOn {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.contentShow {
+  animation: 1.5s contentShowOn forwards;
+}
+
+@keyframes contentShowOn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.imgContentShow {
+  animation: 1.5s imgContentShowOn forwards;
+}
+
+@keyframes imgContentShowOn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

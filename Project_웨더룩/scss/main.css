@@ -7,8 +7,7 @@ body {
   justify-content: center;
   box-sizing: border-box;
   font-family: "Noto Sans KR", sans-serif;
-  color: rgb(41, 41, 41);
-  background-color: rgb(253, 237, 231);
+  color: rgb(51, 51, 51);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -29,6 +28,7 @@ body {
   border: 15px solid rgb(44, 44, 44);
   border-radius: 20px;
   background-color: white;
+  opacity: 0;
 }
 .mainBox #main_Sec1 {
   height: 100%;
@@ -60,47 +60,83 @@ body {
 }
 .mainBox .topBox .topBox_right i {
   font-size: 20px;
-  transform: translateY(2px);
+  transform: translateY(2.5px);
 }
 .mainBox .mainContentBox {
   height: 80%;
 }
 .mainBox .weatherBox {
-  width: 160px;
+  width: 180px;
   height: 65px;
   margin-right: 2.5%;
   background-color: rgba(0, 0, 0, 0.452);
   border-radius: 12px;
-  position: absolute;
-  top: 10%;
-  right: 0;
   display: flex;
   flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 10%;
+  opacity: 0;
+  cursor: pointer;
+  border: none;
+  padding: 5px;
 }
 .mainBox .weatherBox .clickText {
   display: inline-block;
   color: white;
   font-weight: 400;
-  transform: rotate(-4deg);
   margin-left: 10px;
+  -webkit-animation: 2s clickTxtAni infinite forwards;
+          animation: 2s clickTxtAni infinite forwards;
+}
+@-webkit-keyframes clickTxtAni {
+  0% {
+    transform: rotate(-5deg) scale(1);
+  }
+  50% {
+    transform: rotate(-5deg) scale(1.02);
+  }
+  100% {
+    transform: rotate(-5deg) scale(1);
+  }
+}
+@keyframes clickTxtAni {
+  0% {
+    transform: rotate(-5deg) scale(1);
+  }
+  50% {
+    transform: rotate(-5deg) scale(1.02);
+  }
+  100% {
+    transform: rotate(-5deg) scale(1);
+  }
 }
 .mainBox .weatherBox .weatherBox_secondText {
   display: flex;
   align-items: center;
-  justify-content: center;
-  transform: translateY(-10px);
+  justify-content: space-around;
+  width: 90%;
+  /*   background-color: red; */
+  /*  transform: translateY(-5px); */
 }
 .mainBox .weatherBox .weatherBox_secondText p {
   margin: 0;
-  transform: translateY(10px);
+  width: 40px;
+  height: 40px;
 }
 .mainBox .weatherBox .weatherBox_secondText p img {
-  width: 50px;
+  width: 100%;
 }
 .mainBox .weatherBox .weatherBox_secondText span {
   display: inline-block;
   color: white;
-  font-weight: bold;
+  /* font-weight: bold; */
+}
+.mainBox .weatherBox .weatherBox_secondText span:nth-of-type(1) {
+  margin-right: 5px;
+}
+.mainBox .weatherBox .weatherBox_secondText #region {
+  font-size: 13px;
 }
 .mainBox .bottomBox {
   display: flex;
@@ -114,40 +150,76 @@ body {
   font-size: 42px;
   font-weight: bold;
   margin: 0;
+  opacity: 0;
 }
-.mainBox .bottomBox .mainContentBox {
+.mainBox .bottomBox .cssanimation,
+.mainBox .bottomBox .cssanimation span {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+.mainBox .bottomBox .cssanimation span {
+  display: inline-block;
+}
+.mainBox .bottomBox .leRotateYZoomIn span {
+  -webkit-animation-name: leRotateYZoomIn;
+          animation-name: leRotateYZoomIn;
+}
+@-webkit-keyframes leRotateYZoomIn {
+  from {
+    transform: perspective(600px) translate3d(0, -60px, -2000px) rotateY(75deg);
+    opacity: 0;
+  }
+  5% {
+    transform: perspective(600px) translate3d(0, -60px, -1500px) rotateY(75deg);
+  }
+}
+@keyframes leRotateYZoomIn {
+  from {
+    transform: perspective(600px) translate3d(0, -60px, -2000px) rotateY(75deg);
+    opacity: 0;
+  }
+  5% {
+    transform: perspective(600px) translate3d(0, -60px, -1500px) rotateY(75deg);
+  }
+}
+.mainBox .bottomBox .b_mainContentBox {
   width: 100%;
   height: 65%;
   background: linear-gradient(rgba(250, 146, 196, 0.8274509804), rgba(252, 213, 72, 0.6039215686));
   margin-top: 15px;
   border-radius: 18px;
   position: relative;
+  opacity: 0;
 }
-.mainBox .bottomBox .mainContentBox .mainImgBox {
+.mainBox .bottomBox .b_mainContentBox .mainImgBox {
   display: flex;
   height: 100%;
   align-items: center;
 }
-.mainBox .bottomBox .mainContentBox .mainImgBox p {
+.mainBox .bottomBox .b_mainContentBox .mainImgBox p {
   width: 200px;
   margin: 0;
+  opacity: 0;
+  transition: 0.5s;
 }
-.mainBox .bottomBox .mainContentBox .mainImgBox p img {
+.mainBox .bottomBox .b_mainContentBox .mainImgBox p img {
   width: 250px;
 }
-.mainBox .bottomBox .mainContentBox .mainImgBox #shirtBox {
+.mainBox .bottomBox .b_mainContentBox .mainImgBox #shirtBox {
   transform: translate(20%, 10%) rotate(-10deg);
 }
-.mainBox .bottomBox .mainContentBox .mainImgBox #bagBox {
+.mainBox .bottomBox .b_mainContentBox .mainImgBox #bagBox {
   transform: translate(1%, -10%) rotate(2deg) scale(1.1);
 }
-.mainBox .bottomBox .mainContentBox .mainImgBox #shoesBox {
+.mainBox .bottomBox .b_mainContentBox .mainImgBox #shoesBox {
   transform: translate(-25%, 20%);
 }
-.mainBox .bottomBox .mainContentBox .mainImgBox #hatBox {
+.mainBox .bottomBox .b_mainContentBox .mainImgBox #hatBox {
   transform: translate(-30%, -15%) rotate(40deg);
 }
-.mainBox .bottomBox .mainContentBox #smallLogoText {
+.mainBox .bottomBox .b_mainContentBox #smallLogoText {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -156,6 +228,7 @@ body {
   margin-right: 10px;
   font-size: 24px;
   margin-bottom: 10px;
+  opacity: 0;
 }
 .mainBox .bottomBox button {
   background: transparent;
@@ -165,6 +238,7 @@ body {
   margin-bottom: 50px;
   font-size: 28px;
   font-weight: bold;
+  opacity: 0;
 }
 .mainBox .bottomBox button:hover {
   cursor: pointer;
@@ -175,4 +249,79 @@ body {
 }
 .mainBox .bottomBox button i {
   font-size: 24px;
+}
+
+#mainBoxShow {
+  -webkit-animation: 3s mainBoxShowOn forwards;
+          animation: 3s mainBoxShowOn forwards;
+}
+
+@-webkit-keyframes mainBoxShowOn {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes mainBoxShowOn {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+.contentShow {
+  -webkit-animation: 1.5s contentShowOn forwards;
+          animation: 1.5s contentShowOn forwards;
+}
+
+@-webkit-keyframes contentShowOn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes contentShowOn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+.imgContentShow {
+  -webkit-animation: 1.5s imgContentShowOn forwards;
+          animation: 1.5s imgContentShowOn forwards;
+}
+
+@-webkit-keyframes imgContentShowOn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes imgContentShowOn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=main.css.map */

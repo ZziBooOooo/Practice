@@ -3,11 +3,12 @@ const FirstTyping = document.querySelectorAll(".FirstTyping");
 const SecondTyping = document.querySelectorAll(".SecondTyping");
 const p_icons = document.querySelectorAll(".a");
 const icons = document.querySelectorAll(".icon");
+const textLogo1 = document.querySelector(".textLogo1");
+const textLogo2 = document.querySelector(".textLogo2");
 
 function finishIntro() {
   thirdSec.style.display = "block";
   thirdSec.classList.add("overlayDisplay");
-
   setTimeout(() => {
     location.href = "./pages/main.html";
   }, 2000);
@@ -21,7 +22,7 @@ function textLogoShow() {
 
   setTimeout(() => {
     logoBox.classList.add("animate__flash");
-    logoBox.style.transform = "rotate(-5deg)";
+    logoBox.style.transform = "rotate(-5deg)  translateY(50px)";
   }, 1000);
 
   setTimeout(() => {

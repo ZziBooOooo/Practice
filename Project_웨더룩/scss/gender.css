@@ -1,0 +1,53 @@
+.mainBox #main_Sec1 {
+  position: relative;
+}
+.mainBox #main_Sec1 #iBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 50px 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.mainBox #main_Sec1 #iBox i {
+  font-size: 20px;
+}
+.mainBox #main_Sec1 #genderText {
+  font-size: 30px;
+  font-weight: bold;
+}
+.mainBox #main_Sec1 .genderBox {
+  width: 90%;
+  height: 85%;
+  display: flex;
+}
+.mainBox #main_Sec1 .genderBox img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 18px;
+}
+.mainBox #main_Sec1 .genderBox .genderValue {
+  margin-bottom: 50px;
+  font-weight: bold;
+}
+.mainBox #main_Sec1 .genderBox #female {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 50px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.mainBox #main_Sec1 .genderBox #male {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 50px;
+  margin-left: 10px;
+  cursor: pointer;
+}/*# sourceMappingURL=gender.css.map */

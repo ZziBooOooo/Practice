@@ -1,0 +1,311 @@
+.mainBox #main_Sec1 {
+  position: relative;
+  overflow: hidden;
+}
+.mainBox #main_Sec1 #iBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 50px 25px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.mainBox #main_Sec1 #iBox i {
+  font-size: 20px;
+}
+.mainBox #main_Sec1 .weatherContentBox {
+  width: 95%;
+  height: 85%;
+  display: flex;
+}
+.mainBox #main_Sec1 .weatherContentBox .imgBox {
+  width: 60%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mainBox #main_Sec1 .weatherContentBox .imgBox .wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainBox #main_Sec1 .weatherContentBox .imgBox .shape {
+  width: 450px;
+  height: 420px;
+  background: linear-gradient(64.009163468deg, rgb(143, 175, 194) 23.44140625%, rgb(18, 32, 78) 79.84765625%);
+  -webkit-animation: wave 8s ease-in-out infinite;
+          animation: wave 8s ease-in-out infinite;
+  position: absolute;
+  margin-top: 35px;
+  top: 0;
+}
+.mainBox #main_Sec1 .weatherContentBox .imgBox .shape:nth-of-type(2) {
+  width: 800px;
+  height: 800px;
+  position: absolute;
+  top: -300px;
+  left: -400px;
+  opacity: 0.1;
+  z-index: -1;
+}
+.mainBox #main_Sec1 .weatherContentBox .imgBox .shape:nth-of-type(3) {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  top: 350px;
+  right: -700px;
+  opacity: 0.1;
+  z-index: -1;
+}
+@-webkit-keyframes wave {
+  0%, 100% {
+    border-radius: 70% 30% 72% 28%/27% 61% 39% 73%;
+  }
+  50% {
+    border-radius: 77% 23% 54% 46%/40% 38% 62% 60%;
+  }
+  25% {
+    border-radius: 80% 27% 60% 36%/32% 44% 52% 50%;
+  }
+}
+@keyframes wave {
+  0%, 100% {
+    border-radius: 70% 30% 72% 28%/27% 61% 39% 73%;
+  }
+  50% {
+    border-radius: 77% 23% 54% 46%/40% 38% 62% 60%;
+  }
+  25% {
+    border-radius: 80% 27% 60% 36%/32% 44% 52% 50%;
+  }
+}
+.mainBox #main_Sec1 .weatherContentBox .imgBox .weatherImgBox {
+  position: absolute;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.mainBox #main_Sec1 .weatherContentBox .imgBox .weatherImgBox img {
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 450px;
+}
+.mainBox #main_Sec1 .weatherContentBox .textBox {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 100px 40px;
+}
+.mainBox #main_Sec1 .weatherContentBox .textBox p {
+  margin: 0;
+}
+.mainBox #main_Sec1 .weatherContentBox .textBox #day {
+  font-size: 60px;
+  font-weight: 600;
+}
+.mainBox #main_Sec1 .weatherContentBox .textBox #time {
+  font-size: 24px;
+  font-weight: 600;
+}
+.mainBox #main_Sec1 .weatherContentBox .textBox .smallTextBox {
+  display: flex;
+  margin-bottom: 30px;
+}
+.mainBox #main_Sec1 .weatherContentBox .textBox .smallTextBox #region {
+  font-size: 20px;
+  margin-right: 10px;
+}
+.mainBox #main_Sec1 .weatherContentBox .textBox .smallTextBox #temp {
+  font-size: 20px;
+}
+.mainBox #main_Sec1 .weatherContentBox .rain {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+.mainBox #main_Sec1 .weatherContentBox .rain.back-row {
+  display: none;
+  z-index: 1;
+  bottom: 60px;
+  opacity: 0.5;
+}
+.mainBox #main_Sec1 .weatherContentBox body.back-row-toggle .rain.back-row {
+  display: block;
+}
+.mainBox #main_Sec1 .weatherContentBox .drop {
+  position: absolute;
+  bottom: 100%;
+  width: 15px;
+  height: 120px;
+  pointer-events: none;
+  -webkit-animation: drop 0.5s linear infinite;
+          animation: drop 0.5s linear infinite;
+}
+@-webkit-keyframes drop {
+  0% {
+    transform: translateY(0vh);
+  }
+  75% {
+    transform: translateY(90vh);
+  }
+  100% {
+    transform: translateY(90vh);
+  }
+}
+@keyframes drop {
+  0% {
+    transform: translateY(0vh);
+  }
+  75% {
+    transform: translateY(90vh);
+  }
+  100% {
+    transform: translateY(90vh);
+  }
+}
+.mainBox #main_Sec1 .weatherContentBox .stem {
+  width: 1.2px;
+  height: 60%;
+  margin-left: 7px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.452));
+  -webkit-animation: stem 0.5s linear infinite;
+          animation: stem 0.5s linear infinite;
+  transform: rotate(3deg);
+}
+@-webkit-keyframes stem {
+  0% {
+    opacity: 1;
+  }
+  65% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes stem {
+  0% {
+    opacity: 1;
+  }
+  65% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.mainBox #main_Sec1 .weatherContentBox .splat {
+  width: 15px;
+  height: 10px;
+  border-top: 2px dotted rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  opacity: 1;
+  transform: scale(0);
+  -webkit-animation: splat 0.5s linear infinite;
+          animation: splat 0.5s linear infinite;
+  display: none;
+}
+.mainBox #main_Sec1 .weatherContentBox body.splat-toggle .splat {
+  display: block;
+}
+@-webkit-keyframes splat {
+  0% {
+    opacity: 1;
+    transform: scale(0);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(0);
+  }
+  90% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+@keyframes splat {
+  0% {
+    opacity: 1;
+    transform: scale(0);
+  }
+  80% {
+    opacity: 1;
+    transform: scale(0);
+  }
+  90% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+.mainBox #main_Sec1 .weatherContentBox .toggles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+.mainBox #main_Sec1 .weatherContentBox .toggle {
+  position: absolute;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  line-height: 51px;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.mainBox #main_Sec1 .weatherContentBox .toggle:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+.mainBox #main_Sec1 .weatherContentBox .toggle:active {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.mainBox #main_Sec1 .weatherContentBox .toggle.active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.mainBox #main_Sec1 .weatherContentBox .splat-toggle {
+  top: 20px;
+}
+.mainBox #main_Sec1 .weatherContentBox .back-row-toggle {
+  top: 90px;
+  line-height: 12px;
+  padding-top: 14px;
+}
+.mainBox #main_Sec1 .weatherContentBox .single-toggle {
+  top: 160px;
+}
+.mainBox #main_Sec1 .weatherContentBox body.single-toggle .drop {
+  display: none;
+}
+.mainBox #main_Sec1 .weatherContentBox body.single-toggle .drop:nth-child(10) {
+  display: block;
+}/*# sourceMappingURL=weather.css.map */

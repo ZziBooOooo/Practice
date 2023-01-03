@@ -1,0 +1,23 @@
+body {
+  background: linear-gradient(rgb(175, 107, 240), rgba(105, 178, 247, 0.801));
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.App {
+  img {
+    animation: 15s rotate infinite;
+    width: 50%;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}

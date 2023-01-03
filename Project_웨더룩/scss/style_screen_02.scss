@@ -1,0 +1,128 @@
+@import "./main.css";
+@import "./style_screen_01.css";
+
+
+.movebox {
+    width: 100%;
+    position: absolute;
+    top: 30%;
+
+    .left {
+        width: 50%;
+        float: left;
+        // height: 100%;
+        // display: inline-block;
+        // position: absolute;
+
+        .StyleimgsBoxleft {
+            //width: 50%;
+            position: relative;
+            display: flex;
+            text-align: center;
+            //width: 100%;
+
+            .wrap {
+                position: absolute;
+                top: 50%;
+                //transform: translate(-100%, 15%);
+                margin: 0 auto;
+                //border: 2px solid #f00;
+                //box-sizing: border-box;
+                //overflow: hidden;
+                padding-left: 50px;
+                display: flex;
+
+
+                article {
+                    float: left;
+                    padding: 0 10px;
+
+                    img {
+                        border-radius: 20px;
+                        display: block;
+                        width: 300px;
+                        height: 300px;
+                        object-fit: cover;
+                    }
+
+                    &:nth-of-type(2),
+                    &:nth-of-type(4) {
+                        //position: absolute;
+                        transform: translateY(30%);
+                    }
+                }
+            }
+        }
+    }
+
+
+    .right {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        //position: relative;
+
+        float: right;
+
+        .StyleimgsBoxright {
+            //width: 50%;
+            //position: absolute;
+
+            .subheading {
+
+
+                .p1 {
+                    font-weight: 700;
+                    font-size: 25px;
+                }
+
+                img {
+                    width: 5%;
+                    transform: translate(300px, -45px);
+                }
+
+                .p2 {
+                    padding-right: 50px;
+                }
+            }
+
+            .miniimg {
+                padding-right: 50px;
+
+                .wrap02 {
+                    display: flex;
+                    justify-content: space-between;
+                    //transform: translate(79px, 10px);
+                }
+
+                article {
+                    -webkit-filter: grayscale(100%);
+                    img {
+                        border-radius: 10px;
+                        display: block;
+                        width: 110px;
+                        height: 110px;
+                        object-fit: cover;
+
+                        // -webkit-filter: grayscale(100%);
+                        // filter: gray;
+                    }
+
+                    // img:hover {
+                    //     -webkit-filter: grayscale(0%);
+                    //     filter: none;
+                    // }
+                }
+
+                article:hover {
+                    -webkit-filter: grayscale(0%);
+                    //filter: gray;
+                    //filter: none;
+                }
+
+            }
+        }
+
+    }
+}
