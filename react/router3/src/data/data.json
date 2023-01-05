@@ -1,0 +1,34 @@
+{
+  "movies": [
+    { "photo": "../img/01.jpg", "name": "m-1" },
+    { "photo": "../img/02.jpg", "name": "m-2" },
+    { "photo": "../img/03.jpg", "name": "m-3" }
+  ],
+  "music": [
+    { "photo": "../img/04.jpg", "name": "mu-1" },
+    {
+      "photo": "../img/05.jpg",
+      "name": "mu-2"
+    },
+    { "photo": "../img/06.jpg", "name": "mu-3" }
+  ],
+  "apps": [
+    { "photo": "../img/07.jpg", "name": "app-1" },
+    {
+      "photo": "../img/08.jpg",
+      "name": "app-2"
+    },
+    { "photo": "../img/09.jpg", "name": "app-3" }
+  ],
+  "software": [
+    { "photo": "../img/01.jpg", "name": "s-1" },
+    {
+      "photo": "../img/05.jpg",
+      "name": "s-2"
+    },
+    {
+      "photo": "../img/08.jpg",
+      "name": "s-3"
+    }
+  ]
+}
