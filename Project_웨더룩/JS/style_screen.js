@@ -113,8 +113,10 @@ wrapSlider.addEventListener("mouseout", () => {
 
 /* 필터링 거친 이미지 넣는 함수 */
 function setImage() {
-  let imgArray = [c1, c2, c3, c4, c5];
+  let imgArray = [c1, c2, c3, c4, c5, c6];
+  console.log(imgArray);
   for (const key in styleList) {
+    console.log(key);
     let img_src = styleList[key].image.slice(5);
     imgArray[key][0].src = `../img/Cody${img_src}`;
     imgArray[key][1].src = `../img/Cody${img_src}`;
@@ -150,7 +152,24 @@ function setDetailImage(items) {
 function setClickImage(id) {
   localStorage.setItem("id_key", id);
 }
+
 window.addEventListener("load", () => {
   setImage();
   start();
 });
+
+function getTime() {
+  const time = new Date();
+  let minute = time.getMinutes();
+  if (minute < 10) {
+    console.log("8");
+    cur_time.textContent = `${time.getHours()}:0${time.getMinutes()}`;
+  } else {
+    cur_time.textContent = `${time.getHours()}:${time.getMinutes()}`;
+  }
+}
+
+setInterval(getTime, 1000);
+
+const mainBox = document.querySelector(".mainBox");
+mainBox.style.opacity = 1;

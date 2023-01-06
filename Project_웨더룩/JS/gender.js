@@ -24,3 +24,16 @@ function filterGender(tempList, genderValue) {
   let genderList = tempList.filter((item) => item.gender == genderValue);
   localStorage.gender = JSON.stringify(genderList);
 }
+
+function getTime() {
+  const time = new Date();
+  let minute = time.getMinutes();
+  if (minute < 10) {
+    console.log("8");
+    cur_time.textContent = `${time.getHours()}:0${time.getMinutes()}`;
+  } else {
+    cur_time.textContent = `${time.getHours()}:${time.getMinutes()}`;
+  }
+}
+
+setInterval(getTime, 1000);

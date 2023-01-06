@@ -1,0 +1,58 @@
+{
+    "movies": [
+        {
+            "name": "m-1",
+            "url": "./img/01.jpg"
+        },
+        {
+            "name": "m-2",
+            "url": "./img/02.jpg"
+        },
+        {
+            "name": "m-3",
+            "url": "./img/03.jpg"
+        }
+    ],
+    "music": [
+        {
+            "name": "mu-3",
+            "url": "./img/03.jpg"
+        },
+        {
+            "name": "mu-4",
+            "url": "./img/04.jpg"
+        },
+        {
+            "name": "mu-5",
+            "url": "./img/05.jpg"
+        }
+    ],
+    "apps": [
+        {
+            "name": "apps-5",
+            "url": "./img/05.jpg"
+        },
+        {
+            "name": "apps-6",
+            "url": "./img/06.jpg"
+        },
+        {
+            "name": "apps-7",
+            "url": "./img/07.jpg"
+        }
+    ],
+    "software": [
+        {
+            "name": "soft-7",
+            "url": "./img/07.jpg"
+        },
+        {
+            "name": "soft-8",
+            "url": "./img/08.jpg"
+        },
+        {
+            "name": "soft-9",
+            "url": "./img/09.jpg"
+        }
+    ]
+}

@@ -18,3 +18,19 @@ lookStyles.forEach((div) => {
     }, 500);
   });
 });
+
+function getTime() {
+  const time = new Date();
+  let minute = time.getMinutes();
+  if (minute < 10) {
+    console.log("8");
+    cur_time.textContent = `${time.getHours()}:0${time.getMinutes()}`;
+  } else {
+    cur_time.textContent = `${time.getHours()}:${time.getMinutes()}`;
+  }
+}
+
+setInterval(getTime, 1000);
+
+const mainBox = document.querySelector(".mainBox");
+mainBox.style.opacity = 1;

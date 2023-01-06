@@ -2,6 +2,19 @@ const weatherBox = document.querySelector(".weatherBox");
 const API_KEY = "367636d16a48743eb5074f58249138c2";
 let tempList;
 
+/* 현재시간 업데이트 */
+function getTime() {
+  const time = new Date();
+  console.log(time.getMinutes());
+  let minute = time.getMinutes();
+  if (minute < 10) {
+    console.log("8");
+    cur_time.textContent = `${time.getHours()}:0${time.getMinutes()}`;
+  } else {
+    cur_time.textContent = `${time.getHours()}:${time.getMinutes()}`;
+  }
+}
+
 // 메인 컨텐츠 효과
 window.addEventListener("load", () => {
   //   console.log("test");
@@ -10,11 +23,11 @@ window.addEventListener("load", () => {
 
   setTimeout(() => {
     showTitle();
-  }, 1500);
+  }, 400);
 
   setTimeout(() => {
     showContents();
-  }, 3500);
+  }, 2000);
 });
 
 function showTitle() {
@@ -30,7 +43,7 @@ function animateSequence() {
     var letter = $this.innerHTML;
     letter = letter.trim();
     var str = "";
-    var delay = 100;
+    var delay = 80;
     for (l = 0; l < letter.length; l++) {
       if (letter[l] != " ") {
         str +=
@@ -43,7 +56,7 @@ function animateSequence() {
           'ms; ">' +
           letter[l] +
           "</span>";
-        delay += 150;
+        delay += 100;
       } else str += letter[l];
     }
     $this.innerHTML = str;
@@ -104,15 +117,20 @@ function showContents() {
     setTimeout(() => {
       console.log(cont);
       cont.classList.add("contentShow");
+      cont.style.opacity = 1;
       if (key == 1) {
         imgContents.forEach((img, key2) => {
           setTimeout(() => {
             img.classList.add("imgContentShow");
-          }, 400 * key2);
+          }, 200 * key2);
         });
       }
-    }, 800 * key);
+    }, 400 * key);
   });
+  setTimeout(() => {
+    weatherBox.classList.remove("contentShow");
+    testBtn.classList.remove("contentShow");
+  }, 1500);
 }
 
 /* 메인기능 */
@@ -140,6 +158,8 @@ function displayWeather(data) {
   weatherIcon.src = `../img/weather_icon/${data.weather[0].icon}.png`;
   temp.innerHTML = mainTemp + "℃";
   region.innerHTML = data.name;
+
+  localStorage.weather = JSON.stringify(data);
 }
 
 function setTemperature(data) {
@@ -190,3 +210,5 @@ function loadItems() {
     .then((response) => response.json())
     .then((json) => json.items);
 }
+
+getTime();

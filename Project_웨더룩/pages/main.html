@@ -17,16 +17,25 @@
       crossorigin="anonymous"
     ></script>
     <script src="../JS/main.js" defer></script>
+    <script src="../JS/bgColor.js" defer></script>
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.js"
+      integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <div class="logoImgBox">
+    <div id="gradient"></div>
+    <div id="gradient2"></div>
+
+    <div class="logoImgBox" onclick="location.href='./main.html'">
       <img src="../img/logo3.png" class="logo" alt="" />
     </div>
 
     <div class="mainBox">
       <section id="main_Sec1">
         <div class="topBox">
-          <p>11:21</p>
+          <p id="cur_time">11:21</p>
           <div class="topBox_right">
             <p>KT</p>
             <p>5G</p>
